@@ -36,6 +36,6 @@ import { MyorderComponent } from './components/myorder/myorder.component';
     RootRouter
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [HomeComponent]
 })
 export class AppModule { }
