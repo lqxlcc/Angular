@@ -6,7 +6,7 @@ import { Http } from '@angular/http';
   styleUrls: ['./mine.component.scss']
 })
 export class MineComponent implements OnInit {
-    imgUrl: string = './img/mine_level.png'
+   
   constructor(private http:Http) { }
 
   ngOnInit() {

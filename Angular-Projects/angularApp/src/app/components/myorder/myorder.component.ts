@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 @Component({
   selector: 'app-myorder',
   templateUrl: './myorder.component.html',
-  styleUrls: ['./myorder.component.css']
+  styleUrls: ['./myorder.component.scss']
 })
 export class MyorderComponent implements OnInit {
 

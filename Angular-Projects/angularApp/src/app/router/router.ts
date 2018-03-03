@@ -14,11 +14,8 @@ const appRoutes: Routes = [
     {path:'home',component:HomeComponent},
     {path:'cart',component:CartComponent},
     {path:'category',component:CategoryComponent},
-    {path:'mine',component:MineComponent,
-        children:[
-            {path:'myorder',component:MyorderComponent}
-        ]
-    },
+    {path:'mine',component:MineComponent},
+    {path:'myorder',component:MyorderComponent},
     {path:'**',component:PagenotfoundComponent}
 ]
 

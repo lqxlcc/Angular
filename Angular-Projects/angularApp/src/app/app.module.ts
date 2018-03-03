@@ -14,6 +14,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CategoryComponent } from './components/category/category.component';
 import { MineComponent } from './components/mine/mine.component';
 
+
 import { FooterComponent } from './components/footer/footer.component';
 import { MyorderComponent } from './components/myorder/myorder.component';
 @NgModule({
