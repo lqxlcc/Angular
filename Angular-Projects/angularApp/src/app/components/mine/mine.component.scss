@@ -1,0 +1,144 @@
+a{color: #878787;}
+.mineLqx{
+    .headerLqx{
+        height:5.066667rem;
+        .headerAccount{
+            .accountUl{
+                padding:0.8rem 0.4rem;
+                height:3.2rem;
+                text-align:center;
+                line-height: 0.6rem;
+                li{
+                    float: left;
+                    width:30%;
+                    u{
+                        background:url("../../img/mine_level.png");
+                    }
+                    img{
+                        
+                    }
+                    span{
+                        display:block;
+                        font-size:0.426667rem;
+                    }
+                    .sign{
+                        background:#ff8000;
+                        color:#fff;
+                        font-size: 0.373333rem;
+                        border-radius: 0.266667rem;
+                    }
+                }
+                .code{
+                    width:40%;text-align:right;
+                    i{font-size:0.8rem;}
+                    span{font-size:0.373333rem;}
+                }
+            }
+        }
+        .headerDetail{
+            .dettailUl{
+                height:1.866667rem;
+                padding:0.4rem;
+                line-height: 0.533333rem;
+                li{
+                    float:left;
+                    width:25%;
+                    text-align:center;
+                   span{
+                        font-size: 0.373333rem;
+                        display:block;
+                   } 
+                   i{color:#ff8000;}
+                }
+            }
+        }
+    }
+    .mineOrder{
+        .orderNav{
+            height:1.2rem;
+            color: #878787;
+            border-bottom:1px solid #ece9e5;
+            a{
+                display:block;
+                width:100%;
+                height:1.2rem;
+                h3{
+                    float:left;
+                    line-height: 1.18rem;
+                    i{
+                        vertical-align: middle;
+                        font-weight: normal;
+                        color: #878787;
+                        font-size: 0.533333rem;
+                    }
+                    span{
+                        color: #3a3a3a;
+                        padding-left:0.266667rem;
+                        font-size: 0.373333rem;
+                    }
+                }
+                p{
+                    float:right;
+                    font-size: 0.373333rem;
+                    i{
+                       
+                        font-size: 0.666667rem;
+                    }
+                }
+            }
+        }
+        .orderNavListUl{
+            height:2.133333rem;
+            line-height: 0.613333rem;
+            padding:0.586667rem 0 0.32rem 0;
+            li{
+                text-align:center;
+                float:left;
+                width:20%;
+                i{
+                    color: #878787;
+                    font-size:0.426667rem;
+                }
+                span{
+                    display:block;
+                    color: #3a3a3a;
+                    font-size: 0.373333rem;
+                }
+            }
+
+        }
+    }
+    .mineLink{
+        .linkList{
+            padding-top:0.533333rem;
+            li{
+                height:1.2rem;
+                line-height:1.2rem;
+                i{
+                    vertical-align: middle;
+                    font-weight: normal;
+                    color: #878787;
+                    font-size: 0.533333rem;
+                }
+                span{
+                    color: #3a3a3a;
+                    padding-left:0.266667rem;
+                    font-size: 0.373333rem;
+                }
+                p{
+                    float:right;
+                    position:relative;
+                    font-size: 0.373333rem;
+                    padding-right:0.533333rem;
+                    i{
+                       position:absolute;
+                       top:0;
+                       right:0;
+                      
+                        font-size: 0.666667rem;
+                    }
+                }
+            }
+        }
+    }
+}

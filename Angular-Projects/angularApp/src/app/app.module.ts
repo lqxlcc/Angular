@@ -4,28 +4,30 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {RootRouter} from './router/router'
 
-//自定义管道
 import {RangePipe} from './utils/range.pipe'
 
-//组件
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/list/list.component';
-import { PagenotfoundComponent } from './components/pagenotfound/pagenotfo;
-import { CartComponent } from './components/cart/c;
-import { CategoryComponent } from './components/category/categ;
-import { MineComponent } from './components/mine/mine.component'ory.component'art.component'und.component'
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CategoryComponent } from './components/category/category.component';
+import { MineComponent } from './components/mine/mine.component';
 
+import { FooterComponent } from './components/footer/footer.component';
+import { MyorderComponent } from './components/myorder/myorder.component';
 @NgModule({
   declarations: [
     AppComponent,
     RangePipe,
     HomeComponent,
     ListComponent,
-    Pagenot,
+    PagenotfoundComponent,
     CartComponent,
     CategoryComponent,
-    MineComponentfoundComponent,
+    MineComponent,
+    FooterComponent,
+    MyorderComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,6 @@ import { MineComponent } from './components/mine/mine.component'ory.component'ar
     RootRouter
   ],
   providers: [],
-  bootstrap: [HomeComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
