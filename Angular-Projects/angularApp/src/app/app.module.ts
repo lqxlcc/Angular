@@ -3,9 +3,15 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {RootRouter} from './router/router'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
-import {RangePipe} from './utils/range.pipe'
+
+import { ElModule } from 'element-angular';
+
+import {RangePipe} from './utils/range.pipe';
 import {HttpService} from './utils/http.service';
+
+
 
 
 import { AppComponent } from './app.component';
@@ -15,6 +21,15 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { CartComponent } from './components/cart/cart.component';
 import { CategoryComponent } from './components/category/category.component';
 import { MineComponent } from './components/mine/mine.component';
+
+
+import { DataCarouselComponent } from './components/dataCarousel/dataCarousel.component';
+
+
+import { ProductComponent } from './components/product/product.component';
+import { MerchandiseComponent } from './components/merchandise/merchandise.component';
+import { DetailsComponent } from './components/details/details.component';
+import { EstimateComponent } from './components/estimate/estimate.component';
 
 
 import { FooterComponent } from './components/footer/footer.component';
@@ -33,6 +48,11 @@ import { AddressMangementComponent } from './components/address-mangement/addres
     CartComponent,
     CategoryComponent,
     MineComponent,
+    DataCarouselComponent,
+    ProductComponent,
+    MerchandiseComponent,
+    DetailsComponent,
+    EstimateComponent,
     FooterComponent,
     MyorderComponent,
     LoginComponent,
@@ -44,9 +64,11 @@ import { AddressMangementComponent } from './components/address-mangement/addres
     BrowserModule,
     FormsModule,
     HttpModule,
-    RootRouter
+    RootRouter,
+    ElModule.forRoot(),
   ],
   providers: [HttpService],
-  bootstrap: [HomeComponent]
+  bootstrap: [AppComponent]
+
 })
 export class AppModule { }

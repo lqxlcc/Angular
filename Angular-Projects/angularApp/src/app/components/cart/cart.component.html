@@ -37,8 +37,8 @@
             <ul class="cartList">
                 
                 <li class="h98" *ngFor="let obj of cartset;let idx = index;trackBy:trackByID" (click)="count($event,idx)" >
-                    <div>
-                        <i class="circle"></i>
+                    <div >
+                        <i class="circle "></i>
                     </div>
                     
                     <div>
@@ -75,4 +75,8 @@
         
 
     </div>
+
+</div>
+<div class="foot">
+    <app-footer></app-footer>
 </div>

@@ -2,11 +2,22 @@ var express = require('express');
 var bp = require('body-parser');
 var path = require('path');
 var app = express();
+var http = require('http');
+
 
 app.use(bp.urlencoded({extended: false}));
 
-// var list = require('./list')
+
+
 var cart = require('./cart.js');
+
+
+var getHomeMessage = require('./getHomeMessage.js');
+
+var list = require('./list');
+var product = require('./product');
+
+
 module.exports = {
     start: function(_port){
 
@@ -24,8 +35,15 @@ module.exports = {
 
         app.use(express.static(path.resolve(__dirname ,'../')));
 
-        // list.register(app);
+
         cart.register(app);
+
+
+        getHomeMessage.register(app);
+
+        list.register(app);
+        product.register(app);
+
         app.listen(_port,function(){
             console.log('连接成功')
         });
