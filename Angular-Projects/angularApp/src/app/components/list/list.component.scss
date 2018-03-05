@@ -1,0 +1,81 @@
+.list{
+    height: 100%;
+    display:flex;
+    flex-direction:column;
+    .header{
+        height: 1.2rem;
+        padding:0.2rem 0;
+        .header_t{
+            height: 0.8rem;
+            position:relative;
+            .el-icon-arrow-left{
+                font-size:0.666667rem;
+                color: #58bc58;
+                line-height: 0.8rem;
+                margin: 0 0.266667rem;
+                float:left;
+            }
+            .list_search{
+                height: 0.773333rem;
+                width: 7.066667rem;
+                position:relative;
+                color:#000;
+                .el-icon-search{
+                    position:absolute;
+                    left: 2.666667rem;top: 0.133333rem;
+                    font-size:0.533333rem;
+                }
+                .sousuo{
+                    float:left;
+                    height: 0.773333rem;
+                    width: 7.066667rem;
+                    border:1px solid #eee;
+                    border-radius:0.106667rem;
+                    background-color: #ddd;
+                    font-size:0.373333rem;
+                    padding-left:3.333333rem;   
+                }
+                
+            }
+            .sort{
+                float:left;
+                width: 1.733333rem;
+                font-size:0.373333rem;
+                text-align:center;
+                line-height: 0.8rem;
+                color:#58bc58;
+            }
+        }
+
+    }
+    .nav{
+        height: 1.2rem;
+        width: 100%;
+        background-color:#ccc;
+        overflow-y: hidden;
+        display:flex;
+        &::-webkit-scrollbar {width: 0px;display: none;}
+        li{
+            flex:1;
+            // padding: 0 0.133333rem;
+            white-space:nowrap; 
+            a{
+                color::#000;
+                font-size:0.466667rem;
+                height: 1.2rem;
+                padding:0 0.266667rem;
+            }
+        }
+    }
+    .main{
+        flex:1;
+        overflow-x:hidden;
+        display:flex;
+        flex-direction: column;
+        background-color: red;
+        &::-webkit-scrollbar {width: 0px;display: none;}
+
+        p{height: 0.666667rem;}
+    }
+
+}
