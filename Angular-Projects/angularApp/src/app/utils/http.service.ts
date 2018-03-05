@@ -1,4 +1,4 @@
-import {Http, RequestOptions, RequestMethod} from '@angular/http'
+import {Http, RequestOptions, RequestMethod, Headers} from '@angular/http'
 import {Injectable} from '@angular/core';
 
 @Injectable()
@@ -16,10 +16,23 @@ export class HttpService{
     get(api, params = {}){
         return new Promise((resolve, reject) => {
             params['_'] = Math.random();
-            this.http.get(this.getUrl(api), new RequestOptions({
+            this.http.request(this.getUrl(api), new RequestOptions({
                 method: RequestMethod.Get,
                 search: params
             })).toPromise().then((res) => {
+                resolve(res.json());
+            })
+        })
+    }
+    post(api,params={}){
+        return new Promise((resolve,reject)=>{
+            this.http.request(this.getUrl(api),new RequestOptions({
+                method:RequestMethod.Post,
+                body:params,
+                headers: new Headers({
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                })
+            })).toPromise().then(res=>{
                 resolve(res.json());
             })
         })

@@ -2,10 +2,13 @@ var express = require('express');
 var bp = require('body-parser');
 var path = require('path');
 var app = express();
+var http = require('http');
+var request = require('request');
 
 app.use(bp.urlencoded({extended: false}));
 
 // var list = require('./list')
+var getHomeMessage = require('./getHomeMessage.js');
 
 module.exports = {
     start: function(_port){
@@ -25,6 +28,7 @@ module.exports = {
         app.use(express.static(path.resolve(__dirname ,'../')));
 
         // list.register(app);
+        getHomeMessage.register(app);
 
         app.listen(_port,function(){
             console.log('连接成功')

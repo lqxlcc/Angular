@@ -1,8 +1,318 @@
-
-<div>
-  home
-  <a routerLink="list">list</a>
-  <a routerLink="**">pagenotfound</a>
+<div id="home">
+    <div class="head">
+        <div class="address-info">
+            <span class="tomorrow">
+                <img src="https://huodongjd1.fruitday.com/sale/appxx/ci_20171025_1.png" />
+            </span>
+            <span class="address">{{address}}</span>
+            <span class="arrow el-icon-caret-bottom"></span>
+        </div>
+        <div class="search el-icon-search"></div>
+    </div>
+    <div class="main">
+        <app-dataCarousel [banners]="banners"></app-dataCarousel>
+        <div class="vip">
+            <a href="#"><img src="https://imgjd5.fruitday.com/images/2018-03-02/cdfba3db798c79c6259beb7c894ae947.jpg" /></a>
+            <a href="#"><img src="https://imgjd6.fruitday.com/images/2018-01-06/66b11add93bf19fc63fcaf73d05b8972.jpg" /></a>
+        </div>
+        <div class="holiday">
+            <a href="#"><img src="https://imgjd7.fruitday.com/images/2018-03-02/a18ef75febeb140a1bc88028fef4460a.gif" /></a>
+        </div>
+        <div class="hotsale">
+            <div class="h_head">
+                <img src="https://imgjd6.fruitday.com/images/2018-01-17/8265ad64fa014013d28ec2e410c6083e.jpg" />
+            </div>
+            <a href="#" class="h_main">
+                <div class="h_main_l">
+                    <img [src]="hotFruit[0] ? hotFruit[0].mainimg : ''"  />
+                </div>
+                <div class="h_main_r">
+                    <h2>{{hotFruit[0] ? hotFruit[0].title : ''}}</h2>
+                    <h3>{{hotFruit[0] ? hotFruit[0].describe : ''}}</h3>
+                    <p>￥<span>{{hotFruit[0] ? hotFruit[0].saleprice : ''}}</span>/<em>kg</em><strong class="el-icon-plus addcar"></strong></p>
+                </div>
+            </a>
+            <div class="h_foot">
+                <a href="#" class="fruit" *ngFor="let obj of hotFruit">
+                    <img [src]="obj.mainimg" />
+                    <h3>{{obj.title}}}</h3>
+                    <p>￥<span>{{obj.saleprice}}</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                </a>
+            </div>
+        </div>
+        <!-- <div class="hotsale">
+            <div class="h_head">
+                <img src="https://imgjd6.fruitday.com/images/2018-01-17/8265ad64fa014013d28ec2e410c6083e.jpg" />
+            </div>
+            <a href="#" class="h_main">
+                <div class="h_main_l">
+                    <img src="https://imgjd5.fruitday.com/images/product_pic/500/1/1-370x370-500-H41HA97H.jpg" />
+                </div>
+                <div class="h_main_r">
+                    <h2>台湾茂谷柑</h2>
+                    <h3>浓甜无渣 瓣瓣多汁</h3>
+                    <p>￥<span>49.9</span>/<em>kg</em><strong class="el-icon-plus addcar"></strong></p>
+                </div>
+            </a>
+            <div class="h_foot">
+                <a href="#" class="fruit">
+                    <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                    <h3>优选美国爱妃苹果</h3>
+                    <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                </a>
+                <a href="#" class="fruit">
+                    <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                    <h3>优选美国爱妃苹果</h3>
+                    <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                </a><a href="#" class="fruit">
+                    <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                    <h3>优选美国爱妃苹果</h3>
+                    <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                </a><a href="#" class="fruit">
+                    <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                    <h3>优选美国爱妃苹果</h3>
+                    <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                </a><a href="#" class="fruit">
+                    <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                    <h3>优选美国爱妃苹果</h3>
+                    <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                </a>
+            </div>
+        </div> -->
+        <div class="choiceness">
+            <div class="c_head">
+                <img src="https://imgqn9.fruitday.com/images/2018-01-02/1a42df8fbf24bca7f8bd2e88d2e89c65.jpg" />
+            </div>
+            <div class="item0">
+                <div class="item_head">
+                    <a href="#">
+                        <img src="https://imgjd2.fruitday.com/images/2017-12-29/8df550ef3cd69cc164fb647f2b273ac0.jpg" />
+                    </a>
+                </div>
+                <div class="item_foot">
+                    <a href="#" class="fruit" *ngFor="let obj of seasonFruit">
+                        <img [src]="obj.mainimg" />
+                        <h3>{{obj.title}}</h3>
+                        <p>￥<span>{{obj.saleprice}}</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="item0">
+                <div class="item_head">
+                    <a href="#">
+                        <img src="https://imgjd2.fruitday.com/images/2017-12-29/8df550ef3cd69cc164fb647f2b273ac0.jpg" />
+                    </a>
+                </div>
+                <div class="item_foot">
+                    <a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a>
+                    <a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a><a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a><a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a><a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a>
+                </div>
+            </div> -->
+            <div class="item0">
+                <div class="item_head">
+                    <a href="#">
+                        <img src="https://imgqn8.fruitday.com/images/2018-01-02/50a25f418abaa0ecb7e6488288cfe505.jpg" />
+                    </a>
+                </div>
+                <div class="item_foot">
+                    <a href="#" class="fruit" *ngFor="let obj of seafood">
+                        <img [src]="obj.mainimg" />
+                        <h3>{{obj.title}}</h3>
+                        <p>￥<span>{{obj.saleprice}}</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="item0">
+                <div class="item_head">
+                    <a href="#">
+                        <img src="https://imgqn8.fruitday.com/images/2018-01-02/50a25f418abaa0ecb7e6488288cfe505.jpg" />
+                    </a>
+                </div>
+                <div class="item_foot">
+                    <a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a>
+                    <a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a><a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a><a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a><a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a>
+                </div>
+            </div> -->
+            <div class="item0">
+                <div class="item_head">
+                    <a href="#">
+                        <img src="https://imgqn9.fruitday.com/images/2018-01-02/751c2c212c3ae206b46ecef02a71fe28.jpg" />
+                    </a>
+                </div>
+                <div class="item_foot">
+                    <a href="#" class="fruit" *ngFor="let obj of meat">
+                        <img [src]="obj.mainimg" />
+                        <h3>{{obj.title}}</h3>
+                        <p>￥<span>{{obj.saleprice}}</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="item0">
+                <div class="item_head">
+                    <a href="#">
+                        <img src="https://imgqn9.fruitday.com/images/2018-01-02/751c2c212c3ae206b46ecef02a71fe28.jpg" />
+                    </a>
+                </div>
+                <div class="item_foot">
+                    <a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a>
+                    <a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a><a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a><a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a><a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a>
+                </div>
+            </div> -->
+            <div class="item0">
+                <div class="item_head">
+                    <a href="#">
+                        <img src="https://imgjd3.fruitday.com/images/2018-01-01/349fe19f9990ce5003ec32c2b9666122.jpg" />
+                    </a>
+                </div>
+                <div class="item_foot">
+                    <a href="#" class="fruit" *ngFor="let obj of milk">
+                        <img [src]="obj.mainimg" />
+                        <h3>{{obj.title}}</h3>
+                        <p>￥<span>{{obj.saleprice}}</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="item0">
+                <div class="item_head">
+                    <a href="#">
+                        <img src="https://imgjd3.fruitday.com/images/2018-01-01/349fe19f9990ce5003ec32c2b9666122.jpg" />
+                    </a>
+                </div>
+                <div class="item_foot">
+                    <a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a>
+                    <a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a><a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a><a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a><a href="#" class="fruit">
+                        <img src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-370x370-49-XB1F4HC2.jpg" />
+                        <h3>优选美国爱妃苹果</h3>
+                        <p>￥<span>99.9</span>/<em>个</em><strong class="el-icon-plus addcar"></strong></p>
+                    </a>
+                </div>
+            </div> -->
+        </div>
+        <div class="moods">
+            <div class="m_head">
+                <img src="https://imgjd4.fruitday.com/images/2018-01-02/144562fa6b6a129221316260feb0a797.jpg" />
+            </div>
+            <ul class="m_main">
+                <li>
+                    <div class="m_main_l">
+                        <img src="https://imgjd7.fruitday.com/images/product_pic/28/1/1-370x370-28-X1R988X1.jpg" />
+                    </div>
+                    <div class="m_main_r">
+                        <h2>台湾茂谷柑</h2>
+                        <h3>浓甜无渣 瓣瓣多汁</h3>
+                        <p>￥<span>49.9</span>/<em>kg</em><strong class="el-icon-plus addcar"></strong></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="m_main_l">
+                        <img src="https://imgjd7.fruitday.com/images/product_pic/28/1/1-370x370-28-X1R988X1.jpg" />
+                    </div>
+                    <div class="m_main_r">
+                        <h2>台湾茂谷柑</h2>
+                        <h3>浓甜无渣 瓣瓣多汁</h3>
+                        <p>￥<span>49.9</span>/<em>kg</em><strong class="el-icon-plus addcar"></strong></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="m_main_l">
+                        <img src="https://imgjd7.fruitday.com/images/product_pic/28/1/1-370x370-28-X1R988X1.jpg" />
+                    </div>
+                    <div class="m_main_r">
+                        <h2>台湾茂谷柑</h2>
+                        <h3>浓甜无渣 瓣瓣多汁</h3>
+                        <p>￥<span>49.9</span>/<em>kg</em><strong class="el-icon-plus addcar"></strong></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="m_main_l">
+                        <img src="https://imgjd7.fruitday.com/images/product_pic/28/1/1-370x370-28-X1R988X1.jpg" />
+                    </div>
+                    <div class="m_main_r">
+                        <h2>台湾茂谷柑</h2>
+                        <h3>浓甜无渣 瓣瓣多汁</h3>
+                        <p>￥<span>49.9</span>/<em>kg</em><strong class="el-icon-plus addcar"></strong></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="foot"></div>
 </div>
 
 
