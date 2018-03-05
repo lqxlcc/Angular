@@ -1,0 +1,89 @@
+.product{
+    display:flex;
+    flex-direction:column;
+    height: 100%;
+    .header{
+        height: 1.2rem;
+        padding:0.2rem 0;
+        .header_t{
+            height: 0.8rem;
+            position:relative;
+            .el-icon-arrow-left{
+                font-size:0.666667rem;
+                color: #58bc58;
+                line-height: 0.8rem;
+                margin: 0 0.266667rem;
+                float:left;
+            }
+            .header_c{
+                float:left;
+                color: #000;
+                width: 6.666667rem;
+                height: 0.773333rem;
+                font-size:0.533333rem;
+                padding-left:2.033333rem;
+                a{ 
+                    display:inline-block;
+                    color: #000;
+                    padding:0 0.066667rem;
+
+                }
+            }
+            .header_r{
+                float:left;
+                text-align:center;
+                width: 2.133333rem;
+                height: 0.773333rem;
+                .el-icon-share,.el-icon-more{
+                    display:inline-block;
+                    font-size:0.533333rem;
+                    color:#58bc58;
+                    line-height: 0.8rem;
+                    padding:0 0.133333rem;
+                }
+            }
+        }
+
+
+
+    }
+    .main{
+        flex:1;
+        background-color: red;
+    }
+    .footer{
+        height: 1.2rem;
+        background-color: #ccc;
+        position:relative;
+        .foot_l{
+            position:absolute;
+            left: 0.133333rem;bottom: 0.133333rem;
+            height: 1.333333rem;
+            width: 1.333333rem;
+            border:0.013333rem solid #58bc58;
+            border-radius:50%;
+            background-color: #58bc58;
+            .glyphicon-shopping-cart{
+                position:absolute;
+                left: 0.333333rem;
+                top: 0.333333rem;
+                // transform:translate(-50%,50%);
+                display:block;
+                color:#fff !important;
+                
+                font-size:0.6rem !important;
+            }
+            .f_carts_qty{
+                position:absolute;
+                right: 0.133333rem;top: 0.133333rem;
+                width:0.466667rem;
+                height:0.466667rem;
+                color:#fff;
+                background-color: red;
+                border-radius:50%;
+                text-align:center;
+                font-size:0.32rem;
+            }
+        }
+    }
+}

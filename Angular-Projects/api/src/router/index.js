@@ -5,7 +5,8 @@ var app = express();
 
 app.use(bp.urlencoded({extended: false}));
 
-// var list = require('./list')
+var list = require('./list');
+var product = require('./product');
 
 module.exports = {
     start: function(_port){
@@ -24,7 +25,8 @@ module.exports = {
 
         app.use(express.static(path.resolve(__dirname ,'../')));
 
-        // list.register(app);
+        list.register(app);
+        product.register(app);
 
         app.listen(_port,function(){
             console.log('连接成功')

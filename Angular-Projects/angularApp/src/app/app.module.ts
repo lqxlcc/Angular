@@ -4,17 +4,22 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {RootRouter} from './router/router'
 
-//自定义管道
 import {RangePipe} from './utils/range.pipe'
+import {HttpService} from './utils/http.service';
 
-//组件
+import { ElModule } from 'element-angular'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/list/list.component';
-import { PagenotfoundComponent } from './components/pagenotfound/pagenotfo;
-import { CartComponent } from './components/cart/c;
-import { CategoryComponent } from './components/category/categ;
-import { MineComponent } from './components/mine/mine.component'ory.component'art.component'und.component'
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CategoryComponent } from './components/category/category.component';
+import { MineComponent } from './components/mine/mine.component';
+import { ListdatagridComponent } from './components/listdatagrid/listdatagrid.component';
+import { ProductComponent } from './components/product/product.component';
+
 
 @NgModule({
   declarations: [
@@ -22,18 +27,21 @@ import { MineComponent } from './components/mine/mine.component'ory.component'ar
     RangePipe,
     HomeComponent,
     ListComponent,
-    Pagenot,
+    PagenotfoundComponent,
     CartComponent,
     CategoryComponent,
-    MineComponentfoundComponent,
+    MineComponent,
+    ListdatagridComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RootRouter
+    RootRouter,
+    ElModule.forRoot(),
   ],
-  providers: [],
-  bootstrap: [HomeComponent]
+  providers: [HttpService],
+  bootstrap: [ProductComponent]
 })
 export class AppModule { }
