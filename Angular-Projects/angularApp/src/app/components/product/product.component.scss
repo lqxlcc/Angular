@@ -67,7 +67,6 @@
                 position:absolute;
                 left: 0.333333rem;
                 top: 0.333333rem;
-                // transform:translate(-50%,50%);
                 display:block;
                 color:#fff !important;
                 
@@ -83,6 +82,30 @@
                 border-radius:50%;
                 text-align:center;
                 font-size:0.32rem;
+            }
+            
+        }
+        .foot_r{
+            height: 100%;
+            width: 4.8rem;
+            float:right;
+            background-color: #ff8000;
+            padding:0 0.4rem;
+            .arrival_time,.addcart{
+                display:inline-block;
+                line-height: 1.2rem;
+                color:#fff;
+                
+            }
+            .arrival_time{
+                font-size:0.4rem;
+                width: 1.2rem;
+            }
+            .addcart{
+                width: 2.7rem;
+                text-align:center;
+                font-weight:bold;
+                font-size:0.466667rem;
             }
         }
     }

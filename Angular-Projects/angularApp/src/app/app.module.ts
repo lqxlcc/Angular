@@ -17,8 +17,10 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { CartComponent } from './components/cart/cart.component';
 import { CategoryComponent } from './components/category/category.component';
 import { MineComponent } from './components/mine/mine.component';
-import { ListdatagridComponent } from './components/listdatagrid/listdatagrid.component';
 import { ProductComponent } from './components/product/product.component';
+import { MerchandiseComponent } from './components/merchandise/merchandise.component';
+import { DetailsComponent } from './components/details/details.component';
+import { EstimateComponent } from './components/estimate/estimate.component';
 
 
 @NgModule({
@@ -31,8 +33,10 @@ import { ProductComponent } from './components/product/product.component';
     CartComponent,
     CategoryComponent,
     MineComponent,
-    ListdatagridComponent,
     ProductComponent,
+    MerchandiseComponent,
+    DetailsComponent,
+    EstimateComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +46,6 @@ import { ProductComponent } from './components/product/product.component';
     ElModule.forRoot(),
   ],
   providers: [HttpService],
-  bootstrap: [ProductComponent]
+  bootstrap: [ListComponent]
 })
 export class AppModule { }
