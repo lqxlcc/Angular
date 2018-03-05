@@ -1,3 +1,96 @@
-<p>
-  mine works!
-</p>
+<div class="mineLqx">
+    <div class="headerLqx">
+        <div class="headerAccount">
+            <ul class="accountUl">
+                <li><img src="https://wap.fruitday.com/content/images/me/old_v0.png" alt="" /> </li>
+                <li>
+                    <span>17665119545</span>
+                    <span class="sign">签到送好礼</span>
+                </li>
+                <li class="code">
+                    <i class="glyphicon glyphicon-qrcode"></i>
+                    <span>会员码</span>
+                </li>
+            </ul>
+        </div>
+        <div class="headerDetail">
+            <ul class="dettailUl">
+                <li>
+                    <span>积分</span>
+                    <i>0</i>
+                </li>
+                <li>
+                    <span>余额</span>
+                    <i>0</i>
+                </li>
+                <li>
+                    <span>优惠券</span>
+                    <i>0</i>
+                </li>
+                <li>
+                    <span>礼品</span>
+                    <i>0</i>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mineOrder">
+        <div class="orderNav">
+            <a routerLink="myorder">
+                <h3>
+                    
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    <span>我的订单</span>
+                    
+                </h3>
+                <p>全部订单 <i>&gt;</i> </p>
+            </a>
+        </div>
+        <ul class="orderNavListUl">
+            <li>
+                <i class="glyphicon glyphicon-folder-open"></i>
+                <span>待付款</span>
+            </li>
+            <li>
+                <i class="glyphicon glyphicon-folder-open"></i>
+                <span>待发货</span>
+            </li>
+            <li>
+                <i class="glyphicon glyphicon-folder-open"></i>
+                <span>待收货</span>
+            </li>
+            <li>
+                <i class="glyphicon glyphicon-folder-open"></i>
+                <span>待评价</span>
+            </li>
+            <li>
+                <i class="glyphicon glyphicon-folder-open"></i>
+                <span>退换货</span>
+            </li>
+        </ul>
+    </div>
+    <div class="mineLink">
+        <ul class="linkList">
+            <li>
+                <i class="glyphicon glyphicon-tree-deciduous"></i>
+                <span>会员中心</span>
+                <p>享等级特权<i>&gt;</i> </p>
+            </li>
+            <li>
+                <i class="glyphicon glyphicon-tree-deciduous"></i>
+                <span>企业购</span>
+                <p><i>&gt;</i> </p>
+            </li>
+            <li>
+                <i class="glyphicon glyphicon-tree-deciduous"></i>
+                <span>在线客服</span>
+                <p><i>&gt;</i> </p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>

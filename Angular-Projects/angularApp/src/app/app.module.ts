@@ -17,12 +17,15 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { CartComponent } from './components/cart/cart.component';
 import { CategoryComponent } from './components/category/category.component';
 import { MineComponent } from './components/mine/mine.component';
+
 import { ProductComponent } from './components/product/product.component';
 import { MerchandiseComponent } from './components/merchandise/merchandise.component';
 import { DetailsComponent } from './components/details/details.component';
 import { EstimateComponent } from './components/estimate/estimate.component';
 
 
+import { FooterComponent } from './components/footer/footer.component';
+import { MyorderComponent } from './components/myorder/myorder.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,10 +36,15 @@ import { EstimateComponent } from './components/estimate/estimate.component';
     CartComponent,
     CategoryComponent,
     MineComponent,
+
     ProductComponent,
     MerchandiseComponent,
     DetailsComponent,
     EstimateComponent,
+
+    FooterComponent,
+    MyorderComponent
+
   ],
   imports: [
     BrowserModule,
