@@ -1,7 +1,6 @@
 <div class="cartLqx">
-    
     <div class="cartHeader">
-        <ul class="headerUl  navbar navbar-default navbar-fixed-top">
+        <ul class="headerUl  navbar navbar-default navbar-fixed-top" >
             <li>
                 <h3>
                     <i>&lt;</i>
@@ -9,8 +8,6 @@
                     <span>编辑</span>
                 </h3>
             </li>
-            
-            
         </ul>
     </div>
     <div class="cartAddress">
@@ -34,33 +31,48 @@
     <div class="cartMain">
         <div class="cartNav">
             <span>商品清单</span>
-            <span>总重约<i>0</i>kg</span>
+            <span class="fr">总重约<i>0</i>kg</span>
         </div>
-        <div class="cartGoodsList">
+        <div class="cartGoodsList" *ngIf="cartset">
             <ul class="cartList">
-    
-                <li class="h98">
-                    <i class="circle"></i>
+                
+                <li class="h98" *ngFor="let obj of cartset;let idx = index;trackBy:trackByID" (click)="count($event,idx)" >
                     <div>
-                        <img src="https://imgqn8.fruitday.com/images/product_pic/500/1/1-180x180-500-3A4YF743.jpg" />
+                        <i class="circle"></i>
+                    </div>
+                    
+                    <div>
+                        <img [src]="obj.mainimg" />
                     </div>
                     <div class="pl10">
-                        <p>decription</p>
+                        <p>{{obj.describe}}</p>
                         <p><i>300g</i><i>约0.30kg</i></p>
-                        <span class="price">￥99</span><span>明日达</span>
+                        <span class="price">￥{{obj.price}}</span><span>明日达</span>
                     </div>
                     <div class="fr">
-                        <i>&times;1</i>
+                        <i class="glyphicon glyphicon-minus-sign"></i>
+                        <span class="num">{{obj.num}}</span>
+                        <i class="glyphicon glyphicon-plus-sign"></i>
                     </div>
 
                 </li>
-                <li>
-                    <span>共1件商品 合计：￥88.90（含运费￥20.00）</span>
-                </li>
-                <li>
-                    <input type="button" value="删除订单" class="delete"/>
-                </li>
+                
             </ul>
         </div>
+    </div>
+    <div class="cartFoot">
+        <i class="circle"></i>
+        <div class="fl">
+            <span>全选</span>
+            <div class="priceT">
+                <p>合计：<i>￥44</i></p>
+                <p>共优惠￥14</p>
+            </div>
+        </div>
+        <div class="fr">
+            <span>结算（2）</span>
+        </div>
+        
+
     </div>
 </div>

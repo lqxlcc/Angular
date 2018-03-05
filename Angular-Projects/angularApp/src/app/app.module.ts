@@ -5,6 +5,8 @@ import {HttpModule} from '@angular/http';
 import {RootRouter} from './router/router'
 
 import {RangePipe} from './utils/range.pipe'
+import {HttpService} from './utils/http.service';
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -17,6 +19,10 @@ import { MineComponent } from './components/mine/mine.component';
 
 import { FooterComponent } from './components/footer/footer.component';
 import { MyorderComponent } from './components/myorder/myorder.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
+import { AddressMangementComponent } from './components/address-mangement/address-mangement.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +34,11 @@ import { MyorderComponent } from './components/myorder/myorder.component';
     CategoryComponent,
     MineComponent,
     FooterComponent,
-    MyorderComponent
+    MyorderComponent,
+    LoginComponent,
+    RegisterComponent,
+    PersonalInformationComponent,
+    AddressMangementComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +46,7 @@ import { MyorderComponent } from './components/myorder/myorder.component';
     HttpModule,
     RootRouter
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [HomeComponent]
 })
 export class AppModule { }

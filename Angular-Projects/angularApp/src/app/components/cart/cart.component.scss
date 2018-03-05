@@ -1,3 +1,4 @@
+
 .cartLqx{
     .cartHeader{
         height:1.226667rem;
@@ -74,6 +75,122 @@
                     color: #878787;
                     font-size: 0.32rem;
                }
+        }
+    }
+    .cartMain{
+        
+        .cartNav{
+            height:0.853333rem;
+            line-height:0.853333rem;
+            border-bottom: 0.026667rem solid #d8d8d8;
+            padding:0 0.266667rem;
+            span{display:inline-block;float:left;font-size:0.373333rem;}
+            .fr{
+                float:right;
+            }
+        }
+        .cartGoodsList{
+            
+            .cartList{
+                .h98{
+                    margin:0 0.266667rem;
+                    padding-top:0.266667rem;
+                    position:relative;
+                    padding-left:0.533333rem;
+                    height:2.986667rem;
+                    border-bottom:0.026667rem solid #d8d8d8;
+                    .circle{
+                        display: inline-block;
+                        position:absolute;
+                        top:0.266667rem;
+                        left:0;
+                        width: 0.373333rem;
+                        height: 0.373333rem;
+                        margin-right: 0.266667rem;
+                        border: 0.026667rem solid #bfbfbf;
+                        background: #fff;
+                        color: #fff;
+                        border-radius: 100%;
+                        line-height: 0.373333rem;
+                        text-align: center;
+
+                     } 
+                     div{
+                        float:left;
+                       img{width:2.4rem;height:2.4rem;}
+                     } 
+                     .pl10{
+                       p{
+                        font-size:0.373333rem;
+                        line-height:0.693333rem;
+                           i{}
+                             
+                       }
+                        span{background: #ff8000;color:#fff;font-size:0.426667rem;}
+                        .price{color: #ff8000;background: #fff;font-size:0.32rem;}
+                     }
+                    .fr{
+                       float:right;
+                       line-height:2.9rem;
+
+                       i{
+                            font-size:0.48rem;
+                            color: #ff8000;
+                           
+                       }
+                       span{margin:0 0.266667rem;font-size:0.426667rem;}
+                        
+                    }
+                }
+            }
+        }
+    }
+    .cartFoot{
+        padding-left:0.533333rem;
+        position:relative;
+        
+        height:1.333333rem;
+        box-shadow: 0 -0.053333rem -0.053333rem 0 rgba(0,0,0,15);
+        border-top:0.026667rem solid #d8d8d8;
+        border-bottom:0.026667rem solid #d8d8d8;
+        .circle{
+            display: inline-block;
+            position:absolute;
+            top:0.266667rem;
+            left:0.266667rem;
+            width: 0.373333rem;
+            height: 0.373333rem;
+            margin-right: 0.266667rem;
+            border: 0.026667rem solid #bfbfbf;
+            background: #fff;
+            color: #fff;
+            border-radius: 100%;
+            line-height: 0.373333rem;
+            text-align: center;
+        }
+        .fl{
+            float:left;
+            width:60%;
+            padding-left:0.533333rem;
+            span{line-height:1.333333rem;
+            }
+            .priceT{
+                height:1.333333rem;
+                float:right;
+                display:inline-block;
+                p{line-height:0.64rem;
+                    i{font-size:0.426667rem;color:#ff8000;}
+                }
+            }
+        }
+        .fr{
+            height:1.333333rem;
+           
+            background:#ff8000;
+            position:absolute;
+            top:0;
+            right:0;
+            span{font-size:0.48rem;color:#fff;text-align:right;line-height:1.333333rem;height:1.333333rem;padding-left: 0.266667rem;}
         }
     }
 }

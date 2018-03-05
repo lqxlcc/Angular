@@ -1,6 +1,7 @@
 
 <div class="mineLqx">
     <div class="headerLqx">
+        <a (click)="gopPersonal()">
         <div class="headerAccount">
             <ul class="accountUl">
                 <li><img src="https://wap.fruitday.com/content/images/me/old_v0.png" alt="" /> </li>
@@ -14,6 +15,7 @@
                 </li>
             </ul>
         </div>
+        </a>
         <div class="headerDetail">
             <ul class="dettailUl">
                 <li>
@@ -37,7 +39,7 @@
     </div>
     <div class="mineOrder">
         <div class="orderNav" >
-            <a routerLink="myorder" >
+            <a  (click)="goOrder()">
 
                 <h3>
                     <i class="glyphicon glyphicon-list-alt"></i>
@@ -83,7 +85,7 @@
                 <p><i>&gt;</i> </p>
             </li>
             <li>
-                <i class="glyphicon glyphicon-tree-deciduous"></i>
+                <i class="glyphicon glyphicon-headphones"></i>
                 <span>在线客服</span>
                 <p><i>&gt;</i> </p>
             </li>

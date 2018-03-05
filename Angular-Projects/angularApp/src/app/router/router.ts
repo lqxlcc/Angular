@@ -8,6 +8,9 @@ import {CategoryComponent} from '../components/category/category.component';
 import {HomeComponent} from '../components/home/home.component';
 import {MineComponent} from '../components/mine/mine.component';
 import {MyorderComponent} from '../components/myorder/myorder.component';
+import { PersonalInformationComponent } from '../components/personal-information/personal-information.component';
+import { LoginComponent } from '../components/login/login.component';
+import { AddressMangementComponent } from '../components/address-mangement/address-mangement.component';
 const appRoutes: Routes = [
     {path:'list',component: ListComponent},
     
@@ -16,6 +19,9 @@ const appRoutes: Routes = [
     {path:'category',component:CategoryComponent},
     {path:'mine',component:MineComponent},
     {path:'myorder',component:MyorderComponent},
+    {path:'personalInformation',component:PersonalInformationComponent},
+    {path:'login',component:LoginComponent},
+    {path:'addressM',component:AddressMangementComponent},
     {path:'**',component:PagenotfoundComponent}
 ]
 

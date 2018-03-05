@@ -32,3 +32,4 @@ app-root{
     width:100%;
     height:100%;
 }
+app-root .container{padding:0;}
