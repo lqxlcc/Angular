@@ -17,7 +17,7 @@ import {MyorderComponent} from '../components/myorder/myorder.component';
 import { PersonalInformationComponent } from '../components/personal-information/personal-information.component';
 import { LoginComponent } from '../components/login/login.component';
 import { AddressMangementComponent } from '../components/address-mangement/address-mangement.component';
-
+import { RegisterComponent } from '../components/register/register.component';
 const appRoutes: Routes = [
     {path:'',component: HomeComponent},
     {path:'home',component: HomeComponent},
@@ -36,6 +36,7 @@ const appRoutes: Routes = [
     {path:'myorder',component:MyorderComponent},
     {path:'personalInformation',component:PersonalInformationComponent},
     {path:'login',component:LoginComponent},
+    {path:'register',component:RegisterComponent},
     {path:'addressM',component:AddressMangementComponent},
     {path:'**',component:PagenotfoundComponent}
 
