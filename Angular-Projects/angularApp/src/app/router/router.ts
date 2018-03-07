@@ -18,11 +18,13 @@ import { PersonalInformationComponent } from '../components/personal-information
 import { LoginComponent } from '../components/login/login.component';
 import { AddressMangementComponent } from '../components/address-mangement/address-mangement.component';
 
+import { SearchComponent } from '../components/search/search.component';
+
 const appRoutes: Routes = [
     {path:'',component: HomeComponent},
     {path:'home',component: HomeComponent},
     {path:'list',component: ListComponent},
-    {path:'product',component: ProductComponent,
+    {path:'product/:id',component: ProductComponent,
         children: [
             {path: 'merchandise', component: MerchandiseComponent},
             {path: 'details', component: DetailsComponent},
@@ -31,12 +33,12 @@ const appRoutes: Routes = [
     },
     {path:'cart',component:CartComponent},
     {path:'category',component:CategoryComponent},
-
     {path:'mine',component:MineComponent},
     {path:'myorder',component:MyorderComponent},
     {path:'personalInformation',component:PersonalInformationComponent},
     {path:'login',component:LoginComponent},
     {path:'addressM',component:AddressMangementComponent},
+    {path:'search',component:SearchComponent},
     {path:'**',component:PagenotfoundComponent}
 
 ]

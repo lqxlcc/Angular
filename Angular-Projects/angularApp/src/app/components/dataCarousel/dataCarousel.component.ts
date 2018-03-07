@@ -5,7 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './dataCarousel.component.html',
   styleUrls: ['./dataCarousel.component.css']
 })
-export class DataCarouselComponent implements ONInit {
+export class DataCarouselComponent implements OnInit {
 
   constructor() { }
 

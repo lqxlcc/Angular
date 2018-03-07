@@ -24,6 +24,8 @@ import { MineComponent } from './components/mine/mine.component';
 
 
 import { DataCarouselComponent } from './components/dataCarousel/dataCarousel.component';
+import { DataSmallCateComponent } from './components/dataSmallCate/dataSmallCate.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 import { ProductComponent } from './components/product/product.component';
@@ -58,7 +60,9 @@ import { AddressMangementComponent } from './components/address-mangement/addres
     LoginComponent,
     RegisterComponent,
     PersonalInformationComponent,
-    AddressMangementComponent
+    AddressMangementComponent,
+    DataSmallCateComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +70,7 @@ import { AddressMangementComponent } from './components/address-mangement/addres
     HttpModule,
     RootRouter,
     ElModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
