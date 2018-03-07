@@ -64,5 +64,36 @@ module.exports = {
                 }
             })
         })
+        app.post('/addNewAddress',function(req,res){
+            var userid = req.body.userid;
+            var username = req.body.username;
+            var userphone = req.body.userphone;
+            var usercity = req.body.usercity;
+            var userroad = req.body.userroad;
+            var userroom = req.body.userroom;
+            var sql = `insert into useraddress (userid,name,phone,city,road,room) values (${userid},${username},${userphone},${usercity},${userroad},${userroom})`;
+            db.insert(sql,function(result){
+                res.send(result);
+            })
+        })
+        app.get('/getAddress',function(req,res){
+            var id = req.query.addressId;
+            var sql = `select * from useraddress where id=${id}`;
+            db.select(sql,function(result){
+                res.send(result);
+            })
+        })
+        app.post('/updateAddress',function(req,res){
+            var id = req.body.id;
+            var name = req.body.username;
+            var phone = req.body.userphone;
+            var city = req.body.usercity;
+            var road = req.body.userroad;
+            var room = req.body.userroom;
+            var sql = `update useraddress dz_join set name=${name},phone=${phone},city=${city},road=${road},room=${room} where id=${id}`;
+            db.update(sql,function(result){
+                res.send(result);
+            })
+        })
     }
 }

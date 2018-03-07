@@ -26,6 +26,8 @@ import { MineComponent } from './components/mine/mine.component';
 import { DataCarouselComponent } from './components/dataCarousel/dataCarousel.component';
 import { DataSmallCateComponent } from './components/dataSmallCate/dataSmallCate.component';
 import { SearchComponent } from './components/search/search.component';
+import { AddNewAddressComponent } from './components/addNewAddress/addNewAddress.component';
+import { UpdateAddressComponent } from './components/updateAddress/updateAddress.component';
 
 
 import { ProductComponent } from './components/product/product.component';
@@ -62,7 +64,9 @@ import { AddressMangementComponent } from './components/address-mangement/addres
     PersonalInformationComponent,
     AddressMangementComponent,
     DataSmallCateComponent,
-    SearchComponent
+    SearchComponent,
+    AddNewAddressComponent,
+    UpdateAddressComponent
   ],
   imports: [
     BrowserModule,

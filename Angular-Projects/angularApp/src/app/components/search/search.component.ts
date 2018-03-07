@@ -62,9 +62,9 @@ export class SearchComponent implements OnInit {
       let gid = event.target.getAttribute('gid');
       this.http.post('addSingleGood',{userid:id,gid:gid}).then(res=>{
         if(res['status']){
-          this.handle('success');
+          this.handle1('success');
         }else{
-          this.handle('error');
+          this.handle2('error');
         }
       })
     }else{
@@ -88,9 +88,14 @@ export class SearchComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
-  handle(type: string): void {
+  handle1(type: string): void {
   this.message.setOptions({showClose:true})
     this.message[type]('这是一条消息提示: ' + type)
+  }
+
+  handle2(type: string): void {
+  this.message.setOptions({showClose:true})
+    this.message[type]('提交失败')
   }
 
 }

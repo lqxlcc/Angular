@@ -13,7 +13,9 @@ export class HomeComponent implements OnInit {
 
     constructor(private http: HttpService,private router:Router,private message: ElMessageService) { }
 
+    detailsAddress: string = '';
     address: string = '';
+    fixer_a: boolean;
     banners: Array<string> = ['https://imgjd4.fruitday.com/images/2018-02-27/335cd282f26369758810e650c54ed247.jpg','https://imgjd5.fruitday.com/images/2018-02-28/afc5bb5589902842ef3a8e80afbb0353.jpg','https://imgjd2.fruitday.com/images/2017-11-24/830ebe6b81e6f4b058c5c1c90bd73f9b.jpg','https://imgjd1.fruitday.com/images/2018-02-27/25276a5eeb58f7803284358018f2d34d.jpg'];
     hotFruit: Array<Object> = [];
     seasonFruit: Array<Object> = [];
@@ -25,8 +27,10 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
         localStorage.setItem('history',JSON.stringify([]));
         let address = returnCitySN['cname'];
-        let reg = /^.*省(.*市).*$/g;
-        this.address = address.replace(reg,'$1');
+        let reg1 = /^.*省(.*市).*$/g;
+        let reg2 = /^(.*市).*$/g;
+        this.address = address.replace(reg1,'$1');
+        this.detailsAddress = address.replace(reg2,'$1');
         this.http.get('getHomeHotFruit').then(res=>{
             this.hotFruit = res['data']['results'];
         })
@@ -80,6 +84,23 @@ export class HomeComponent implements OnInit {
     handle(type: string): void {
     this.message.setOptions({showClose:true})
       this.message[type]('这是一条消息提示: ' + type)
+    }
+
+    goAddress(){
+        this.fixer_a = true;
+    }
+
+    closeAddress(){
+        this.fixer_a = false;
+    }
+
+    goAddAddress(){console.log('touchend')
+        if(localStorage.getItem('id')){
+            this.router.navigate(['addNewAddress']);
+        }else{
+            this.popup = true;
+            this.fixer_a = false;
+        }
     }
 
 }

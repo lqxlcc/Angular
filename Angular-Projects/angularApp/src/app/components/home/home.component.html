@@ -1,11 +1,10 @@
-
 <div id="home">
     <div class="head">
         <div class="address-info">
             <span class="tomorrow">
                 <img src="https://huodongjd1.fruitday.com/sale/appxx/ci_20171025_1.png" />
             </span>
-            <span class="address">{{address}}</span>
+            <span class="address" (click)="goAddress()">{{address}}</span>
             <span class="arrow el-icon-caret-bottom"></span>
         </div>
         <a href="search" class="search"><i class="el-icon-search"></i></a>
@@ -134,6 +133,18 @@
             </div>
         </div>
     </div>
+    <div class="fixer-a" *ngIf="fixer_a">
+        <div class="fix-head">
+            <i class="el-icon-close" (touchend)="closeAddress()"></i>
+            <p>选择收货地址</p>
+            <a (touchend)="goAddAddress()">新增地址</a>
+        </div>
+        <div class="fix-main">
+            <h3>当前地址</h3>
+            <p>{{detailsAddress}}</p>
+        </div>
+    </div>
+</div>
 
 
 
