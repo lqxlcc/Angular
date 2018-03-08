@@ -1,9 +1,9 @@
 <div id="myCarousel" class="carousel slide">
             <!-- 轮播（Carousel）指标 -->
             <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active carousel_li"></li>
-                <li class="carousel_li" data-target="#myCarousel"  data-slide-to="1" ></li>
-       <!--          <li class="carousel_li" data-target="#myCarousel"  data-slide-to="2" ></li> -->  
+                <li data-target="#myCarousel" data-slide-to="0" class="active carousel_li"  *ngFor="let str of imgs;let idx = index" [class.carousel_li]="idx == 0"></li> 
+
+
             </ol>   
             <!-- 轮播（Carousel）项目 -->
             <div class="carousel-inner">
@@ -17,7 +17,7 @@
                data-slide="prev">&lsaquo;</a>
             <a class="carousel-control right" href="#myCarousel" 
                data-slide="next">&rsaquo;</a> -->
-        </div> 
+</div> 
 <div class="goods_title">
     <h3>{{data.title}}</h3>
     <h4>{{data.describe}}</h4>

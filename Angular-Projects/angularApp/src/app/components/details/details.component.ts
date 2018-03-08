@@ -17,7 +17,7 @@ export class DetailsComponent implements OnInit {
     "20170119/14848127163870.gif",
     "20170119/14848127196121.gif",
     "20171220/1513762362174.jpg"
-    ] 
+    ] ;
 
     constructor() { }
 

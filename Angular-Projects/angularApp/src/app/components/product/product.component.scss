@@ -70,7 +70,7 @@
             .glyphicon-shopping-cart{
                 position:absolute;
                 left: 0.333333rem;
-                top: 0.333333rem;
+                top: 0.373333rem;
                 display:block;
                 color:#fff !important;
                 
@@ -99,7 +99,8 @@
                 width: 1.333333rem;
                 height: 1.2rem;
                 text-align:center;
-                color:#aaa;    
+                color:#aaa;  
+                
                 .glyphicon-earphone, .glyphicon-heart-empty{
                     padding-top:0.133333rem;
                     display:block;
@@ -107,6 +108,7 @@
                 }
                 p{
                     padding-top:0.066667rem;
+                    font-size:0.32rem;
                 }
             }
         }

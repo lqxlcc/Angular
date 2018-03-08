@@ -78,7 +78,6 @@ export class ListComponent implements OnInit {
     paixu(){
         let sortUl =this.ref.nativeElement.querySelector('.sort_ul');
         console.log(sortUl.className)
-        sortUl.style.display = "";
         sortUl.classList.toggle('showHide');
         
     }
