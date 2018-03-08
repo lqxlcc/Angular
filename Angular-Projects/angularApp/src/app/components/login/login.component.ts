@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+
 import {Router} from '@angular/router';
 import {HttpService} from '../../utils/http.service';
 
+
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+	selector: 'app-login',
+	templateUrl: './login.component.html',
+	styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
     loginStatus: string='';
   
     api: string = 'http://localhost:88/login';
@@ -40,15 +43,28 @@ export class LoginComponent implements OnInit {
         //console.log(this.loginStatus)
         const mobieReg = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
         this.reg =  mobieReg.test(this.phone);
-        
-        
-      
-
       })
       
     }
-    
-   
-    
-    
+		public tips = '获取验证码';  
+		public disabled = false;  
+		getCode(event: any) {  
+				let number = 60;  
+				this.disabled = true;  
+				const that = this;  
+				that.tips = number + 's后重新获取';  
+			
+				const timer = setInterval(function () {  
+						number --;  
+						if (number === 0) {  
+							that.disabled = false;  
+							that.tips = '获取验证码';  
+							clearInterval(timer);  
+						} else {  
+							that.tips = number + 's后重新获取';  
+						}  
+				}, 1000);  
+	
+		} 
+
 }

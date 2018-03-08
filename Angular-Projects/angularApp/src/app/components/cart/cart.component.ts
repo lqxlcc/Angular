@@ -29,7 +29,9 @@ export class CartComponent implements OnInit {
         //console.log(this.cartset.length)
         })
     }
-
+    goConfirmorder(){
+        this.router.navigateByUrl("confirmorder");
+    }
     getKeys(item){
         return Object.keys(item);
     }
