@@ -16,8 +16,6 @@ export class SearchComponent implements OnInit {
   hotSearch: Array<string> = ['橙','樱桃','苹果','火龙果','瓜'];
   searchInput: string = '';
   history: Array<string> = [];
-  hint: string = '';
-  pShow: boolean;
   listGoods: Array<Object> = [];
   listShow: boolean;
   popup: boolean;
@@ -29,16 +27,17 @@ export class SearchComponent implements OnInit {
   }
 
   goSmallList(){
-    if(this.searchInput){
+    if(this.searchInput.trim()){
         this.http.get('fuzzySearch',{keyWord:this.searchInput}).then(res=>{
             this.listGoods = res.data.results;
             this.listShow = true;
         })
-        this.history.unshift(this.searchInput);
-        localStorage.setItem('history',JSON.stringify(this.history));
+        if(this.history.indexOf(this.searchInput.trim()) < 0){
+          this.history.unshift(this.searchInput.trim());
+          localStorage.setItem('history',JSON.stringify(this.history));
+        }
     }else{
-        this.hint = "请输入搜索内容";
-        this.pShow = !this.pShow;
+        this.handle3('error');
     }
   }
 
@@ -93,6 +92,7 @@ export class SearchComponent implements OnInit {
 
   clearInput(){
     this.searchInput = '';
+    this.listShow = false;
   }
 
   cancelAdd(){
@@ -104,13 +104,23 @@ export class SearchComponent implements OnInit {
   }
 
   handle1(type: string): void {
-  this.message.setOptions({showClose:true,center:true})
-    this.message[type]('这是一条消息提示: ' + type)
+  this.message.setOptions({showClose:true,center:true,customClass:'mystyle'})
+    this.message[type]('已提交成功')
   }
 
   handle2(type: string): void {
-  this.message.setOptions({showClose:true,center:true})
+  this.message.setOptions({showClose:true,center:true,customClass:'mystyle'})
     this.message[type]('提交失败')
   }
+
+  handle3(type: string): void {
+  this.message.setOptions({showClose:true,center:true,customClass:'mystyle'})
+    this.message[type]('请输入搜索内容');
+  }
+
+  clearHistory(){
+        this.history = [];
+        localStorage.setItem('history':JSON.stringify([]));
+    }
 
 }

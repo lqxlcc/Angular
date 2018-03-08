@@ -41,3 +41,9 @@ app-root{
 
 app-root .container{padding:0;}
 
+
+.mystyle.el-message{top:2.666667rem;}
+.mystyle.el-message i{font-size:0.533333rem;}
+.mystyle.el-message .el-message__closeBtn{font-size:0.533333rem;}
+.mystyle.el-message .el-message__content{font-size:0.533333rem;}
+

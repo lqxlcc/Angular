@@ -16,7 +16,7 @@
         <span *ngFor="let str of hotSearch">{{str}}</span>
         <h3>历史搜索</h3>
         <span *ngFor="let str of history">{{str}}</span>
-        <p [class.active]="pShow">{{hint}}</p>
+        <p (touchend)="clearHistory()">清空搜索记录</p>
     </div>
     <div class="s-list" *ngIf="listShow">
         <a class="l-main" *ngFor="let obj of listGoods" (touchstart)="goStart()" (touchmove)="goMove($event)" (touchend)="goDetails($event,obj.id)">
