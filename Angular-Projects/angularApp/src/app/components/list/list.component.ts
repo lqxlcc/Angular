@@ -1,6 +1,6 @@
 import { Component, OnInit ,Input,ElementRef} from '@angular/core';
 import {HttpService} from '../../utils/http.service';
-import {Router} from '@angular/router';
+import {Router,ActivatedRoute} from '@angular/router';
 import global from '../../utils/global';
 
 @Component({
@@ -13,7 +13,6 @@ export class ListComponent implements OnInit {
 
     // 模拟跳转传来的参数
     name:string = "奇异果";
-    classify:number = 1;
     sort:string ="综合";
     lifting:boolean = false;
     types:Array<object> = [];
@@ -23,24 +22,34 @@ export class ListComponent implements OnInit {
     data:Object = {};
     cartqty:number;
     showHide: boolean =false;
+    smallId:string;
+    bigId:string;
+    userId:string = "";
 
-  constructor(private http: HttpService,private router:Router,private ref:ElementRef) { 
+  constructor(private http: HttpService,private router:Router,private ref:ElementRef,private route:ActivatedRoute) { 
   }
 
-  ngOnInit() {
-    let params={classify:1,sort:this.sort,dec:this.lifting};
-    //商品列表数据
-    this.http.get('goodslist',params).then((res)=>{
+    ngOnInit() {
+        // 获取登录者id
+        this.userId = localStorage.getItem("id") || "";
+        console.log(this.userId);
 
-      this.data = res['data'].results;
-      console.log(res['data'].results);
+        //获取传过来的参数id
+        this.smallId = this.route.snapshot.paramMap.get('smallid');
+        this.bigId = this.route.snapshot.paramMap.get('bigid');
+        let params={classify:this.bigId,sort:this.sort,dec:this.lifting};
 
-      this.types = this.data[0];
-      this.lists = this.data[1];
-      //购物车商品数量
-     this.http.get('cart',{userid:1}).then((cartRes)=>{
-         console.log(cartRes);
-     })
+        //商品列表数据
+        this.http.get('goodslist',params).then((res)=>{
+          this.data = res['data'].results;
+          this.types = this.data[0];
+          this.lists = this.data[1];
+
+        //购物车商品数量
+        this.http.get('cart',{userid:1}).then((cartRes)=>{
+             console.log(cartRes);
+             
+        })
 
     })
   }
@@ -55,20 +64,30 @@ export class ListComponent implements OnInit {
         } 
     }
 
-    addCart(goodsid){
-        //加入购物车，待做。。。
-        this.http.get('cart',{id:goodsid}).then((res)=>{
-          console.log();
-
-        })
-         
+    goCart(){
+        if(this.userId == ""){
+            this.router.navigate(["register"]);
+        }else{
+            this.router.navigate(["cart"]);
+        }
 
     }
-    goProduct(ids){
-        console.log(ids); 
+    goProduct(event,ids){
         this.store['gid'] = ids; 
-        console.log(this.store);
-        this.router.navigate(["product/"+ids+ '/merchandise']);
+        if(event.target.tagName.toLowerCase() == 'i'){
+            if(this.userId == ""){
+                this.router.navigate(["register"]);
+            }
+              //加入购物车，待做。。。
+            
+            // this.http.get('cart',{id:ids,userid:}).then((res)=>{
+            //   console.log();
+
+            // })
+         
+        }else{
+            this.router.navigate(["product/"+ids+ '/merchandise']);
+        }
     }
     
     goto(){
@@ -77,9 +96,12 @@ export class ListComponent implements OnInit {
 
     paixu(){
         let sortUl =this.ref.nativeElement.querySelector('.sort_ul');
-        console.log(sortUl.className)
+        // console.log(sortUl.className)
         sortUl.classList.toggle('showHide');
         
+    }
+    goSearch(){
+        this.router.navigate(['search']);
     }
 
 }
