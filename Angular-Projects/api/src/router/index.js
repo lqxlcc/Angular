@@ -4,15 +4,15 @@ var path = require('path');
 var app = express();
 var http = require('http');
 
-
 app.use(bp.urlencoded({extended: false}));
-
-
 
 var cart = require('./cart.js');
 
+<<<<<<< HEAD
+=======
 var login = require('./login.js');
 
+>>>>>>> afa7874222b4361b4c05141d7e18ba22a4459571
 var getHomeMessage = require('./getHomeMessage.js');
  
 var list = require('./list');

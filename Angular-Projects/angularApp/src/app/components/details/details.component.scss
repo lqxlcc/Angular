@@ -1,0 +1,35 @@
+.detail_t{
+    width: 100%;
+    height: 2.933333rem;
+    background-color: #eee;
+    li{
+        height: 0.96rem;
+        width: 100%;
+        border-bottom:0.013333rem solid #ccc;
+        font-size:0.4rem;
+        dt{
+            
+            display:inline-block;
+            width: 2.933333rem;
+            height: 0.933333rem;
+            padding:0.24rem 0.32rem;
+            border-right:0.013333rem solid #ccc;
+        }
+        dd{
+            display:inline-block;
+            height: 0.933333rem;
+            padding:0.24rem 0.32rem;
+            width: 6rem;
+        }
+    }
+}
+.detail_img{
+    width: 100%;
+    li{ 
+    
+        img{
+            width: 100%;
+            
+        }
+    }
+}

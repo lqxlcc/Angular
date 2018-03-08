@@ -5,6 +5,7 @@
     .header{
         height: 1.2rem;
         padding:0.2rem 0;
+        border-bottom:0.013333rem solid #ccc;
         .header_t{
             height: 0.8rem;
             position:relative;
@@ -49,11 +50,14 @@
     }
     .main{
         flex:1;
-        background-color: red;
+        display:flex;
+        flex-direction:column;
+        overflow-x:hidden;
     }
     .footer{
         height: 1.2rem;
-        background-color: #ccc;
+        border-top:0.013333rem solid #ccc;
+        // background-color: #ccc;
         position:relative;
         .foot_l{
             position:absolute;
@@ -66,7 +70,7 @@
             .glyphicon-shopping-cart{
                 position:absolute;
                 left: 0.333333rem;
-                top: 0.333333rem;
+                top: 0.373333rem;
                 display:block;
                 color:#fff !important;
                 
@@ -83,7 +87,30 @@
                 text-align:center;
                 font-size:0.32rem;
             }
-            
+           
+        }
+        .kefu{
+            width: 2.666667rem;
+            height: 1.2rem;
+            float:left;
+            margin-left:2.266667rem;
+            li{
+                float:left;
+                width: 1.333333rem;
+                height: 1.2rem;
+                text-align:center;
+                color:#aaa;  
+                
+                .glyphicon-earphone, .glyphicon-heart-empty{
+                    padding-top:0.133333rem;
+                    display:block;
+                    font-size:0.466667rem;
+                }
+                p{
+                    padding-top:0.066667rem;
+                    font-size:0.32rem;
+                }
+            }
         }
         .foot_r{
             height: 100%;

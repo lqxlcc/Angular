@@ -2,16 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {RootRouter} from './router/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {RootRouter} from './router/router'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 
 import { ElModule } from 'element-angular';
 
 import {RangePipe} from './utils/range.pipe';
 import {HttpService} from './utils/http.service';
-
-
 
 
 import { AppComponent } from './app.component';
@@ -45,7 +44,7 @@ import { PersonalInformationComponent } from './components/personal-information/
 import { AddressMangementComponent } from './components/address-mangement/address-mangement.component';
 
 
-import { PayingComponent } from './components/paying/paying.component';
+import {PayingComponent} from './components/paying/paying.component';
 import { SendingComponent } from './components/sending/sending.component';
 import { ReceivingComponent } from './components/receiving/receiving.component';
 import { EvaluatingComponent } from './components/evaluating/evaluating.component';
@@ -54,6 +53,7 @@ import { DatagridComponent } from './components/datagrid/datagrid.component';
 import { OrderdatailComponent } from './components/orderdatail/orderdatail.component';
 
 import { ConfirmorderComponent } from './components/confirmorder/confirmorder.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -95,6 +95,7 @@ import { ConfirmorderComponent } from './components/confirmorder/confirmorder.co
     HttpModule,
     RootRouter,
     ElModule.forRoot(),
+    NgZorroAntdModule.forRoot(),
     BrowserAnimationsModule
   ],
   providers: [HttpService],

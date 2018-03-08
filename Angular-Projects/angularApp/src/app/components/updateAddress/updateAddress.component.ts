@@ -22,7 +22,7 @@ export class UpdateAddressComponent implements OnInit {
 
   @Input() banners: Array<string>;
 
-  ngOnInit(){localStorage.setItem('addressId':4);
+  ngOnInit(){localStorage.setItem('addressId': 4);
     this.addressId = localStorage.getItem('addressId');
     this.http.get('getAddress',{addressId:this.addressId}).then(res=>{
       let data = res.data.results[0];

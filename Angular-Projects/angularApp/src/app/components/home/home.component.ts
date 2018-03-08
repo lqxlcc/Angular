@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
     endY: number;
 
     ngOnInit() {
+
         localStorage.setItem('history',JSON.stringify([]));
         let address = returnCitySN['cname'];
         let reg1 = /^.*省(.*市).*$/g;
@@ -129,6 +130,7 @@ export class HomeComponent implements OnInit {
             this.router.navigate(['specialPull']);
         }
         return;
+
     }
 
 }

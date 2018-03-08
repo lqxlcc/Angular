@@ -1,3 +1,18 @@
-<p>
-  details works!
-</p>
+<ul class="detail_t">
+    <li>
+        <dt class="dt01">产地</dt>
+        <dd>意大利</dd>
+    </li>
+    <li>
+        <dt class="dt01">储藏方法</dt>
+        <dd>0°及以上冷藏</dd>
+    </li>
+    <li>
+        <dt class="dt01">单重</dt>
+        <dd>80-95g</dd>
+    </li>
+</ul>
+<ul class="detail_img">
+    <li><img *ngFor="let img of imgurl;let idx of index " src={{baseURI+img}} /></li>
+    
+</ul>
