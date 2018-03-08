@@ -104,12 +104,12 @@ export class SearchComponent implements OnInit {
   }
 
   handle1(type: string): void {
-  this.message.setOptions({showClose:true})
+  this.message.setOptions({showClose:true,center:true})
     this.message[type]('这是一条消息提示: ' + type)
   }
 
   handle2(type: string): void {
-  this.message.setOptions({showClose:true})
+  this.message.setOptions({showClose:true,center:true})
     this.message[type]('提交失败')
   }
 

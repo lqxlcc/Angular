@@ -77,9 +77,9 @@ export class HomeComponent implements OnInit {
         let gid = event.target.getAttribute('gid');
         this.http.post('addSingleGood',{userid:id,gid:gid}).then(res=>{
           if(res['status']){
-            this.handle('success');
+            this.handle1('success');
           }else{
-            this.handle('error');
+            this.handle2('error');
           }
         })
       }else{
@@ -101,7 +101,7 @@ export class HomeComponent implements OnInit {
     }
 
     handle2(type: string): void {
-    this.message.setOptions({showClose:true})
+    this.message.setOptions({showClose:true,center:true})
         this.message[type]('添加失败')
     }
 
