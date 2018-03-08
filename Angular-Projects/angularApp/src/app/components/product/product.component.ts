@@ -3,7 +3,7 @@ import {HttpService} from '../../utils/http.service';
 
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })

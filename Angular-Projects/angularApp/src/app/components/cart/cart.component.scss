@@ -1,5 +1,6 @@
 
 .cartLqx{
+    
     .cartHeader{
         height:1.226667rem;
         .headerUl{
@@ -14,10 +15,15 @@
                     text-align:center;
                     font-size: 0.48rem;
                     color: #75a739;
-                    i{
-                        position:absolute;
-                        left:0;
-                        top:0;
+                    a{
+                        color: #75a739;
+
+                        i{
+                            position:absolute;
+                            left:0;
+                            top:0.266667rem;
+                            font-size:0.733333rem;
+                        }
                     }
                     span{
                         font-size: 0.32rem;
@@ -30,167 +36,256 @@
 
         }
     }
-    .cartAddress{
-        position:relative;
-        height:3.066667rem;
-        padding: 0.533333rem 0.8rem;
-        .borderTop{
-            display:block;
-            height:0.053333rem;
-            width:100%;
-            position:absolute;
-            top:0;
-            left:0;
-            background:url('https://wap.fruitday.com/content/images/main/border.png');
-        }
-        .borderBottom{
-            display:block;
-            height:0.053333rem;
-            width:100%;
-            position:absolute;
-            bottom:0;
-            left:0;
-            background:url('https://wap.fruitday.com/content/images/main/border.png');
-        }
-        p{font-size: 0.426667rem;padding-left:0.266667rem;margin-bottom: 0.266667rem;
-            span{
-                padding-right:0.533333rem;
-            }
-            .addressType{
-                padding: 0 .05rem;
-                font-size: 0.373333rem;
-                color: #ff8000;
-                border: .01rem solid #ff8000;
-                height: 0.373333rem;
-                line-height: 0.426667rem;
-                border-radius: 0.106667rem;
-               
-            }
-        }
-        .localAddress{
-           
-            .glyphicon{position:absolute;top:50%;left:0.266667rem;color:#ff8000;font-size:0.48rem;-webkit-transform:translate(0 -50%);
-               }
-               p{
-                    color: #878787;
-                    font-size: 0.32rem;
-               }
-        }
-    }
-    .cartMain{
+    .cartMainlqx{
         
-        .cartNav{
-            height:0.853333rem;
-            line-height:0.853333rem;
-            border-bottom: 0.026667rem solid #d8d8d8;
-            padding:0 0.266667rem;
-            span{display:inline-block;float:left;font-size:0.373333rem;}
-            .fr{
-                float:right;
+        .cartAddress{
+            position:relative;
+            height:3.066667rem;
+            padding: 0.533333rem 0.8rem;
+            .borderTop{
+                display:block;
+                height:0.053333rem;
+                width:100%;
+                position:absolute;
+                top:0;
+                left:0;
+                background:url('https://wap.fruitday.com/content/images/main/border.png');
+            }
+            .borderBottom{
+                display:block;
+                height:0.053333rem;
+                width:100%;
+                position:absolute;
+                bottom:0;
+                left:0;
+                background:url('https://wap.fruitday.com/content/images/main/border.png');
+            }
+            p{font-size: 0.426667rem;padding-left:0.266667rem;margin-bottom: 0.266667rem;
+                span{
+                    padding-right:0.533333rem;
+                }
+                .addressType{
+                    padding: 0 .05rem;
+                    font-size: 0.373333rem;
+                    color: #ff8000;
+                    border: .01rem solid #ff8000;
+                    height: 0.373333rem;
+                    line-height: 0.426667rem;
+                    border-radius: 0.106667rem;
+                   
+                }
+            }
+            .localAddress{
+               
+                .glyphicon{position:absolute;top:50%;left:0.266667rem;color:#ff8000;font-size:0.48rem;-webkit-transform:translate(0 -50%);
+                   }
+                   p{
+                        color: #878787;
+                        font-size: 0.32rem;
+                   }
             }
         }
-        .cartGoodsList{
+        .cartMain{
             
-            .cartList{
-                .h98{
-                    margin:0 0.266667rem;
-                    padding-top:0.266667rem;
-                    position:relative;
-                    padding-left:0.533333rem;
-                    height:2.986667rem;
-                    border-bottom:0.026667rem solid #d8d8d8;
-                    .circle{
-                        display: inline-block;
-                        position:absolute;
-                        top:0.266667rem;
-                        left:0;
-                        width: 0.373333rem;
-                        height: 0.373333rem;
-                        margin-right: 0.266667rem;
-                        border: 0.026667rem solid #bfbfbf;
-                        background: #fff;
-                        color: #fff;
-                        border-radius: 100%;
-                        line-height: 0.373333rem;
-                        text-align: center;
+            .cartNav{
+                height:0.853333rem;
+                line-height:0.853333rem;
+                border-bottom: 0.026667rem solid #d8d8d8;
+                padding:0 0.266667rem;
+                span{display:inline-block;float:left;font-size:0.373333rem;}
+                .fr{
+                    float:right;
+                }
+            }
+            .cartGoodsList{
+                
+                .cartList{
+                    
+                    .h98{
+                        margin:0 0.266667rem;
+                        padding-top:0.266667rem;
+                        height:2.986667rem;
+                        border-bottom:0.026667rem solid #d8d8d8;
+                        .pt{
+                            position:relative;
+                            width: 0.373333rem;
+                            margin-right:0.133333rem;
+                            height: 0.373333rem;
+                            .circle{
+                                display: inline-block;
+                                position:absolute;
+                                top:0.266667rem;
+                                left:0;
+                                width: 0.373333rem;
+                                height: 0.373333rem;
+                                margin-right: 0.266667rem;
+                                border: 0.026667rem solid #bfbfbf;
+                                background: #fff;
+                                color: #fff;
+                                border-radius: 100%;
+                                line-height: 0.373333rem;
+                                text-align: center;
 
-                     } 
-                     div{
-                        float:left;
-                       img{width:2.4rem;height:2.4rem;}
-                     } 
-                     .pl10{
-                       p{
-                        font-size:0.373333rem;
-                        line-height:0.693333rem;
-                           i{}
+                            } 
+                            .actived{background:#ff8000;}
+                        }
+                        
+                        div{
+                            float:left;
+                           img{width:2.4rem;height:2.4rem;}
+                        } 
+                        .pl10{
+                           p{
+                            font-size:0.373333rem;
+                            line-height:0.693333rem;
                              
-                       }
-                        span{background: #ff8000;color:#fff;font-size:0.426667rem;}
-                        .price{color: #ff8000;background: #fff;font-size:0.32rem;}
-                     }
-                    .fr{
-                       float:right;
-                       line-height:2.9rem;
+                                 
+                        }
+                        span{background: #ff8000;color:#fff;font-size:0.373333rem;}
+                            .price{color: #ff8000;background: #fff;font-size:0.48rem;}
+                        }
+                        .fr{
+                           float:right;
+                           line-height:2.7rem;
 
-                       i{
+                        i{
                             font-size:0.48rem;
                             color: #ff8000;
+                               
+                        }
+                        span{margin:0 0.266667rem;font-size:0.426667rem;}
                            
-                       }
-                       span{margin:0 0.266667rem;font-size:0.426667rem;}
-                        
+                        }
+                        .mask{
+                            display:none;
+                            z-index: 92;
+                            background: rgba(0,0,0,.5);
+                            top: 0;
+                            bottom: auto;
+                            left: 0;
+                            width: 100%;
+                            position: fixed;
+                            height: 100%;
+                            z-index:1080;
+                            .deleteDialog{
+                                position: fixed;
+                                z-index: 99;
+                                top: 50%;
+                                left: 50%;
+                                width: 7.2rem;
+                                min-height: 4.0rem;
+                                margin-top: -2.0rem;
+                                margin-left: -3.6rem;
+                                background: #fff;
+                                overflow: hidden;
+                                border-radius: .06rem .06rem .06rem .06rem;
+                                -webkit-box-shadow: 0 0.053333rem 0.106667rem 0 rgba(0,0,0,.5);
+                                box-shadow: 0 0.053333rem 0.106667rem 0 rgba(0,0,0,.5);
+                                .verMass{
+                                    display: table;
+                                    width: 100%;
+                                    height: 2.8rem;
+                                    color: #000;
+                                    text-align: center;
+                                    line-height: 2.8rem;
+                                    font-size:0.373333rem;
+                                }
+                                .verBtn{
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    border-top: .01rem solid #bfbfbf;
+                                    span{
+                                        height:1.226667rem;
+                                        line-height:1.226667rem;
+                                       color: #008eff;
+                                        width: 49%;
+                                        font-size: 0.48rem;
+                                        display: inline-block;
+                                        text-align: center;
+
+                                    }
+                                    .cancelBtn{
+                                        border-right: 0.026667rem solid #bfbfbf;
+                                    }
+                                }
+                            }
+                            
+                        } 
+                        .verDeleteDialog{
+                            display:none;
+                            background:#fff;
+                        }
                     }
                 }
             }
         }
     }
-    .cartFoot{
-        padding-left:0.533333rem;
-        position:relative;
-        
-        height:1.333333rem;
-        box-shadow: 0 -0.053333rem -0.053333rem 0 rgba(0,0,0,15);
-        border-top:0.026667rem solid #d8d8d8;
-        border-bottom:0.026667rem solid #d8d8d8;
-        .circle{
-            display: inline-block;
-            position:absolute;
-            top:0.266667rem;
-            left:0.266667rem;
-            width: 0.373333rem;
-            height: 0.373333rem;
-            margin-right: 0.266667rem;
-            border: 0.026667rem solid #bfbfbf;
-            background: #fff;
-            color: #fff;
-            border-radius: 100%;
-            line-height: 0.373333rem;
-            text-align: center;
-        }
-        .fl{
-            float:left;
-            width:60%;
+    .foot{
+        height:5.333333rem;
+        .cartFoot{
+            background:#fff;
             padding-left:0.533333rem;
-            span{line-height:1.333333rem;
+            position:fixed;
+            bottom:1.34rem;
+            width:100%;
+            height:1.333333rem;
+            box-shadow: 0 -0.053333rem -0.053333rem 0 rgba(0,0,0,15);
+            border-top:0.026667rem solid #d8d8d8;
+            border-bottom:0.026667rem solid #d8d8d8;
+            .circle{
+                display: inline-block;
+                position:absolute;
+                top:0.266667rem;
+                left:0.266667rem;
+                width: 0.373333rem;
+                height: 0.373333rem;
+                margin-right: 0.266667rem;
+                border: 0.026667rem solid #bfbfbf;
+                background: #fff;
+                color: #fff;
+                border-radius: 100%;
+                line-height: 0.373333rem;
+                text-align: center;
             }
-            .priceT{
-                height:1.333333rem;
-                float:right;
-                display:inline-block;
-                p{line-height:0.64rem;
-                    i{font-size:0.426667rem;color:#ff8000;}
+            .actived{background:#ff8000;}
+            .fl{
+                float:left;
+                width:60%;
+                padding-left:0.533333rem;
+                span{line-height:1.333333rem;
+                }
+                .priceT{
+                    height:1.333333rem;
+                    float:right;
+                    display:inline-block;
+                    p{line-height:0.64rem;
+                        i{font-size:0.426667rem;color:#ff8000;}
+                    }
+                }
+            }
+            .fr{
+                height:1.28rem;
+               
+                background:#ff8000;
+                position:absolute;
+                top:0;
+                right:0;
+                button{font-size:0.48rem;color:#fff;text-align:right;line-height:1.333333rem;height:1.333333rem;padding-left: 0.266667rem; background: #ff8000;}
+                button[disabled]{
+                        background: #bfbfbf;
+                }
+                .delEdit{
+                    display:none;
                 }
             }
         }
-        .fr{
-            height:1.333333rem;
-           
-            background:#ff8000;
-            position:absolute;
-            top:0;
-            right:0;
-            span{font-size:0.48rem;color:#fff;text-align:right;line-height:1.333333rem;height:1.333333rem;padding-left: 0.266667rem;}
-        }
     }
+    
+    
+    
+    
 }
+
+

@@ -3,80 +3,98 @@
         <ul class="headerUl  navbar navbar-default navbar-fixed-top" >
             <li>
                 <h3>
-                    <i>&lt;</i>
+                    <a href="javascript:history.go(-1)"><i class="el-icon-arrow-left"></i></a>
                     购物车
-                    <span>编辑</span>
+                    <span class="edit"(click)="delEdit()">编辑</span>
                 </h3>
             </li>
         </ul>
     </div>
-    <div class="cartAddress">
-        <span class="borderTop"></span>
-        <span class="borderBottom"></span>
-       
-        <p>
-            <span class="username">lqx</span>
-            <span class="phone">1888888888</span>
-            <span class="addressType">公司</span>
-        </p>
-        <div class="localAddress">
-            <i class="glyphicon glyphicon-map-marker"></i>
+    <div class="cartMainlqx">
+        <div class="cartAddress">
+            <span class="borderTop"></span>
+            <span class="borderBottom"></span>
+           
             <p>
-                <span class="street">元岗街道 </span>
-                <span class="detailAddress">广东省广州市天河区元岗街道兆联元岗创意产业园D座 </span>
+                <span class="username">{{username}}</span>
+                <span class="phone">{{phone}}</span>
+                <span class="addressType">公司</span>
             </p>
+            <div class="localAddress">
+                <i class="glyphicon glyphicon-map-marker"></i>
+                <p>
+                    <span class="street">元岗街道 </span>
+                    <span class="detailAddress">广东省广州市天河区元岗街道兆联元岗创意产业园D座 </span>
+                </p>
+            </div>
+            <i class=""></i>
         </div>
-        <i class=""></i>
-    </div>
-    <div class="cartMain">
-        <div class="cartNav">
-            <span>商品清单</span>
-            <span class="fr">总重约<i>0</i>kg</span>
-        </div>
-        <div class="cartGoodsList" *ngIf="cartset">
-            <ul class="cartList">
-                
-                <li class="h98" *ngFor="let obj of cartset;let idx = index;trackBy:trackByID" (click)="count($event,idx)" >
-                    <div >
-                        <i class="circle "></i>
-                    </div>
+        <div class="cartMain">
+            <div class="cartNav">
+                <span>商品清单</span>
+                <span class="fr">总重约<i>0</i>kg</span>
+            </div>
+            <div class="cartGoodsList" *ngIf="cartset">
+                <ul class="cartList">
                     
-                    <div>
-                        <img [src]="obj.mainimg" />
-                    </div>
-                    <div class="pl10">
-                        <p>{{obj.describe}}</p>
-                        <p><i>300g</i><i>约0.30kg</i></p>
-                        <span class="price">￥{{obj.price}}</span><span>明日达</span>
-                    </div>
-                    <div class="fr">
-                        <i class="glyphicon glyphicon-minus-sign"></i>
-                        <span class="num">{{obj.num}}</span>
-                        <i class="glyphicon glyphicon-plus-sign"></i>
-                    </div>
+                    <li class="h98" *ngFor="let obj of cartset;let idx = index;trackBy:trackByID" (click)="count($event,idx)" >
+                        <div class="pt" *ngIf="multiple">
+                            <i class="circle" [class.actived]="currentTrIndexs.indexOf(idx)>-1" (click)="selectTr(idx)"></i>
+                        </div>
+                        
+                        <div>
+                            <img [src]="obj.mainimg" />
+                        </div>
+                        <div class="pl10">
+                            <p>{{obj.describes}}</p>
+                            <p><i>300g</i><i>约0.30kg</i></p>
+                            <span class="price">￥{{obj.price}}</span><span>明日达</span>
+                        </div>
+                        <div class="fr">
+                            <i class="glyphicon glyphicon-minus-sign"></i>
+                            <span class="num">{{obj.num}}</span>
+                            <i class="glyphicon glyphicon-plus-sign"></i>
+                        </div>
+                        <div class="mask">
+                           <div class="deleteDialog">
+                               <div class="verMass">确定要删除{{obj.describes}}？</div>
+                               <div class="verBtn">
+                                   <span class="cancelBtn" (click)="cancelMask(idx)">取消</span>
+                                   <span  (click)="deleteBtn(currentTrIndexs)">确定</span>
+                               </div>
+                           </div>
 
-                </li>
-                
-            </ul>
+                        </div>
+                        <div class="verDeleteDialog">删除成功</div>
+                    </li>
+                    
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="cartFoot">
-        <i class="circle"></i>
+   <div class="foot">
+    <div class="cartFoot" *ngIf="multiple">
+        <i class="circle" (click)="selectAll()" [class.actived]="currentTrIndexs.length==cartset.length"></i>
         <div class="fl">
             <span>全选</span>
             <div class="priceT">
-                <p>合计：<i>￥44</i></p>
+                <p>合计：<i>￥{{totalMoney}}</i></p>
                 <p>共优惠￥14</p>
             </div>
         </div>
         <div class="fr">
-            <span>结算（2）</span>
+
+            <button class="delCount" [disabled]="currentTrIndexs.length<=0">结算（{{qty}}）</button>
+            <button [disabled]="currentTrIndexs.length<=0" class="delEdit" (click)="mask()" >删除（{{qty}}）</button>
         </div>
         
 
     </div>
 
-</div>
-<div class="foot">
     <app-footer></app-footer>
 </div>
+    
+</div>
+
+
+

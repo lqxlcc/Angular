@@ -14,10 +14,15 @@
                     text-align:center;
                     font-size: 0.48rem;
                     color: #75a739;
+                    a{
+                        color: #75a739;
+
                     i{
                         position:absolute;
                         left:0;
-                        top:0;
+                        top:0.266667rem;
+                        font-size:0.733333rem;
+                    }
                     }
                 }
             }
@@ -51,7 +56,11 @@
                 font-size:0.373333rem;
                 height:0.666667rem;
                 line-height:0.666667rem;
+                background:#f93;
                 
+            }
+            .getVer[disabled]{
+                background:#878787;
             }
             i{
 

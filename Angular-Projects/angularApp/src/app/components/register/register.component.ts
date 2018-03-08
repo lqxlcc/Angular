@@ -7,15 +7,18 @@ import {HttpService} from '../../utils/http.service'
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  phone:string = '';
-  reg: string = '';
-  randomCode: number = '';
-  verRandomCode:number = '';
+  phone:string = null;
+  reg: boolean = null;
+  randomCode: number=null;
+  verRandomCode:number;
   params:object = null;
-  api: string = 'http://localhost:88/register';
+  apiRegister: string = 'http://localhost:88/register';
+  apiUser: string = 'http://localhost:88/registerVer';
+  registerStatus:boolean = null;
   constructor(private http:HttpService,private router:Router) { }
 
   ngOnInit() {
+    
   }
   goLogin(){
     this.router.navigateByUrl("login");
@@ -35,6 +38,7 @@ export class RegisterComponent implements OnInit {
             that.tips = '获取验证码';  
             clearInterval(timer);  
           } else {  
+            that.disabled = true; 
             that.tips = number + 's后重新获取';  
           }  
       }, 1000); 
@@ -43,14 +47,19 @@ export class RegisterComponent implements OnInit {
 
   } 
   ver(){
-    const mobieReg = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
-        this.reg =  mobieReg.test(this.phone);
 
+    const mobieReg = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+    this.reg =  mobieReg.test(this.phone);
+    //console.log(this.reg)
+    this.http.get(this.apiUser,this.params={phone:this.phone}).then((res)=>{
+          this.registerStatus = res;
+          console.log(this.registerStatus)
+    })   
   }
   saveRegister(){
   console.log(this.phone)
-    this.http.post(this.api,this.params={phone:this.phone,password:this.verRandomCode}).then((res)=>{
-      console.log(res);
+    this.http.post(this.apiRegister,this.params={phone:this.phone,password:this.verRandomCode}).then((res)=>{
+      //console.log(res);
     })
   }
 

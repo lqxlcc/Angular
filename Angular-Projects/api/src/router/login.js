@@ -33,7 +33,29 @@ module.exports = {
 
             })   
         })
-        
+        app.get('/registerVer', function(req, res){
+            var phone = req.query.phone;
+            var sql = `
+            select 
+               
+                *
+            from 
+                user
+                
+            where phone = '${phone}';
+            `;
+            
+            db.select(sql, function(data){
+                var _data = data.data.results;
+                console.log(_data)
+                if(_data.length<=0){
+                    res.send('false');
+                }else{
+                    res.send('true');
+
+                }
+            })   
+        })
 
         // 增
          

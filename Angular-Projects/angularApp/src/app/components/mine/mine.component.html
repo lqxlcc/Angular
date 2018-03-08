@@ -1,12 +1,12 @@
 
 <div class="mineLqx">
     <div class="headerLqx">
-        <a (click)="goPersonal()">
+        
         <div class="headerAccount">
             <ul class="accountUl">
                 <li><img src="https://wap.fruitday.com/content/images/me/old_v0.png" alt="" /> </li>
                 <li>
-                    <span>17665119545</span>
+                    <span (click)="goPersonal()">{{phone}}</span>
                     <span class="sign">签到送好礼</span>
                 </li>
                 <li class="code">
@@ -15,7 +15,7 @@
                 </li>
             </ul>
         </div>
-        </a>
+        
         <div class="headerDetail">
             <ul class="dettailUl">
                 <li>
