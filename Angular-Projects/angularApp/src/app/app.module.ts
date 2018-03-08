@@ -4,14 +4,12 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {RootRouter} from './router/router'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { ElModule } from 'element-angular';
 
 import {RangePipe} from './utils/range.pipe';
 import {HttpService} from './utils/http.service';
-
-
 
 
 import { AppComponent } from './app.component';
@@ -38,6 +36,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
 import { AddressMangementComponent } from './components/address-mangement/address-mangement.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +65,7 @@ import { AddressMangementComponent } from './components/address-mangement/addres
     HttpModule,
     RootRouter,
     ElModule.forRoot(),
+    NgZorroAntdModule.forRoot(),
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

@@ -19,24 +19,25 @@ export class HomeComponent implements OnInit {
     milk:Array<Object> = [];
 
     ngOnInit() {
-        let address = returnCitySN['cname'];
-        let reg = /^.*省(.*市).*$/g;
-        this.address = address.replace(reg,'$1');
-        this.http.get('getHomeHotFruit').then(res=>{
-            this.hotFruit = res.data.results;
-        })
-        this.http.get('getHomeSeasonFruit').then(res=>{
-            this.seasonFruit = res.data.results;
-        })
-        this.http.get('getHomeSeafood').then(res=>{
-            this.seafood = res.data.results;
-        })
-        this.http.get('getHomeMeat').then(res=>{
-            this.meat = res.data.results;
-        })
-        this.http.get('getHomeMilk').then(res=>{
-            this.milk = res.data.results;
-        })
+        
+        // let address = returnCitySN['cname'];
+        // let reg = /^.*省(.*市).*$/g;
+        // this.address = address.replace(reg,'$1');
+        // this.http.get('getHomeHotFruit').then(res=>{
+        //     this.hotFruit = res.data.results;
+        // })
+        // this.http.get('getHomeSeasonFruit').then(res=>{
+        //     this.seasonFruit = res.data.results;
+        // })
+        // this.http.get('getHomeSeafood').then(res=>{
+        //     this.seafood = res.data.results;
+        // })
+        // this.http.get('getHomeMeat').then(res=>{
+        //     this.meat = res.data.results;
+        // })
+        // this.http.get('getHomeMilk').then(res=>{
+        //     this.milk = res.data.results;
+        // })
     }
 
 }

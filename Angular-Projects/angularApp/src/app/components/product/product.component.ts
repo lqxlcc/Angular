@@ -1,27 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpService} from '../../utils/http.service';
-
+import global from '../../utils/global'
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  styleUrls: ['./product.component.scss'],
 })
+
 export class ProductComponent implements OnInit {
-    goodsId:number = 10;
 
-    constructor(private  http: HttpService) {
-
+    constructor() {
     }
-
     ngOnInit() {
-        let params = {gid:10};
-        
-        this.http.get('product',params).then((res)=>{
-              console.log(res);
 
-        })
-       
     }
 
+    goto(){
+        history.go(-1);
+    }
 }

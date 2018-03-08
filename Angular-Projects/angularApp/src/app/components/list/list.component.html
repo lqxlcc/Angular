@@ -1,82 +1,79 @@
 <div class="list">
     <div class="header">
         <div class="header_t">
-            <i class="el-icon-arrow-left"></i>
+            <i class="el-icon-arrow-left" (click)="goto()"></i>
             <a routerLink="#" class="list_search">
                 <i class="el-icon-search"></i>
                 <input type="text" class="sousuo" value="苹果" />
             </a>
             <div class="sort">
-                <span>综合<i class="el-icon-caret-bottom"></i></span>
+                <span (click)="paixu()">{{sort}}<i class="el-icon-caret-bottom"></i></span>
+                <ul class="sort_ul" (click)="sort()">
+                  <li>综合排序</li>
+                  <li>价格<i class="glyphicon glyphicon-arrow-down"></i></li>
+                  <li>价格<i class="glyphicon glyphicon-arrow-up"></i></li>
+                  <li>销量</li>
+                </ul>
             </div>
         </div>
     </div>
     
-   <ul class="nav">
-        <li><a href="#">全部</a></li>
-        <li><a href="#">奇异果</a></li>
-        <li><a href="#">奇异果</a></li>
-        <li><a href="#">奇异果</a></li>
-        <li><a href="#">奇异果</a></li>
-        <li><a href="#">奇异果</a></li>
-        <li><a href="#">奇异果</a></li>
-        <li><a href="#">奇异果</a></li>
-        <li><a href="#">奇异果</a></li>
-        <li><a href="#">奇异果</a></li>
-        <li><a href="#">奇异果</a></li>
-        <li><a href="#">奇异果</a></li>
-        <li><a href="#">奇异果</a></li>
+   <ul class="nav" (click)="gotos($event)">
+        <li><a >全部</a></li>
+        <li *ngFor="let item of types"><a>{{item.type}}</a></li>
         
     </ul>
     <div class="main">
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p> <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p> <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p> <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
+            <ul *ngIf="keywordBool" class="list_ul">
+                
+                   <li class="list_li" *ngFor="let obj of lists;let idx =index" (click)="goProduct(obj['id'])">
+                       <img src="{{obj['mainimg']}}"/>
+                       <dl class="list_li_r">
+                           <dt>{{obj['title']}}</dt>
+                           <dd>{{obj['descrlbe']}}</dd>
+                           <dd class="list_dd">{{obj['qty']}}个</dd>
+                           <div class="list_div"> 
+                                <small>￥</small>
+                                <b>{{obj['saleprice']}}</b>
+                                <small></small>  
+                                <span style="background: #FF8000">明日达</span> 
+                                <i class="glyphicon glyphicon-plus-sign" (click)="addCart(obj['id'])"></i>
+                            </div>
+                       </dl>
+                   </li>
+            </ul>
+        <div *ngIf="!keywordBool">
+            <!-- <ng-template ngFor obj [ngForOf]="lists"> -->
+                <ul  class="list_ul" *ngFor="let obj of lists;let idx =index">
+
+                    <li class="list_li" *ngIf="obj['type'] == keyword" (click)="goProduct(obj['id'])">
+                       <img src="{{obj['mainimg']}}"/>
+                       <dl class="list_li_r">
+                           <dt>{{obj['title']}}</dt>
+                           <dd>{{obj['descrlbe']}}</dd>
+                           <dd class="list_dd">{{obj['qty']}}个</dd>
+                           <div class="list_div"> 
+                                <small>￥</small>
+                                <b>{{obj['saleprice']}}</b>
+                                <small></small>  
+                                <span style="background: #FF8000">明日达</span> 
+                                <i class="glyphicon glyphicon-plus-sign" (click)="addCart(obj['id'])"></i>
+                            </div>
+                       </dl>
+                   </li>
+                </ul>
+            <!-- </ng-template> -->
+
+        </div>
+
+        <div class="carts">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            <i class="f_carts_qty" >0</i>
+
+               <!-- *ngIf=" qty >0"  -->
+
+        </div>
     </div>
        
-  
 </div>
 

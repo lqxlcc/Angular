@@ -5,6 +5,7 @@
     .header{
         height: 1.2rem;
         padding:0.2rem 0;
+        background-color:#eee;
         .header_t{
             height: 0.8rem;
             position:relative;
@@ -44,6 +45,30 @@
                 text-align:center;
                 line-height: 0.8rem;
                 color:#58bc58;
+                position:relative;
+                .sort_ul{
+                    display:none;
+                    position:absolute;
+                    right: 0.04rem;top: 0.786667rem;
+                    // background-color: #000;
+                    background-color:rgba(0,0,0,0.7);
+                    li{
+                        width: 2.0rem;
+                        height: 0.8rem;
+                        color:#fff;
+                        font-size:0.4rem;
+                        .glyphicon-arrow-down{
+                            font-size:0.4rem;
+                        }
+                    }
+                }
+                .sort_ative{
+                    color:#ff8000;
+                }
+                .showHide{
+                   display:block;
+                }
+                
             }
         }
 
@@ -51,7 +76,7 @@
     .nav{
         height: 1.2rem;
         width: 100%;
-        background-color:#ccc;
+        background-color:#eee;
         overflow-y: hidden;
         display:flex;
         &::-webkit-scrollbar {width: 0px;display: none;}
@@ -64,6 +89,8 @@
                 font-size:0.466667rem;
                 height: 1.2rem;
                 padding:0 0.266667rem;
+                line-height: 1.2rem;
+
             }
         }
     }
@@ -72,10 +99,105 @@
         overflow-x:hidden;
         display:flex;
         flex-direction: column;
-        background-color: red;
+        position:relative;
         &::-webkit-scrollbar {width: 0px;display: none;}
-
         p{height: 0.666667rem;}
+        .list_ul{
+            
+            .list_li{
+                width: 100%;
+                height: 3.333333rem;
+                padding:0.266667rem;
+                border-bottom:0.013333rem solid #d8d8d8;
+                color:#aaa;
+                img{
+                    float:left;
+                    width: 2.8rem;
+                    height: 2.8rem;
+                    margin-right:0.266667rem;
+                    border-radius: 0.133333rem;
+                }
+                .list_li_r{
+                    width: 6.4rem;
+                    height: 2.8rem;
+                    float:left;
+                    dt,dd,{
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    dt{
+                        display:block;
+                        color:#3a3a3a;
+                        font-size:0.4rem;
+                    }
+                    dd{
+                         display:block;
+                         font-size:0.4rem;
+                    }
+                    .list_dd{
+                        margin-top:0.4rem;
+                      
+                    }
+                    .list_div{
+                        width: 100%;
+                        height: 0.613333rem;
+                        color: #ff8000;
+                        position:relative;
+                        margin-top:0.066667rem;
+                        small{
+                             font-size:0.32rem;   
+                        }
+                        b{  
+                            font-size:0.466667rem;
+                        }
+                        span{
+                            position:absolute;
+                            top: 0.093333rem;left: 1.613333rem;
+                            color:#fff;
+                            font-size:0.32rem;
+                            padding:0.026667rem;
+                        }
+                        .glyphicon-plus-sign{
+                            position:absolute;
+                            right: 0.24rem;top: 0.09rem;
+                            font-size:0.533333rem;
+
+                        }
+                    }
+                }
+            }
+        }
+    
+        .carts{
+            position:fixed;;
+            left: 0.266667rem;bottom:0.266667rem;
+            width: 1.333333rem;
+            height: 1.333333rem;
+            background-color: #58bc58;
+            position:flex;
+            border-radius:50%;
+
+            .glyphicon-shopping-cart{
+                position:absolute;
+                left: 0.333333rem;
+                top: 0.333333rem;
+                display:block;
+                color:#fff !important;
+                
+                font-size:0.6rem !important;
+            }
+            .f_carts_qty{
+                position:absolute;
+                right: 0.133333rem;top: 0.133333rem;
+                width:0.466667rem;
+                height:0.466667rem;
+                color:#fff;
+                background-color: red;
+                border-radius:50%;
+                text-align:center;
+                font-size:0.32rem;
+            }
+        }
     }
 
 }
