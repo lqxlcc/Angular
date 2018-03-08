@@ -15,7 +15,7 @@ export class AddNewAddressComponent implements OnInit {
   userphone: string = '';
   usercity: string = '';
   userroad: string = '';
-  userroon: string = '';
+  userroom: string = '';
 
 
   @Input() banners: Array<string>;
@@ -26,7 +26,7 @@ export class AddNewAddressComponent implements OnInit {
   submitAddress(){
     let userid = localStorage.getItem('id');
     this.http.post('addNewAddress',{userid:userid,username:this.username,userphone:this.userphone,usercity:this.usercity,userroad:this.userroad,userroom:this.userroom}).then(res=>{
-        if(res.status){
+        if(res['status']){
             this.handle1('success');
             this.username = '';
             this.userphone = '';

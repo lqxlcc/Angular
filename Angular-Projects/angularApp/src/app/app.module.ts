@@ -79,7 +79,7 @@ import { ConfirmorderComponent } from './components/confirmorder/confirmorder.co
     SearchComponent,
     AddNewAddressComponent,
     UpdateAddressComponent,
-    SpecialPullComponent
+    SpecialPullComponent,
     PayingComponent,
     SendingComponent,
     ReceivingComponent,

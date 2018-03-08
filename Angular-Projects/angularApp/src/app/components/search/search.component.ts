@@ -19,8 +19,8 @@ export class SearchComponent implements OnInit {
   listGoods: Array<Object> = [];
   listShow: boolean;
   popup: boolean;
-  endX: number;
-  endY: number;
+  endX: string;
+  endY: string;
 
   ngOnInit() {
     this.history = JSON.parse(localStorage.getItem('history'));
@@ -29,7 +29,7 @@ export class SearchComponent implements OnInit {
   goSmallList(){
     if(this.searchInput.trim()){
         this.http.get('fuzzySearch',{keyWord:this.searchInput}).then(res=>{
-            this.listGoods = res.data.results;
+            this.listGoods = res['data']['results'];
             this.listShow = true;
         })
         if(this.history.indexOf(this.searchInput.trim()) < 0){
@@ -105,12 +105,12 @@ export class SearchComponent implements OnInit {
 
   handle1(type: string): void {
   this.message.setOptions({showClose:true,center:true,customClass:'mystyle'})
-    this.message[type]('已提交成功')
+    this.message[type]('已提交成功');
   }
 
   handle2(type: string): void {
   this.message.setOptions({showClose:true,center:true,customClass:'mystyle'})
-    this.message[type]('提交失败')
+    this.message[type]('提交失败');
   }
 
   handle3(type: string): void {
@@ -119,8 +119,8 @@ export class SearchComponent implements OnInit {
   }
 
   clearHistory(){
-        this.history = [];
-        localStorage.setItem('history':JSON.stringify([]));
-    }
+      this.history = [];
+      localStorage.setItem('history',JSON.stringify([]));
+  }
 
 }
