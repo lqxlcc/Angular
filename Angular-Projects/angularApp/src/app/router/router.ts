@@ -34,7 +34,7 @@ import { ConfirmorderComponent } from '../components/confirmorder/confirmorder.c
 const appRoutes: Routes = [
     {path:'',component: HomeComponent},
     {path:'home',component: HomeComponent},
-    {path:'list',component: ListComponent},
+    {path:'list/:smallid/:bigid',component: ListComponent},
     {path:'product/:id',component: ProductComponent,
         children: [
             {path: 'merchandise', component: MerchandiseComponent},

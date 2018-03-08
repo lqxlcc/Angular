@@ -41,3 +41,6 @@ app-root{
 
 app-root .container{padding:0;}
 
+.anticon.anticon-star{
+    font-size: 0.4rem;
+}

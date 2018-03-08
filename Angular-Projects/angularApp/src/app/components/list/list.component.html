@@ -2,7 +2,7 @@
     <div class="header">
         <div class="header_t">
             <i class="el-icon-arrow-left" (click)="goto()"></i>
-            <a routerLink="#" class="list_search">
+            <a class="list_search" (click)="goSearch()">
                 <i class="el-icon-search"></i>
                 <input type="text" class="sousuo" value="苹果" />
             </a>
@@ -26,7 +26,7 @@
     <div class="main">
             <ul *ngIf="keywordBool" class="list_ul">
                 
-                   <li class="list_li" *ngFor="let obj of lists;let idx =index" (click)="goProduct(obj['id'])">
+                   <li class="list_li" *ngFor="let obj of lists;let idx =index" (click)="goProduct($event,obj['id'])">
                        <img src="{{obj['mainimg']}}"/>
                        <dl class="list_li_r">
                            <dt>{{obj['title']}}</dt>
@@ -37,7 +37,7 @@
                                 <b>{{obj['saleprice']}}</b>
                                 <small></small>  
                                 <span style="background: #FF8000">明日达</span> 
-                                <i class="glyphicon glyphicon-plus-sign" (click)="addCart(obj['id'])"></i>
+                                <i class="glyphicon glyphicon-plus-sign" ></i>
                             </div>
                        </dl>
                    </li>
@@ -46,7 +46,7 @@
             <!-- <ng-template ngFor obj [ngForOf]="lists"> -->
                 <ul  class="list_ul" *ngFor="let obj of lists;let idx =index">
 
-                    <li class="list_li" *ngIf="obj['type'] == keyword" (click)="goProduct(obj['id'])">
+                    <li class="list_li" *ngIf="obj['type'] == keyword" (click)="goProduct($event,obj['id'])">
                        <img src="{{obj['mainimg']}}"/>
                        <dl class="list_li_r">
                            <dt>{{obj['title']}}</dt>
@@ -57,16 +57,16 @@
                                 <b>{{obj['saleprice']}}</b>
                                 <small></small>  
                                 <span style="background: #FF8000">明日达</span> 
-                                <i class="glyphicon glyphicon-plus-sign" (click)="addCart(obj['id'])"></i>
+                                <i class="glyphicon glyphicon-plus-sign"></i>
                             </div>
                        </dl>
                    </li>
                 </ul>
             <!-- </ng-template> -->
-
+goCart
         </div>
 
-        <div class="carts">
+        <div class="carts" (click)="goCart()">
             <span class="glyphicon glyphicon-shopping-cart"></span>
             <i class="f_carts_qty" >0</i>
 

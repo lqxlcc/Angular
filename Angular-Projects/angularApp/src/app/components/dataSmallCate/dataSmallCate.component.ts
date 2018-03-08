@@ -31,12 +31,7 @@ export class DataSmallCateComponent implements OnInit {
   }
 
   gotoList(_idx){
-    this.router.navigate(['list'], {
-        queryParams: {
-            smalltypeid:this.smallCate[_idx]['smalltype'],
-            bigtypeid:this.bigTypeId
-        }
-    });
+    this.router.navigate(['list/'+this.smallCate[_idx]['smalltype']+"/"+this.bigTypeId]);
   }
 
 }

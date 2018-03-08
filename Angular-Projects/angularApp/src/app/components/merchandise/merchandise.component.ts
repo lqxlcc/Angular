@@ -17,7 +17,7 @@ export class MerchandiseComponent implements OnInit {
     constructor(private http: HttpService,private route:ActivatedRoute) { }
 
     ngOnInit() {
-       
+       //获取传过来的参数id
         this.gids = this.route.parent.snapshot.paramMap.get('id');
 
          this.http.get('product',{gid:this.gids}).then((res)=>{

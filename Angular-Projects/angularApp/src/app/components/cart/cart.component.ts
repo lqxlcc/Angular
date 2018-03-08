@@ -9,7 +9,7 @@ import {HttpService} from '../../utils/http.service'
 export class CartComponent implements OnInit {
 
     params:object = null;
-    cartset: Array<any> = null;
+    cartset: Array<any> = [];
     phone:string = '';
     username:string = 'angular';
     multiple:boolean = true;
