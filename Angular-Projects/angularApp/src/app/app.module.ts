@@ -28,6 +28,7 @@ import { DataSmallCateComponent } from './components/dataSmallCate/dataSmallCate
 import { SearchComponent } from './components/search/search.component';
 import { AddNewAddressComponent } from './components/addNewAddress/addNewAddress.component';
 import { UpdateAddressComponent } from './components/updateAddress/updateAddress.component';
+import { SpecialPullComponent } from './components/specialPull/specialPull.component';
 
 
 import { ProductComponent } from './components/product/product.component';
@@ -66,7 +67,8 @@ import { AddressMangementComponent } from './components/address-mangement/addres
     DataSmallCateComponent,
     SearchComponent,
     AddNewAddressComponent,
-    UpdateAddressComponent
+    UpdateAddressComponent,
+    SpecialPullComponent
   ],
   imports: [
     BrowserModule,

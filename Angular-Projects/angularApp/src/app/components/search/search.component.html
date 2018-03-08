@@ -19,7 +19,7 @@
         <p [class.active]="pShow">{{hint}}</p>
     </div>
     <div class="s-list" *ngIf="listShow">
-        <a class="l-main" *ngFor="let obj of listGoods" (touchend)="goDetails($event,obj.id)">
+        <a class="l-main" *ngFor="let obj of listGoods" (touchstart)="goStart()" (touchmove)="goMove($event)" (touchend)="goDetails($event,obj.id)">
             <div class="l-main-l">
                 <img [src]="obj.mainimg" />
             </div>

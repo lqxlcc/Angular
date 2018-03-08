@@ -21,6 +21,8 @@ export class SearchComponent implements OnInit {
   listGoods: Array<Object> = [];
   listShow: boolean;
   popup: boolean;
+  endX: number;
+  endY: number;
 
   ngOnInit() {
     this.history = JSON.parse(localStorage.getItem('history'));
@@ -50,10 +52,23 @@ export class SearchComponent implements OnInit {
     }
   }
 
+  goStart(){
+    this.endX = '';
+    this.endY = '';
+  }
+
+  goMove(event){
+    this.endX = event.targetTouches[0].clientX;
+    this.endY = event.targetTouches[0].clientY;
+  }
+
   goDetails(event,gid){
-    if(event.target.tagName.toLowerCase() != 'strong'){
-      this.router.navigate(['product/' + gid + '/merchandise']);
+    if(!this.endX && !this.endY){
+      if(event.target.tagName.toLowerCase() != 'strong'){
+        this.router.navigate(['product/' + gid + '/merchandise']);
+      }
     }
+    return;
   }
 
   addCart(event){

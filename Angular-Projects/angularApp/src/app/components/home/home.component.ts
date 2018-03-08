@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit {
     milk:Array<Object> = [];
     moods:Array<Object> = [];
     popup: boolean;
+    endX: number;
+    endY: number;
 
     ngOnInit() {
         localStorage.setItem('history',JSON.stringify([]));
@@ -51,10 +53,22 @@ export class HomeComponent implements OnInit {
         })
     }
 
+    goStart(){
+      this.endX = '';
+      this.endY = '';
+    }
+
+    goMove(event){
+      this.endX = event.targetTouches[0].clientX;
+      this.endY = event.targetTouches[0].clientY;
+    }
+
     goDetails(event,gid){
-      if(event.target.tagName.toLowerCase() != 'strong'){
-        this.router.navigate(['product/' + gid + '/merchandise']);
-      }
+        if(!this.endX && !this.endY){
+            if(event.target.tagName.toLowerCase() != 'strong'){
+              this.router.navigate(['product/' + gid + '/merchandise']);
+            }
+        }
     }
 
     addCart(event){
@@ -81,9 +95,14 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['login']);
     }
 
-    handle(type: string): void {
+    handle1(type: string): void {
+    this.message.setOptions({showClose:true,center:true})
+        this.message[type]('已添加成功')
+    }
+
+    handle2(type: string): void {
     this.message.setOptions({showClose:true})
-      this.message[type]('这是一条消息提示: ' + type)
+        this.message[type]('添加失败')
     }
 
     goAddress(){
@@ -101,6 +120,15 @@ export class HomeComponent implements OnInit {
             this.popup = true;
             this.fixer_a = false;
         }
+    }
+
+    goSpecial(url,arr){
+        if(!this.endX && !this.endY){
+            localStorage.setItem('imgurl',url);
+            localStorage.setItem('specials',JSON.stringify(arr));
+            this.router.navigate(['specialPull']);
+        }
+        return;
     }
 
 }

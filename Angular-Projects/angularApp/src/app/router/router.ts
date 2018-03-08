@@ -21,6 +21,7 @@ import { AddressMangementComponent } from '../components/address-mangement/addre
 import { SearchComponent } from '../components/search/search.component';
 import { AddNewAddressComponent } from '../components/addNewAddress/addNewAddress.component';
 import { UpdateAddressComponent } from '../components/updateAddress/updateAddress.component';
+import { SpecialPullComponent } from '../components/specialPull/specialPull.component';
 
 const appRoutes: Routes = [
     {path:'',component: HomeComponent},
@@ -43,6 +44,7 @@ const appRoutes: Routes = [
     {path:'search',component:SearchComponent},
     {path:'addNewAddress',component:AddNewAddressComponent},
     {path:'updateAddress',component:UpdateAddressComponent},
+    {path:'specialPull',component:SpecialPullComponent},
     {path:'**',component:PagenotfoundComponent}
 
 ]

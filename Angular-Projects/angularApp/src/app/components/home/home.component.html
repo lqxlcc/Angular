@@ -15,14 +15,11 @@
             <a href="category"><img src="https://imgjd5.fruitday.com/images/2018-03-02/cdfba3db798c79c6259beb7c894ae947.jpg" /></a>
             <a href="mine"><img src="https://imgjd6.fruitday.com/images/2018-01-06/66b11add93bf19fc63fcaf73d05b8972.jpg" /></a>
         </div>
-        <div class="holiday">
-            <a href="#"><img src="https://imgjd7.fruitday.com/images/2018-03-02/a18ef75febeb140a1bc88028fef4460a.gif" /></a>
-        </div>
         <div class="hotsale">
             <div class="h_head">
                 <img src="https://imgjd6.fruitday.com/images/2018-01-17/8265ad64fa014013d28ec2e410c6083e.jpg" />
             </div>
-            <a class="h_main" (touchend)="goDetails($event,hotFruit[0].id)">
+            <a class="h_main" (touchstart)="goStart()" (touchmove)="goMove($event)" (touchend)="goDetails($event,hotFruit[0].id)">
                 <div class="h_main_l">
                     <img [src]="hotFruit[0] ? hotFruit[0].mainimg : ''"  />
                 </div>
@@ -33,7 +30,7 @@
                 </div>
             </a>
             <div class="h_foot">
-                <a class="fruit" *ngFor="let obj of hotFruit" (touchend)="goDetails($event,obj.id)">
+                <a class="fruit" *ngFor="let obj of hotFruit" (touchstart)="goStart()" (touchmove)="goMove($event)" (touchend)="goDetails($event,obj.id)">
                     <img [src]="obj.mainimg" />
                     <h3>{{obj.title}}}</h3>
                     <p>￥<span>{{obj.saleprice}}</span>/<em>kg</em><strong class="el-icon-plus addcar" [attr.gid]="obj.id" (touchend)="addCart($event);$event.stopPropagation();"></strong></p>
@@ -45,13 +42,13 @@
                 <img src="https://imgqn9.fruitday.com/images/2018-01-02/1a42df8fbf24bca7f8bd2e88d2e89c65.jpg" />
             </div>
             <div class="item0">
-                <div class="item_head">
+                <div class="item_head" (touchstart)="goStart()" (touchmove)="goMove($event)" (touchend)="goSpecial('https://imgjd2.fruitday.com/images/2017-12-29/8df550ef3cd69cc164fb647f2b273ac0.jpg',seasonFruit)">
                     <a href="#">
                         <img src="https://imgjd2.fruitday.com/images/2017-12-29/8df550ef3cd69cc164fb647f2b273ac0.jpg" />
                     </a>
                 </div>
                 <div class="item_foot">
-                    <a class="fruit" *ngFor="let obj of seasonFruit" (touchend)="goDetails($event,obj.id)">
+                    <a class="fruit" *ngFor="let obj of seasonFruit" (touchstart)="goStart()" (touchmove)="goMove($event)" (touchend)="goDetails($event,obj.id)">
                         <img [src]="obj.mainimg" />
                         <h3>{{obj.title}}</h3>
                         <p>￥<span>{{obj.saleprice}}</span>/<em>kg</em><strong class="el-icon-plus addcar" [attr.gid]="obj.id" (touchend)="addCart($event);$event.stopPropagation();"></strong></p>
@@ -59,13 +56,13 @@
                 </div>
             </div>
             <div class="item0">
-                <div class="item_head">
+                <div class="item_head" (touchstart)="goStart()" (touchmove)="goMove($event)" (touchend)="goSpecial('https://imgqn8.fruitday.com/images/2018-01-02/50a25f418abaa0ecb7e6488288cfe505.jpg',seafood)">
                     <a href="#">
                         <img src="https://imgqn8.fruitday.com/images/2018-01-02/50a25f418abaa0ecb7e6488288cfe505.jpg" />
                     </a>
                 </div>
                 <div class="item_foot">
-                    <a class="fruit" *ngFor="let obj of seafood" (touchend)="goDetails($event,obj.id)">
+                    <a class="fruit" *ngFor="let obj of seafood" (touchstart)="goStart()" (touchmove)="goMove($event)" (touchend)="goDetails($event,obj.id)">
                         <img [src]="obj.mainimg" />
                         <h3>{{obj.title}}</h3>
                         <p>￥<span>{{obj.saleprice}}</span>/<em>kg</em><strong class="el-icon-plus addcar" [attr.gid]="obj.id" (touchend)="addCart($event);$event.stopPropagation();"></strong></p>
@@ -73,13 +70,13 @@
                 </div>
             </div>
             <div class="item0">
-                <div class="item_head">
+                <div class="item_head" (touchstart)="goStart()" (touchmove)="goMove($event)" (touchend)="goSpecial('https://imgqn9.fruitday.com/images/2018-01-02/751c2c212c3ae206b46ecef02a71fe28.jpg',meat)">
                     <a href="#">
                         <img src="https://imgqn9.fruitday.com/images/2018-01-02/751c2c212c3ae206b46ecef02a71fe28.jpg" />
                     </a>
                 </div>
                 <div class="item_foot">
-                    <a class="fruit" *ngFor="let obj of meat" (touchend)="goDetails($event,obj.id)">
+                    <a class="fruit" *ngFor="let obj of meat" (touchstart)="goStart()" (touchmove)="goMove($event)" (touchend)="goDetails($event,obj.id)">
                         <img [src]="obj.mainimg" />
                         <h3>{{obj.title}}</h3>
                         <p>￥<span>{{obj.saleprice}}</span>/<em>kg</em><strong class="el-icon-plus addcar" [attr.gid]="obj.id" (touchend)="addCart($event);$event.stopPropagation();"></strong></p>
@@ -87,13 +84,13 @@
                 </div>
             </div>
             <div class="item0">
-                <div class="item_head">
+                <div class="item_head" (touchstart)="goStart()" (touchmove)="goMove($event)" (touchend)="goSpecial('https://imgjd3.fruitday.com/images/2018-01-01/349fe19f9990ce5003ec32c2b9666122.jpg',milk)">
                     <a href="#">
                         <img src="https://imgjd3.fruitday.com/images/2018-01-01/349fe19f9990ce5003ec32c2b9666122.jpg" />
                     </a>
                 </div>
                 <div class="item_foot">
-                    <a class="fruit" *ngFor="let obj of milk" (touchend)="goDetails($event,obj.id)">
+                    <a class="fruit" *ngFor="let obj of milk" (touchstart)="goStart()" (touchmove)="goMove($event)" (touchend)="goDetails($event,obj.id)">
                         <img [src]="obj.mainimg" />
                         <h3>{{obj.title}}</h3>
                         <p>￥<span>{{obj.saleprice}}</span>/<em>kg</em><strong class="el-icon-plus addcar" [attr.gid]="obj.id" (touchend)="addCart($event);$event.stopPropagation();"></strong></p>
@@ -102,11 +99,11 @@
             </div>
         </div>
         <div class="moods">
-            <div class="m_head">
+            <div class="m_head" (touchstart)="goStart()" (touchmove)="goMove($event)" (touchend)="goSpecial('https://imgjd4.fruitday.com/images/2018-01-02/144562fa6b6a129221316260feb0a797.jpg',moods)">
                 <img src="https://imgjd4.fruitday.com/images/2018-01-02/144562fa6b6a129221316260feb0a797.jpg" />
             </div>
             <ul class="m_main">
-                <li *ngFor="let obj of moods" (touchend)="goDetails($event,obj.id)">
+                <li *ngFor="let obj of moods.slice(0,5)" (touchstart)="goStart()" (touchmove)="goMove($event)" (touchend)="goDetails($event,obj.id)">
                     <div class="m_main_l">
                         <img [src]="obj.mainimg" />
                     </div>
