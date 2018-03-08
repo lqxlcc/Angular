@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
 import {Router} from '@angular/router';
+import {HttpService} from '../../utils/http.service'
 
 @Component({
   selector: 'app-footer',
@@ -8,10 +8,23 @@ import {Router} from '@angular/router';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
-  constructor(private http:Http,private router:Router) { }
+  
+  apiCart:string = 'http://localhost:88/cart';
+  params:object = null;
+  cartQty:Array<any> = null;
+  qty:number=0;
+  constructor(private http:HttpService,private router:Router) { }
 
   ngOnInit() {
+    this.http.get(this.apiCart,this.params={userid:localStorage.getItem('id')}).then((res)=>{
+      console.log(res.data.results[2]);
+      this.cartQty = res.data.results[2];
+      for(var i=0;i<this.cartQty.length;i++){
+      //console.log(this.cartQty[i].num)
+        this.qty += this.cartQty[i].num*1;
+      }
+      console.log(this.qty);
+    })
   }
   gocategory(){
      this.router.navigateByUrl("category");  

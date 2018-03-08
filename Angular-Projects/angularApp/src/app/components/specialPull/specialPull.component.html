@@ -1,0 +1,23 @@
+<div class="special">
+    <div class="spe_head">
+        <a href="javascript:history.go(-1)"><i class="el-icon-arrow-left"></i></a>
+        <p>专题推荐</p>
+    </div>
+    <div class="spe_main">
+        <div class="spe_main_t">
+            <img [src]="imgurl" />
+        </div>
+        <ul class="spe_main_b">
+            <li *ngFor="let obj of specials" (touchstart)="goStart()" (touchmove)="goMove($event)" (touchend)="goDetails(obj.id)">
+                <div class="spe_main_b_l">
+                    <img [src]="obj.mainimg" />
+                </div>
+                <div class="spe_main_b_r">
+                    <h2>{{obj.title}}</h2>
+                    <h3>{{obj.describes}}</h3>
+                    <p>￥<span>{{obj.saleprice}}</span>/<em>kg</em></p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

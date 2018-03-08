@@ -7,10 +7,11 @@ import {Router} from '@angular/router';
   styleUrls: ['./personal-information.component.scss']
 })
 export class PersonalInformationComponent implements OnInit {
-
+  phone: string = '';
   constructor(private router:Router) { }
 
   ngOnInit() {
+    this.phone = localStorage.getItem('phone');
   }
   goLogin(){
      this.router.navigateByUrl("login"); 

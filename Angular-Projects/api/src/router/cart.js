@@ -5,39 +5,85 @@ module.exports = {
         // 查
         app.get('/cart', function(req, res){
            
-            var page = (req.query.page || 1) * 1;
-            var limit = (req.query.limit || 10) * 1;
+            var userid = req.query.userid;
+            
             var sql = `
+                
             select 
                 SQL_CALC_FOUND_ROWS
-                goods.describe, goods.price,goods.mainimg,cart.num
+            * from 
+            (select goods.describes, goods.price,goods.mainimg,cart.userid,cart.num,cart.gid,cart.id
             from 
-                goods 
-                INNER JOIN 
+            goods 
+            INNER JOIN 
+                        cart
+                        ON cart.gid=goods.id)
+            as G 
+            where G.userid in (select user.id from user where user.id=${userid});
+            select FOUND_ROWS() as rowscount;
+            select 
+                cart.num
+                from 
             cart
-            ON goods.id=cart.gid
-            limit ${(page - 1) * limit}, ${limit};
-            select FOUND_ROWS() as rowscount;`;
-            
+             WHERE
+                userid=${userid}
+            `;
+            /*
+                select 
+                SQL_CALC_FOUND_ROWS
+                goods.describe, goods.price,goods.mainimg,cart.num
+                from 
+                    goods 
+                    INNER JOIN 
+                cart
+                ON goods.id=cart.gid
+                limit ${(page - 1) * limit}, ${limit};
+                select FOUND_ROWS() as rowscount;
+             */
             db.select(sql, function(data){
                 
                 res.send(data);
             })   
         })
-        /*
-        
-         
         // 删
-        app.post('/goodsdel',function(req,res){
-            var id = req.body.id;
+        app.post('/cartgoodsdel',function(req,res){
+            var id = req.body.cartid;
             var sql =`
-                delete from goods where id=${id}
+                delete from cart where id IN (${id})
             `;
             db.delete(sql,function(data){
+                res.send(data);
+                console.log(data)
+            })
+
+        })
+        // Update 语句用于修改表中的数据。
+        //语法：UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值
+        app.post('/cartgoodsupdate',function(req,res){
+            // 参数
+            var id= req.body.cartid;
+            
+            var num= req.body.num;
+            
+         
+
+            var sql=`
+                update cart
+                set cart.num='${num}'
+                where cart.id='${id}';
+                
+            `;
+            db.update(sql,function(data){
+                console.log(data);
                 res.send(data);
             })
 
         })
+        /*
+        
+         
+        
+        
          // 增
          
         app.post('/goodsinsert',function(req,res){
@@ -63,34 +109,7 @@ module.exports = {
             })
 
         })
-        // Update 语句用于修改表中的数据。
-        //语法：UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值
-        app.post('/goodsupdate',function(req,res){
-            // 参数
-            var id= req.body.id;
-            console.log(id)
-            var price= req.body.price;
-            console.log(price)
-            var title= req.body.title;
-            console.log(title)
-            var type= req.body.type;
-           
-            var saleqty= req.body.saleqty;
-            console.log(saleqty)
-         
-
-            var sql=`
-                update goods, bigtype
-                set goods.price='${price}', goods.title='${title}', goods.saleqty='${saleqty}',bigtype.type='${type}'
-                where goods.id='${id}';
-                
-            `;
-            db.update(sql,function(data){
-                console.log(data);
-                res.send(data);
-            })
-
-        })
+        
         */
     }
 }

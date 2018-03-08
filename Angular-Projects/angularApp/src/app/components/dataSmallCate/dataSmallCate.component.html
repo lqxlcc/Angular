@@ -1,0 +1,28 @@
+<div class="smallcate">
+    <div class="s-head">
+        <p>{{bigCate[activeCate] ? bigCate[activeCate].name : ''}}</p>
+        <a (click)="goList()">全部<span class="el-icon-arrow-right"></span></a>
+    </div>
+    <div class="s-main">
+        <a *ngFor="let obj of smallCate;let idx = index" (click)="gotoList(idx)">
+            <img [src]="obj.imgurl" />
+            <h3>{{obj.name}}</h3>
+        </a>
+        <!-- <a href="#">
+            <img src="https://imgjd5.fruitday.com/images/2017-09-19/2e7463ed7ab392af0fd3370586cad765.png" />
+            <h3>奇异果</h3>
+        </a>
+        <a href="#">
+            <img src="https://imgjd5.fruitday.com/images/2017-09-19/2e7463ed7ab392af0fd3370586cad765.png" />
+            <h3>奇异果</h3>
+        </a>
+        <a href="#">
+            <img src="https://imgjd5.fruitday.com/images/2017-09-19/2e7463ed7ab392af0fd3370586cad765.png" />
+            <h3>奇异果</h3>
+        </a>
+        <a href="#">
+            <img src="https://imgjd5.fruitday.com/images/2017-09-19/2e7463ed7ab392af0fd3370586cad765.png" />
+            <h3>奇异果</h3>
+        </a> -->
+    </div>
+</div>

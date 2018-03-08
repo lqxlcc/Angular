@@ -6,6 +6,7 @@ import {RootRouter} from './router/router'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
+
 import { ElModule } from 'element-angular';
 
 import {RangePipe} from './utils/range.pipe';
@@ -22,6 +23,11 @@ import { MineComponent } from './components/mine/mine.component';
 
 
 import { DataCarouselComponent } from './components/dataCarousel/dataCarousel.component';
+import { DataSmallCateComponent } from './components/dataSmallCate/dataSmallCate.component';
+import { SearchComponent } from './components/search/search.component';
+import { AddNewAddressComponent } from './components/addNewAddress/addNewAddress.component';
+import { UpdateAddressComponent } from './components/updateAddress/updateAddress.component';
+import { SpecialPullComponent } from './components/specialPull/specialPull.component';
 
 
 import { ProductComponent } from './components/product/product.component';
@@ -36,6 +42,17 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
 import { AddressMangementComponent } from './components/address-mangement/address-mangement.component';
+
+
+import {PayingComponent} from './components/paying/paying.component';
+import { SendingComponent } from './components/sending/sending.component';
+import { ReceivingComponent } from './components/receiving/receiving.component';
+import { EvaluatingComponent } from './components/evaluating/evaluating.component';
+import { OrderAllComponent } from './components/order-all/order-all.component';
+import { DatagridComponent } from './components/datagrid/datagrid.component';
+import { OrderdatailComponent } from './components/orderdatail/orderdatail.component';
+
+import { ConfirmorderComponent } from './components/confirmorder/confirmorder.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +74,20 @@ import { AddressMangementComponent } from './components/address-mangement/addres
     LoginComponent,
     RegisterComponent,
     PersonalInformationComponent,
-    AddressMangementComponent
+    AddressMangementComponent,
+    DataSmallCateComponent,
+    SearchComponent,
+    AddNewAddressComponent,
+    UpdateAddressComponent,
+    SpecialPullComponent
+    PayingComponent,
+    SendingComponent,
+    ReceivingComponent,
+    EvaluatingComponent,
+    OrderAllComponent,
+    DatagridComponent,
+    OrderdatailComponent,
+    ConfirmorderComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +96,7 @@ import { AddressMangementComponent } from './components/address-mangement/addres
     RootRouter,
     ElModule.forRoot(),
     NgZorroAntdModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

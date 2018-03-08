@@ -10,7 +10,7 @@ export class DataCarouselComponent implements OnInit {
   constructor() { }
 
   pageActive: number = 0;
-  timer: number;
+  timer;
 
   @Input() banners: Array<string>;
 
