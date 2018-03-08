@@ -16,10 +16,15 @@
                     text-align:center;
                     font-size: 0.48rem;
                     color: #75a739;
-                    i{
-                        position:absolute;
-                        left:0;
-                        top:0;
+                    a{
+                        color: #75a739;
+
+                        i{
+                            position:absolute;
+                            left:0;
+                            top:0.266667rem;
+                            font-size:0.733333rem;
+                        }
                     }
                     span{
                         font-size: 0.32rem;
@@ -34,7 +39,7 @@
     .information{
         background: #fff;
         border-bottom: 1px solid #dcdcdc;
-        padding-top:2.213333rem;
+        padding:2.213333rem 0.266667rem 0;
         li{
             position:relative;
             height:1.226667rem;
@@ -42,9 +47,13 @@
             font-size:0.426667rem;
             color: #3a3a3a;
             border-top: 1px solid #dcdcdc;
-            span{
-                display:inline-block;float:right;
-                color: #bfbfbf;
+            span{ display:inline-block;float:right;}
+            a{
+                color: #3a3a3a;
+                span{
+                    line-height:1.226667rem;
+                    color: #bfbfbf;
+                }
             }
             img{
                 
@@ -65,8 +74,12 @@
         font-size:0.48rem;
         text-align: center;
         line-height: 1.2rem;
-        .btnExit{
-        
+        a{
+            color: #3a3a3a;
+            .btnExit{
+                width:100%;
+                background: #fff;
+            }
         }
     }
 }

@@ -11,11 +11,14 @@ app.use(bp.urlencoded({extended: false}));
 
 var cart = require('./cart.js');
 
+var login = require('./login.js');
 
 var getHomeMessage = require('./getHomeMessage.js');
-
+ 
 var list = require('./list');
 var product = require('./product');
+
+var myorder = require('./myorder');
 
 
 module.exports = {
@@ -37,12 +40,14 @@ module.exports = {
 
 
         cart.register(app);
-
-
+        login.register(app);
         getHomeMessage.register(app);
 
         list.register(app);
         product.register(app);
+
+        myorder.register(app);
+       
 
         app.listen(_port,function(){
             console.log('连接成功')

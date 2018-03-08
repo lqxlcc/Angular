@@ -3,31 +3,31 @@
         <ul class="headerUl  navbar navbar-default navbar-fixed-top">
             <li>
                 <h3>
-                    <i>&lt;</i>
+                    <a href="javascript:history.go(-1)"><i class="el-icon-arrow-left"></i></a>
                     我的订单
                 </h3>
             </li>
             <li class="menu">
-                <a rooterLink="orderAll">
+                <a routerLink="orderAll">
                     <span>全部</span>
                 </a>
-                <a rooterLink="paying">
+                <a routerLink="paying">
                     <span>待付款</span>
                 </a>
-                <a rooterLink="sending">
+                <a routerLink="sending">
                     <span>待发货</span>
                 </a>
-                <a rooterLink="receiving">
+                <a routerLink="receiving">
                     <span>待收货</span>
                 </a>
-                <a rooterLink="evaluating">
+                <a routerLink="evaluating">
                     <span>待评价</span>
                 </a>
             </li>
             
         </ul>
     </div>
-    <div class="myorderMain">
+   <!--  <div class="myorderMain">
         <ul class="myordreList">
             <li>
                 <p>
@@ -56,6 +56,8 @@
                 <input type="button" value="删除订单" class="delete"/>
             </li>
         </ul>
+    </div> -->
+    <div class="main">
+        <router-outlet></router-outlet>
     </div>
-    
 </div>

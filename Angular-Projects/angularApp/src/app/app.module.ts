@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {RootRouter} from './router/router'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {RootRouter} from './router/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { ElModule } from 'element-angular';
@@ -43,6 +43,17 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
 import { AddressMangementComponent } from './components/address-mangement/address-mangement.component';
+
+
+import { PayingComponent } from './components/paying/paying.component';
+import { SendingComponent } from './components/sending/sending.component';
+import { ReceivingComponent } from './components/receiving/receiving.component';
+import { EvaluatingComponent } from './components/evaluating/evaluating.component';
+import { OrderAllComponent } from './components/order-all/order-all.component';
+import { DatagridComponent } from './components/datagrid/datagrid.component';
+import { OrderdatailComponent } from './components/orderdatail/orderdatail.component';
+
+import { ConfirmorderComponent } from './components/confirmorder/confirmorder.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +80,14 @@ import { AddressMangementComponent } from './components/address-mangement/addres
     AddNewAddressComponent,
     UpdateAddressComponent,
     SpecialPullComponent
+    PayingComponent,
+    SendingComponent,
+    ReceivingComponent,
+    EvaluatingComponent,
+    OrderAllComponent,
+    DatagridComponent,
+    OrderdatailComponent,
+    ConfirmorderComponent
   ],
   imports: [
     BrowserModule,

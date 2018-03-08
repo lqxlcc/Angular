@@ -1,12 +1,12 @@
 
 <div class="mineLqx">
     <div class="headerLqx">
-        <a (click)="gopPersonal()">
+        
         <div class="headerAccount">
             <ul class="accountUl">
                 <li><img src="https://wap.fruitday.com/content/images/me/old_v0.png" alt="" /> </li>
                 <li>
-                    <span>17665119545</span>
+                    <span (click)="goPersonal()">{{phone}}</span>
                     <span class="sign">签到送好礼</span>
                 </li>
                 <li class="code">
@@ -15,7 +15,7 @@
                 </li>
             </ul>
         </div>
-        </a>
+        
         <div class="headerDetail">
             <ul class="dettailUl">
                 <li>
@@ -46,7 +46,7 @@
                     <span>我的订单</span>
                     
                 </h3>
-                <p>全部订单 <i>&gt;</i> </p>
+                <p>全部订单 <i class="el-icon-arrow-right"></i> </p>
             </a>
         </div>
         <ul class="orderNavListUl">
@@ -77,17 +77,17 @@
             <li>
                 <i class="glyphicon glyphicon-tree-deciduous"></i>
                 <span>会员中心</span>
-                <p>享等级特权<i>&gt;</i> </p>
+                <p>享等级特权<i class="el-icon-arrow-right"></i> </p>
             </li>
             <li>
                 <i class="glyphicon glyphicon-tree-deciduous"></i>
                 <span>企业购</span>
-                <p><i>&gt;</i> </p>
+                <p><i class="el-icon-arrow-right"></i> </p>
             </li>
             <li>
                 <i class="glyphicon glyphicon-headphones"></i>
                 <span>在线客服</span>
-                <p><i>&gt;</i> </p>
+                <p><i class="el-icon-arrow-right"></i> </p>
             </li>
         </ul>
     </div>

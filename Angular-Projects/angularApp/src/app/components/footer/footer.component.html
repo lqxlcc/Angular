@@ -15,7 +15,8 @@
         <li>
             <a (click)="gocart()">
                 <span class="glyphicon glyphicon-shopping-cart"></span>
-                <span>购物车</span>
+                <span class="qty">购物车<i *ngIf="qty>0"[class.actived]="qty>0">{{qty}}</i></span>
+
             </a>
         </li>
         <li>
