@@ -11,9 +11,7 @@
 .search .s-main{flex:1;padding:0.533333rem 0.266667rem 0;overflow-x:hidden;}
 .search .s-main h3{color:#878787;font-size:0.373333rem;line-height:1.066667rem;}
 .search .s-main span{display:inline-block;font-size:0.373333rem;line-height:0.853333rem;background:#f1f1f1;padding:0 0.266667rem;margin-right:0.426667rem;margin-bottom:0.426667rem;border-radius:0.133333rem;}
-.search .s-main p{width:5.333333rem;font-size:0.426667rem;line-height:0.906667rem;color:white;background-color:rgba(0,0,0,.6);position:absolute;left:50%;bottom:5.333333rem;transform:translate(-50%,0);text-align:center;opacity:0;}
-
-.search .s-main p.active{animation:show 5s;}
+.search .s-main p{width:5.333333rem;font-size:0.426667rem;line-height:0.906667rem;background:#f6f6f6;position:absolute;left:50%;bottom:5.333333rem;transform:translate(-50%,0);text-align:center;}
 @keyframes show
 {
     0%{opacity:0;}
@@ -40,3 +38,5 @@
 .search .fixer .f-main .f-main-t{font-size:0.426667rem;line-height:2.666667rem;text-align:center;}
 .search .fixer .f-main .f-main-b{display:flex;height:1.226667rem;}
 .search .fixer .f-main .f-main-b input{flex:1;text-align:center;line-height:1.12rem;color:#008eff;}
+
+.mystyle.el-message .el-message__content{font-size:0.8rem;}

@@ -97,12 +97,12 @@ export class HomeComponent implements OnInit {
     }
 
     handle1(type: string): void {
-    this.message.setOptions({showClose:true,center:true})
+    this.message.setOptions({showClose:true,center:true,customClass:'mystyle'})
         this.message[type]('已添加成功')
     }
 
     handle2(type: string): void {
-    this.message.setOptions({showClose:true,center:true})
+    this.message.setOptions({showClose:true,center:true,customClass:'mystyle'})
         this.message[type]('添加失败')
     }
 
