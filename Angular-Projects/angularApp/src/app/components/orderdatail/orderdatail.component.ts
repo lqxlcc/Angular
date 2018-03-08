@@ -12,7 +12,7 @@ export class OrderdatailComponent implements OnInit {
 	cc:boolean = false;
 	aa:boolean = false;
 	bb:boolean = true;
-	pay1:boolean = false;
+	pay1:boolean = true;
 	constructor() { }
 
 	ngOnInit() {
