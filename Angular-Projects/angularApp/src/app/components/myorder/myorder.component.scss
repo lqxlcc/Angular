@@ -1,7 +1,7 @@
 .myorderLqx{
-    height:53.333333rem;
     .myorderHeader{
         height:2.24rem;
+
         .headerUl{
             li{
                 height:1.226667rem;
@@ -16,6 +16,7 @@
                     color: #75a739;
                     i{
                         position:absolute;
+                        font-size:0.64rem;
                         left:0;
                         top:0;
                     }
@@ -40,52 +41,52 @@
             }
         }
     }
-    .myorderMain{
-        .myordreList{
-            li{
-                padding:0 0.266667rem;
-                border-bottom: .01rem solid #d8d8d8;
-                height:0.88rem;
+    // .myorderMain{
+    //     .myordreList{
+    //         li{
+    //             padding:0 0.266667rem;
+    //             border-bottom: .01rem solid #d8d8d8;
+    //             height:0.88rem;
 
-                p{
-                    height:0.88rem;
+    //             p{
+    //                 height:0.88rem;
 
-                    span{
-                        line-height:0.88rem;
-                        display:block;
-                        float:left;
-                    }
-                    .fr{float:right;color: #ff7e05;}
-                }
-                span{
-                    display:block;
-                    float:right;
-                    line-height:0.88rem;
-                }
-                .delete{
-                    float:right;
-                    color: #878787;
-                    height: 0.64rem;
-                    background-color: #fff;
-                    border-radius: 0.64rem;
-                    border: .01rem solid #d8d8d8;
-                    padding: 0.08rem 0.266667rem;
-                    margin-top:0.133333rem;
-                    margin-left: 0.133333rem;}
+    //                 span{
+    //                     line-height:0.88rem;
+    //                     display:block;
+    //                     float:left;
+    //                 }
+    //                 .fr{float:right;color: #ff7e05;}
+    //             }
+    //             span{
+    //                 display:block;
+    //                 float:right;
+    //                 line-height:0.88rem;
+    //             }
+    //             .delete{
+    //                 float:right;
+    //                 color: #878787;
+    //                 height: 0.64rem;
+    //                 background-color: #fff;
+    //                 border-radius: 0.64rem;
+    //                 border: .01rem solid #d8d8d8;
+    //                 padding: 0.08rem 0.266667rem;
+    //                 margin-top:0.133333rem;
+    //                 margin-left: 0.133333rem;}
                 
-            }
-            .h98{
-                height:2.613333rem;
-                div{
-                    float:left;
-                    span{padding:0 0.266667rem;}
-                    img{width:1.866667rem;height:1.866667rem;}
-                    p{font-size:0.373333rem;line-height: 0.533333rem;}
-                    i{font-size:0.32rem;line-height: 0.426667rem;}
-                }
-                .pl10{padding-left:0.266667rem;}
-                .fr{float:right;}
-            }
-        }
-    }
+    //         }
+    //         .h98{
+    //             height:2.613333rem;
+    //             div{
+    //                 float:left;
+    //                 span{padding:0 0.266667rem;}
+    //                 img{width:1.866667rem;height:1.866667rem;}
+    //                 p{font-size:0.373333rem;line-height: 0.533333rem;}
+    //                 i{font-size:0.32rem;line-height: 0.426667rem;}
+    //             }
+    //             .pl10{padding-left:0.266667rem;}
+    //             .fr{float:right;}
+    //         }
+    //     }
+    // }
 }

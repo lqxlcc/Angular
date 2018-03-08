@@ -15,7 +15,7 @@ export class MineComponent implements OnInit {
     }
 
     goOrder(){
-        this.router.navigateByUrl("myorder");  
+        this.router.navigateByUrl("myorder/orderAll");  
     }
     gopPersonal(){
         this.router.navigateByUrl("personalInformation");  

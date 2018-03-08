@@ -12,7 +12,14 @@ import {CartComponent} from '../components/cart/cart.component';
 import {CategoryComponent} from '../components/category/category.component';
 import {HomeComponent} from '../components/home/home.component';
 import {MineComponent} from '../components/mine/mine.component';
+
 import {MyorderComponent} from '../components/myorder/myorder.component';
+import {OrderAllComponent} from '../components/order-all/order-all.component';
+import {PayingComponent} from '../components/paying/paying.component';
+// import {ReceivingComponent} from '../components/receiving/receiving.component';
+// import {SendingComponent} from '../components/sending/sending.component';
+// import {EvaluatingComponent} from '../components/evaluating/evaluating.component';
+import {OrderdatailComponent} from '../components/orderdatail/orderdatail.component';
 
 import { PersonalInformationComponent } from '../components/personal-information/personal-information.component';
 import { LoginComponent } from '../components/login/login.component';
@@ -33,7 +40,16 @@ const appRoutes: Routes = [
     {path:'category',component:CategoryComponent},
 
     {path:'mine',component:MineComponent},
-    {path:'myorder',component:MyorderComponent},
+    {path:'myorder',component:MyorderComponent,
+        children:[
+            {path:'orderAll',component:OrderAllComponent},
+            {path:'paying',component:PayingComponent},
+            // {path:'receiving',component:ReceivingComponent},
+            // {path:'sending',component:SendingComponent},
+            // {path:'evaluating',component:EvaluatingComponent},
+        ]
+    },
+    {path:'orderdatail',component:OrderdatailComponent},
     {path:'personalInformation',component:PersonalInformationComponent},
     {path:'login',component:LoginComponent},
     {path:'addressM',component:AddressMangementComponent},
