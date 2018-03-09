@@ -18,8 +18,26 @@ module.exports = {
 
                 res.send(data);
             })
-
         })
 
+        app.get('/estimate',function(req,res){
+            let gid = req.query.gid;
+
+            let sql=`
+                select 
+                    g.*,
+                    u.phone
+                from
+                    grade g 
+                    inner join user u on g.userid=u.id
+                where
+                    gid=${gid}
+            `;
+
+            db.select(sql,function(data){
+                res.send(data);
+
+            })
+        })
     }
 }

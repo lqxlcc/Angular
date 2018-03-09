@@ -8,7 +8,7 @@ import {ActivatedRoute,Router} from '@angular/router';
   styleUrls: ['./merchandise.component.scss']
 })
 export class MerchandiseComponent implements OnInit {
-    
+    datas:Array<object> = [];
     gids:string;
     data:Object ={};
     times:string;
@@ -17,7 +17,7 @@ export class MerchandiseComponent implements OnInit {
     constructor(private http: HttpService,private route:ActivatedRoute) { }
 
     ngOnInit() {
-       //获取传过来的参数id
+       //获取传过来的参数商品id
         this.gids = this.route.parent.snapshot.paramMap.get('id');
 
          this.http.get('product',{gid:this.gids}).then((res)=>{
@@ -31,6 +31,16 @@ export class MerchandiseComponent implements OnInit {
          let month = now.getMonth();//得到月份
          let date = now.getDate();//得到日期
          this.times = month+1 + '月' + (date+1) +'日';
+
+         // 该商品用户评价
+         this.http.get('estimate',{gid:this.gids}).then((res)=>{
+            
+            this.datas = res['data'].results || [];
+                console.log(this.datas );
+            
+        })
+
+
     }
 
 }
