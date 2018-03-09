@@ -7,8 +7,9 @@ import {HttpService} from '../../utils/http.service'
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+    edit:number = 1;
 
-    params:object = null;
+    params:object = {};
     cartset: Array<any> = [];
     phone:string = '';
     username:string = 'angular';
@@ -20,6 +21,7 @@ export class CartComponent implements OnInit {
     updateApi:string = 'http://localhost:88/cartgoodsupdate';
     totalMoney:number = 0;
     qty:number = 0;
+    
     constructor(private http:HttpService,private router:Router) { }
 
     ngOnInit() {
@@ -27,9 +29,10 @@ export class CartComponent implements OnInit {
         this.username = localStorage.getItem('username');
         this.http.get(this.api,this.params={userid:localStorage.getItem('id')}).then((res)=>{
         //console.log(res)
-            this.cartset = res.data.results[0];
+            this.cartset = res.data.results[0] || [];
         //console.log(this.cartset.length)
         })
+
     }
     goConfirmorder(){
         //console.log(this.currentTrIndexs);
@@ -54,7 +57,10 @@ export class CartComponent implements OnInit {
     cancelMask(idx){
         //console.log(12)
         document.querySelector('.mask').style.display = "none";
-        
+        this.qty ++;
+         let qtyAll = this.qty+'';
+        localStorage.setItem('qtyAll', qtyAll);
+        console.log(qtyAll)
         
     }
     count(event,idx){
@@ -64,12 +70,22 @@ export class CartComponent implements OnInit {
         
         if(event.target === add[idx]){
             this.cartset[idx].num++
+            
+            this.qty++;
+            let qtyAll = this.qty+'';
+            localStorage.setItem('qtyAll', qtyAll);
+            console.log(qtyAll)
         }
         else if(event.target === subtract[idx]){
             this.cartset[idx].num--
+            this.qty--;
+            let qtyAll = this.qty+'';
+            localStorage.setItem('qtyAll', qtyAll);
+            console.log(qtyAll)
             if(this.cartset[idx].num === 0){
                 document.querySelector('.mask').style.display = "block";
                 this.cartset[idx].num = 1;
+
             }
             
         }
@@ -109,11 +125,13 @@ export class CartComponent implements OnInit {
     delEdit(){
         if(document.querySelector('.edit').innerText==="完成"){
             document.querySelector('.edit').innerText = "编辑";
+            this.edit = 0;
             document.querySelector('.delCount').style.display = "inline-block";
             document.querySelector('.delEdit').style.display = "none";
             
         }
         else if(document.querySelector('.edit').innerText==="编辑"){
+            this.edit = 1;
             document.querySelector('.edit').innerText = "完成";
             document.querySelector('.delEdit').style.display = "inline-block";
             document.querySelector('.delCount').style.display = "none";
@@ -144,17 +162,22 @@ export class CartComponent implements OnInit {
         this.currentTrIndexs = [];
         this.totalMoney = 0;
         this.qty = 0;
+        let qtyAll = this.qty+'';
+        localStorage.setItem('qtyAll', '');
         
         for(let i=0;i<this.cartset.length;i++){
-          this.currentTrIndexs.push(i);
-          this.totalMoney += this.cartset[i].num * this.cartset[i].price;
-          this.qty += this.cartset[i].num;
-          
+            this.currentTrIndexs.push(i);
+            this.totalMoney += this.cartset[i].num * this.cartset[i].price;
+            this.qty += this.cartset[i].num;
+            let qtyAll = this.qty+'';
+            localStorage.setItem('qtyAll', qtyAll);
+        
         }
       }else{
         this.currentTrIndexs = [];
         this.totalMoney = 0;
         this.qty = 0;
+        localStorage.setItem('qtyAll', '');
         
       }
     }

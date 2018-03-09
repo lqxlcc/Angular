@@ -4,10 +4,7 @@ var path = require('path');
 var app = express();
 var http = require('http');
 
-
 app.use(bp.urlencoded({extended: false}));
-
-
 
 var cart = require('./cart.js');
 

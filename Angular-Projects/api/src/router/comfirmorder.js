@@ -1,50 +1,36 @@
-const db = require('../db/db')
+const db = require('../db/db');
 
 module.exports = {
     register: (app) => {
-        
-        
-        
         // 增
-         
         app.post('/orderproduct',function(req,res){
-
-            
-
-            let comfirmorders = req.body.comfirmorders;
-            console.log(comfirmorders);
-            
+            let comfirmorders = JSON.parse(req.body.comfirmorders);
+            //console.log(comfirmorders);
+            let orderStatus = req.body.orderStatus;
             for(let j=0;j<comfirmorders.length;j++){
 
                 let uid = comfirmorders[j].userid;
                 let gid = comfirmorders[j].gid;
                 let num = comfirmorders[j].num;
-                let total = comfirmorders[j].total;
+                let total = 0;
+                total += num*comfirmorders[j].price;
 
 
-                let sql = `insert into orders(userid,total,status) values (${uid},${total},0);`
+                let sql = `insert into orders(userid,total,status) values (${uid},${total},${orderStatus});`
                 db.insert(sql,(result)=>{
                     sql = "";
-                    console.log(result.data);
-                    let orderid = result.data[0].id;
+                    console.log(result);
+                    let orderid = result.data.results.insertId;
+                    //res.send(result)   
+                    sql = `insert into orderproduct(gid,orderid,qty) values(${gid},${orderid},${num});`;   
                     
-                    let gids = gid.split(',');
-                    let qtys = qty.split(',');
-                    for(let i=0;i<gids.length;i++ ){
-                        var qtyNumber=Number(qtys[i]);
-                        
-                        sql += `insert into orderproduct(gid,orderid,qty) values(${gids[i]},${orderid},${qtyNumber});`;
-                    }
                     db.insert(sql,(inserResults)=>{
                         var orderid = inserResults.data.results.insertId;
                         sql = '';
                         sql = `select * from orderproduct where id = ${orderid}`;
                         db.select(sql,function(res2){
-
-                            if(comfirmorders.length == j){
-
-                                res.send(res2);
-                            }
+                            res.send(res2)
+                        
                         })
                         
                     })
@@ -54,8 +40,5 @@ module.exports = {
 
             
         })
-        
-        
-       
     }
 }

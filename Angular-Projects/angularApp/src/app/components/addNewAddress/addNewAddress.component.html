@@ -1,0 +1,26 @@
+<div class="add-new">
+    <div class="an-head">
+        <a href="javascript:history.go(-1)"><i class="el-icon-arrow-left"></i></a>
+        <p>新增收货地址</p>
+    </div>
+    <div class="an-main">
+        <div class="form-item">
+            <label for="username">收货人</label>
+            <input type="text" id="username" placeholder="收货人姓名" [(ngModel)]="username" />
+        </div>
+        <div class="form-item">
+            <label for="phone">收货人手机</label>
+            <input type="text" id="phone" placeholder="手机号码" [(ngModel)]="userphone" />
+        </div>
+        <div class="form-item">
+            <label for="address">收货地址</label>
+            <input type="text" id="address" placeholder="省市区" [(ngModel)]="usercity" />
+        </div>
+        <input type="text" placeholder="街道小区楼层" [(ngModel)]="userroad" />
+        <div class="form-item">
+            <label for="doornum">门牌</label>
+            <input type="text" id="doornum" placeholder="例：71号501室" [(ngModel)]="userroom" />
+        </div>
+        <input [class.cover]="!username || !userphone || !usercity || !userroad || !userroom" type="button" [disabled]="!username || !userphone || !usercity || !userroad || !userroom" (click)="submitAddress()" value="提交新增" />
+    </div>
+</div>

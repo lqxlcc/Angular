@@ -1,6 +1,5 @@
 import {RouterModule,Routes} from '@angular/router';
 
-//龙飞宇
 import {ListComponent} from '../components/list/list.component';
 import {PagenotfoundComponent} from "../components/pagenotfound/pagenotfound.component";
 import { ProductComponent } from '../components/product/product.component';
@@ -24,22 +23,28 @@ import {OrderdatailComponent} from '../components/orderdatail/orderdatail.compon
 import { PersonalInformationComponent } from '../components/personal-information/personal-information.component';
 import { LoginComponent } from '../components/login/login.component';
 import { AddressMangementComponent } from '../components/address-mangement/address-mangement.component';
+
+import { SearchComponent } from '../components/search/search.component';
+import { AddNewAddressComponent } from '../components/addNewAddress/addNewAddress.component';
+import { UpdateAddressComponent } from '../components/updateAddress/updateAddress.component';
+import { SpecialPullComponent } from '../components/specialPull/specialPull.component';
+
 import { RegisterComponent } from '../components/register/register.component';
 import { ConfirmorderComponent } from '../components/confirmorder/confirmorder.component';
 const appRoutes: Routes = [
     {path:'',component: HomeComponent},
     {path:'home',component: HomeComponent},
-    {path:'list',component: ListComponent},
-    {path:'product',component: ProductComponent,
+    {path:'list/:smallid/:bigid',component: ListComponent},
+    {path:'product/:id',component: ProductComponent,
         children: [
             {path: 'merchandise', component: MerchandiseComponent},
+            {path: '', component: MerchandiseComponent},
             {path: 'details', component: DetailsComponent},
             {path: 'estimate', component: EstimateComponent}
         ]
     },
     {path:'cart',component:CartComponent},
     {path:'category',component:CategoryComponent},
-
     {path:'mine',component:MineComponent},
     {path:'myorder',component:MyorderComponent,
         children:[
@@ -56,6 +61,10 @@ const appRoutes: Routes = [
     {path:'login',component:LoginComponent},
     {path:'register',component:RegisterComponent},
     {path:'addressM',component:AddressMangementComponent},
+    {path:'search',component:SearchComponent},
+    {path:'addNewAddress',component:AddNewAddressComponent},
+    {path:'updateAddress',component:UpdateAddressComponent},
+    {path:'specialPull',component:SpecialPullComponent},
     {path:'**',component:PagenotfoundComponent}
 
 ]

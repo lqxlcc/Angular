@@ -1,29 +1,59 @@
 <div id="myCarousel" class="carousel slide">
             <!-- 轮播（Carousel）指标 -->
             <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="0" class="active carousel_li"  *ngFor="let str of imgs;let idx = index" [class.carousel_li]="idx == 0"></li> 
+
+
             </ol>   
             <!-- 轮播（Carousel）项目 -->
             <div class="carousel-inner">
-                <div class="item active">
-                    <img style="width:10.0rem"  src="https://imgjd3.fruitday.com/images/product_pic/2169/1/1-270x270-2169-YR8PTW67.jpg" alt="First slide">
+                <div class="item" *ngFor="let str of imgs;let idx = index" [class.active]="idx == 0">
+                    <img style="width:10.0rem"  src={{str}} alt="Second slide">
                 </div>
-                <div class="item">
-                    <img style="width:10.0rem"  src="https://imgjd3.fruitday.com/images/product_pic/2169/1/1-270x270-2169-YR8PTW67.jpg" alt="Second slide">
-                </div>
-                <div class="item">
-                    <img style="width:10.0rem" src="https://imgjd2.fruitday.com/images/product_pic/49/1/1-270x270-49-D6PKH6S9.jpg" alt="Third slide">
-                </div>
+             
             </div>
             <!-- 轮播（Carousel）导航 -->
           <!--   <a class="carousel-control left" href="#myCarousel" 
                data-slide="prev">&lsaquo;</a>
             <a class="carousel-control right" href="#myCarousel" 
                data-slide="next">&rsaquo;</a> -->
-        </div> 
+</div> 
+<div class="goods_title">
+    <h3>{{data.title}}</h3>
+    <h4>{{data.describe}}</h4>
+    <div class="price">
+        <small>￥</small>
+        <em>{{data.saleprice}}</em>
+        <small></small>   
+    </div>
+    <div class="size">  
+<!--         <span class="cur"  data-pid="28497"> 
+            <strong>6个</strong> 
+            <small>  明日达  </small> 
+        </span>   -->
+        <span class="cur" data-pid="28501">
+            <strong>{{data.qty}}</strong> 
+            <small>  明日达  </small> </span>  
+        <p>最快{{times}}09:00-18:00送达</p> 
+    </div>
+</div>
+<div class="liucheng">
+        <ul class="uls">
+            <li><i class="glyphicon glyphicon-check"></i><span>48小时送货</span></li>
+            <li><i class="glyphicon glyphicon-check"></i><span>全程冷链</span></li>
+            <li><i class="glyphicon glyphicon-check"></i><span>果园标准</span></li>
+            <i class="glyphicon glyphicon-chevron-right"></i>
+        </ul>
+</div>
+<div class="pingjia">
+    <div class="pj_t">
+        <span class="pj_tl">评价(1217)</span>
+        <span class="pj_tr"><i>96%</i>好评</span>
+    </div>
+    <ul class="pj_ul">
+        <li></li>
+    </ul>
+    <div class="go_pj"><a href="#" >查看全部评价</a></div>
+</div>
 
-<p>
-  merchandise works!
-</p>
+

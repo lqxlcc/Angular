@@ -1,33 +1,10 @@
 <div id="myCarousel" class="carousel slide">
-            <!-- 轮播（Carousel）指标 -->
-            <ol class="carousel-indicators">
-                <li *ngFor="let imgurl of banners;let idx = index" data-target="#myCarousel" data-slide-to="idx" [class.active]="pageActive==idx" (touchstart)="changePage(idx)"></li>
-                <!-- <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li> -->
-            </ol>   
-            <!-- 轮播（Carousel）项目 -->
-            <div class="carousel-inner">
-                <div *ngFor="let banner of banners;let idx = index" class='item' [class.active]="pageActive==idx">
-                    <img [src]="banner" />
-                </div>
-                <!-- <div class="item active">
-                    <img style="width:10.0rem"  src="https://imgjd4.fruitday.com/images/2018-02-27/335cd282f26369758810e650c54ed247.jpg">
-                </div>
-                <div class="item">
-                    <img style="width:10.0rem"  src="https://imgjd5.fruitday.com/images/2018-02-28/afc5bb5589902842ef3a8e80afbb0353.jpg">
-                </div>
-                <div class="item">
-                    <img style="width:10.0rem" src="https://imgjd2.fruitday.com/images/2017-11-24/830ebe6b81e6f4b058c5c1c90bd73f9b.jpg">
-                </div>
-                <div class="item">
-                    <img style="width:10.0rem" src="https://imgjd1.fruitday.com/images/2018-02-27/25276a5eeb58f7803284358018f2d34d.jpg">
-                </div> -->
-            </div>
-            <!-- 轮播（Carousel）导航 -->
-            <!--   <a class="carousel-control left" href="#myCarousel" 
-               data-slide="prev">&lsaquo;</a>
-            <a class="carousel-control right" href="#myCarousel" 
-               data-slide="next">&rsaquo;</a> -->
+    <ol class="carousel-indicators">
+        <li *ngFor="let imgurl of banners;let idx = index" data-target="#myCarousel" data-slide-to="idx" [class.active]="pageActive==idx" (touchstart)="changePage(idx)"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div *ngFor="let banner of banners;let idx = index" class='item' [class.active]="pageActive==idx">
+            <img [src]="banner" />
         </div>
+    </div>
+</div>

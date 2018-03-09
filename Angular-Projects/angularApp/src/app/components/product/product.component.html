@@ -1,9 +1,9 @@
 <div class="product">
     <div class="header">
         <div class="header_t">
-            <i class="el-icon-arrow-left"></i>
+            <i class="el-icon-arrow-left" (click)="goto()"></i>
             <div class="header_c">
-                <a routerLink="merchandise" >商品</a>
+                <a routerLink="merchandise">商品</a>
                 <a routerLink="details" >详情</a>
                 <a routerLink="estimate" >评价</a>
             </div>
@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="main">
-        <router-outlet></router-outlet>
+        <router-outlet></router-outlet>  
     </div>
     <div class="footer">
         <div class="foot_l">
@@ -22,8 +22,16 @@
              <i class="f_carts_qty" >0</i>
 
              <!-- *ngIf=" qty >0"  -->
-            
+
         </div>
+        <ul class="kefu">
+            <li>
+                <i class="glyphicon glyphicon-earphone"></i>
+                <p>客服</p></li>
+            <li>
+                <i class="glyphicon glyphicon-heart-empty"></i>
+                <p>收藏</p></li>
+        </ul>
         <div class="foot_r">
             <span class="arrival_time">明日达</span>
             <span class="addcart" >加入购物车</span>

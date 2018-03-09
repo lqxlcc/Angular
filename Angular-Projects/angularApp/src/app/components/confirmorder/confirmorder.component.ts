@@ -12,6 +12,7 @@ export class ConfirmorderComponent implements OnInit {
   totalMoney:number = 0;
   apiOrder:string = 'http://localhost:88/orderproduct';
   params: object = {};
+  orderStatus:number = 0;
   constructor(private http:HttpService,private router:Router) { }
   
   ngOnInit() {
@@ -29,11 +30,11 @@ export class ConfirmorderComponent implements OnInit {
   goOrderdatail(){
 
     //this.router.navigateByUrl("orderdatail"); 
-    console.log(this.http)
-    this.http.post(this.apiOrder,this.params={comfirmorders:JSON.stringify(this.cartorder)}).then((res)=>{
+    //console.log(this.http)
+    this.http.post(this.apiOrder,this.params={comfirmorders:JSON.stringify(this.cartorder),orderStatus:this.orderStatus}).then((res)=>{
         console.log(res);
     })
-
+    this.cartorder = [];
   }
   
 

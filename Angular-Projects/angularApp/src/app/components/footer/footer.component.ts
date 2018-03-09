@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpService} from '../../utils/http.service'
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -25,6 +26,7 @@ export class FooterComponent implements OnInit {
       //console.log(this.qty);
     })
   }
+   
   gocategory(){
      this.router.navigateByUrl("category");  
   }
@@ -37,5 +39,5 @@ export class FooterComponent implements OnInit {
   gomine(){
   this.router.navigateByUrl("mine"); 
   }
-  
+  this.qty = localStorage.getItem('qtyAll');
 }
