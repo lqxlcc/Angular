@@ -32,8 +32,10 @@ export class CartComponent implements OnInit {
              let ress = JSON.parse(JSON.stringify(res));
              console.log(ress);
 
+
             if(ress.status){
                 this.cartset = ress.data.results[0];
+
             }else{
                 this.cartset =[];
             }
