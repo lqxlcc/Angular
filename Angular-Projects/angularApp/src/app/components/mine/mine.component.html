@@ -6,8 +6,8 @@
             <ul class="accountUl">
                 <li><img src="https://wap.fruitday.com/content/images/me/old_v0.png" alt="" /> </li>
                 <li class="w40">
-                <span *ngIf="phone!=''">
-                    <span (click)="goPersonal()">{{phone}}</span>
+                <span *ngIf="phone!=''"  (click)="goPersonal()">
+                    <span>{{phone}}</span>
                     <span class="sign">签到送好礼</span>
                 </span>
                 <span *ngIf="phone==''" class="login">

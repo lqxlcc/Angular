@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./mine.component.scss']
 })
 export class MineComponent implements OnInit {
-   phone: string = '';
+   phone: string = 'huangyingdenglu';
     constructor(private http:Http,private router:Router) { }
 
     ngOnInit() {
