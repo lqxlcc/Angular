@@ -15,7 +15,8 @@ export class UpdateAddressComponent implements OnInit {
   userphone: string = '';
   usercity: string = '';
   userroad: string = '';
-  userroon: string = '';
+  userroom: string = '';
+
   addressId: string;
   hasChange: boolean;
 
@@ -25,19 +26,19 @@ export class UpdateAddressComponent implements OnInit {
   ngOnInit(){
     this.addressId = localStorage.getItem('addressId');
     this.http.get('getAddress',{addressId:this.addressId}).then(res=>{
-      let data = res.data.results[0];
+      let data = res['data']['results'][0];
       this.username = data.name;
       this.userphone = data.phone;
       this.usercity = data.phone;
       this.userroad = data.road;
-      this.userroon = data.room;
+      this.userroom = data.room;
     })
   }
 
   submitAddress(){
     let id = localStorage.getItem('addressId');
     this.http.post('updateAddress',{id:id,username:this.username,userphone:this.userphone,usercity:this.usercity,userroad:this.userroad,userroom:this.userroom}).then(res=>{
-        if(res.status){
+        if(res['status']){
             this.handle1('success');
         }else{
             this.handle2('error');

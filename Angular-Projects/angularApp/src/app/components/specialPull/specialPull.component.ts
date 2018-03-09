@@ -12,8 +12,8 @@ export class SpecialPullComponent implements OnInit {
 
   imgurl: string = '';
   specials: Array<Object> = [];
-  endX: number;
-  endY: number;
+  endX: string;
+  endY: string;
 
   constructor(private http:HttpService,private router:Router) {}
 
