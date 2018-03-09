@@ -8,10 +8,11 @@ import {Router} from '@angular/router';
   styleUrls: ['./mine.component.scss']
 })
 export class MineComponent implements OnInit {
-   phone: string = '';
+   phone: string = 'huangyingdenglu';
     constructor(private http:Http,private router:Router) { }
 
     ngOnInit() {
+
       this.phone = localStorage.getItem('phone');
     }
 
@@ -21,6 +22,11 @@ export class MineComponent implements OnInit {
     goPersonal(){
         this.router.navigateByUrl("personalInformation");  
     }
-
+    goLogin(){
+        this.router.navigateByUrl("login");  
+    }
+    goRegister(){
+        this.router.navigateByUrl("register");  
+    }
 
 }

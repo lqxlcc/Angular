@@ -1,26 +1,26 @@
 <div class="footerLqx navbar navbar-default navbar-fixed-bottom" role="navigation">
     <ul class="footerUl nav navbar-nav">
         <li>
-            <a (click)="gohome()">
+            <a (touchend)="gohome()">
                 <span class="glyphicon glyphicon-home"></span>
                 <span>首页</span>
             </a>
         </li>
         <li>
-            <a (click)="gocategory()">
+            <a (touchend)="gocategory()">
                 <span class="glyphicon glyphicon-th-large"></span>
                 <span>分类</span>
             </a>
         </li>
         <li>
-            <a (click)="gocart()">
+            <a (touchend)="gocart()">
                 <span class="glyphicon glyphicon-shopping-cart"></span>
                 <span class="qty">购物车<i *ngIf="qty>0"[class.actived]="qty>0">{{qty}}</i></span>
 
             </a>
         </li>
         <li>
-            <a (click)="gomine()">
+            <a (touchend)="gomine()">
                 <span class="glyphicon glyphicon-user"></span>
                 <span>我的果园</span>
             </a>

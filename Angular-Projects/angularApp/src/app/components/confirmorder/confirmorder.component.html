@@ -5,7 +5,7 @@
                 <h3>
                     <a href="javascript:history.go(-1)"><i class="el-icon-arrow-left"></i></a>
                     确认订单
-                    <span class="edit"(click)="delEdit()">编辑</span>
+                    
                 </h3>
             </li>
         </ul>
@@ -31,29 +31,31 @@
         </div>
         <div class="confirmorderMain">
             <div class="confirmorderNav">
-                <span>商品清单</span>
-                <span class="fr">总重约<i>0</i>kg</span>
+                <span>包裹1</span>
+                <span class="tag" style="background: #FF8000"> 明日达  </span>
+                <span class="fr"><i>{{num}}</i>件商品</span>
             </div>
-            <div class="confirmorderGoodsList" *ngIf="cartset">
+            <div class="confirmorderTime">
+                <span>送达时间</span>
+                
+                <span class="fr">03月10日|周五 09:00-18:00</span>
+            </div>
+            <div class="confirmorderGoodsList" *ngIf="cartorder">
                 <ul class="confirmorderList">
                     
-                    <li class="h98" *ngFor="let obj of cartset;let idx = index;trackBy:trackByID" (click)="count($event,idx)" >
-                        <div class="pt" *ngIf="multiple">
-                            <i class="circle" [class.actived]="currentTrIndexs.indexOf(idx)>-1" (click)="selectTr(idx)"></i>
-                        </div>
-                        
+                    <li class="h98" *ngFor="let obj of cartorder;let idx = index;trackBy:trackByID" (click)="count($event,idx)" >
                         <div>
                             <img [src]="obj.mainimg" />
                         </div>
                         <div class="pl10">
                             <p>{{obj.describes}}</p>
                             <p><i>300g</i><i>约0.30kg</i></p>
-                            <span class="price">￥{{obj.price}}</span><span>明日达</span>
+                            <span>明日达</span>
                         </div>
                         <div class="fr">
-                            <i class="glyphicon glyphicon-minus-sign"></i>
-                            <span class="num">{{obj.num}}</span>
-                            <i class="glyphicon glyphicon-plus-sign"></i>
+                            
+                            <span class="num">x{{obj.num}}</span>
+                            <span class="price">￥{{obj.price*obj.num}}</span>
                         </div>
                         <div class="mask">
                            <div class="deleteDialog">
@@ -73,26 +75,17 @@
         </div>
     </div>
    <div class="foot">
-    <div class="confirmorderFoot" *ngIf="multiple">
-        <i class="circle" (click)="selectAll()" [class.actived]="currentTrIndexs.length==cartset.length"></i>
-        <div class="fl">
-            <span>全选</span>
+        <div class="confirmorderFoot navbar navbar-default navbar-fixed-bottom" >
             <div class="priceT">
-                <p>合计：<i>￥{{totalMoney}}</i></p>
-                <p>共优惠￥14</p>
+                <p>待支付<i>￥{{totalMoney}}</i></p>
+            </div>
+            
+            <div class="fr">
+                <button class="delCount"(click)="goOrderdatail()">提交订单</button>
+                
             </div>
         </div>
-        <div class="fr">
-
-            <button class="delCount" [disabled]="currentTrIndexs.length<=0"(click)="goOrderdatail()">结算（{{qty}}）</button>
-            <button [disabled]="currentTrIndexs.length<=0" class="delEdit" (click)="mask()" >删除（{{qty}}）</button>
-        </div>
-        
-
     </div>
-
-    
-</div>
     
 </div>
 

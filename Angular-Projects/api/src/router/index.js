@@ -9,7 +9,7 @@ app.use(bp.urlencoded({extended: false}));
 var cart = require('./cart.js');
 
 var login = require('./login.js');
-
+var comfirmorder = require('./comfirmorder.js');
 var getHomeMessage = require('./getHomeMessage.js');
  
 var list = require('./list');
@@ -38,6 +38,7 @@ module.exports = {
 
         cart.register(app);
         login.register(app);
+        comfirmorder.register(app);
         getHomeMessage.register(app);
 
         list.register(app);
