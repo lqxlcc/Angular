@@ -13,11 +13,17 @@ export class OrderdatailComponent implements OnInit {
 	aa:boolean = false;
 	bb:boolean = true;
 	pay1:boolean = true;
+	totalMoney:number = 0;
 	confirmorder:Array<any> = []; 
+	apiOrder:string = 'http://localhost:88/orderStatus';
+	orderStatus:number = 1;
 	constructor() { }
 
 	ngOnInit() {
 		this.confirmorder =  JSON.parse(localStorage.getItem('cartorder'));
+		for(let i=0;i<this.confirmorder.length;i++){
+			this.totalMoney += this.confirmorder[i].num*this.confirmorder[i].price;
+		}
 
 	}
 	qxd(){
@@ -41,5 +47,9 @@ export class OrderdatailComponent implements OnInit {
 	}
 	close(){
 		this.pay1 = false;
+	}
+	confirmPay(){
+		console.log(this.confirmorder);
+		
 	}
 }

@@ -39,6 +39,36 @@ module.exports = {
             }
 
             
+        }),
+        app.post('/orderStatus',function(req,res){
+            var id= req.body.orderid;
+            
+            var orderStatus= req.body.orderStatus;
+            var sql=`
+                update orders
+                set orders.status='${orderStatus}'
+                where orders.id='${id}';
+                
+            `;
+            db.update(sql,function(data){
+                console.log(data);
+                res.send(data);
+            })
+        }),
+        app.get('/orders',function(req,res){
+            var id= req.body.orderid;
+            
+            var sql=`
+                select *
+                from
+                 orders
+                where orders.id='${id}';
+                
+            `;
+            db.select(sql,function(data){
+                console.log(data);
+                res.send(data);
+            })
         })
     }
 }
