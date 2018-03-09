@@ -8,7 +8,6 @@ import {HttpService} from '../../utils/http.service'
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  
   apiCart:string = 'http://localhost:88/cart';
   params:object = null;
   cartQty:Array<any> = null;
@@ -27,16 +26,15 @@ export class FooterComponent implements OnInit {
     })
   }
   gocategory(){
-     this.router.navigateByUrl("category");  
+     this.router.navigateByUrl("category");
   }
   gohome(){
-    this.router.navigateByUrl("home");  
+    this.router.navigateByUrl("home");
   }
   gocart(){
-    this.router.navigateByUrl("cart");  
+    this.router.navigateByUrl("cart");
   }
   gomine(){
-  this.router.navigateByUrl("mine"); 
+  this.router.navigateByUrl("mine");
   }
-  
 }

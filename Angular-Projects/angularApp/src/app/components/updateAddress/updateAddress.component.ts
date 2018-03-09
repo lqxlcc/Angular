@@ -16,7 +16,7 @@ export class UpdateAddressComponent implements OnInit {
   usercity: string = '';
   userroad: string = '';
   userroom: string = '';
-  addressId: string;
+  addressId: number;
   hasChange: boolean;
 
 
