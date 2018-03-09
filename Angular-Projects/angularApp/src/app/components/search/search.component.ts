@@ -123,4 +123,5 @@ export class SearchComponent implements OnInit {
       localStorage.setItem('history',JSON.stringify([]));
   }
 
+
 }

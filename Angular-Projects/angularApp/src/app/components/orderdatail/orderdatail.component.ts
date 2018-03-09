@@ -12,10 +12,13 @@ export class OrderdatailComponent implements OnInit {
 	cc:boolean = false;
 	aa:boolean = false;
 	bb:boolean = true;
-	pay1:boolean = false;
+	pay1:boolean = true;
+	confirmorder:Array<any> = []; 
 	constructor() { }
 
 	ngOnInit() {
+		this.confirmorder =  JSON.parse(localStorage.getItem('cartorder'));
+
 	}
 	qxd(){
 		if(this.bb){

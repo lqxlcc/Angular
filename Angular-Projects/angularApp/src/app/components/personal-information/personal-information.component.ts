@@ -15,6 +15,8 @@ export class PersonalInformationComponent implements OnInit {
   }
   goLogin(){
      this.router.navigateByUrl("login"); 
+     localStorage.setItem('phone','');
+     localStorage.setItem('id','');
   }
   goAddressM(){
     this.router.navigateByUrl("addressM"); 

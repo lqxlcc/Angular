@@ -11,9 +11,11 @@ import {ActivatedRoute,Router} from '@angular/router'
 })
 export class EstimateComponent implements OnInit {
     store:Object = global;
-    gid:Object ={};
+    gid:string;
     mData: Object = {};
     fontSize:string = 'red';
+    userId:string = "";
+
     tabs = [
         {
           index: 1
@@ -26,19 +28,20 @@ export class EstimateComponent implements OnInit {
 
     constructor(private http: HttpService,private route:ActivatedRoute,private ref:ElementRef) { }
 
-    ngOnInit() {
-        console.log(this.route.parent.snapshot.paramMap.get('id'));
+    ngOnInit(){
+        this.userId = localStorage.getItem("id");
 
-        //  this.gid = this.store['gid'];
-        //  // console.log(this.gid);
-        //  this.http.get('product',{gid:this.gid}).then((res)=>{
+        console.log(this.gid);
+        this.gid=this.route.parent.snapshot.paramMap.get('id');
+
+        if(this.userId == ""){};
+         this.http.get('product',{userid:this.userId,gid:this.gid}).then((res)=>{
           
-        //       // console.log(res);
-        //       this.mData = res['data'].results;
-        //       console.log(this.mData);
-        // })
-        
-        
+              this.mData = res['data'].results;
+              console.log(this.mData);
+
+        })
     }
+
 
 }

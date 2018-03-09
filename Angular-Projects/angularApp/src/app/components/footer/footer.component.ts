@@ -16,15 +16,16 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
     this.http.get(this.apiCart,this.params={userid:localStorage.getItem('id')}).then((res)=>{
-      console.log(res.data.results[2]);
+     // console.log(res.data.results[2]);
       this.cartQty = res.data.results[2];
       for(var i=0;i<this.cartQty.length;i++){
       //console.log(this.cartQty[i].num)
         this.qty += this.cartQty[i].num*1;
       }
-      console.log(this.qty);
+      //console.log(this.qty);
     })
   }
+   
   gocategory(){
      this.router.navigateByUrl("category");
   }

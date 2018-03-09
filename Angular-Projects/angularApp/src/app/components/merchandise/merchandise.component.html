@@ -1,8 +1,10 @@
 <div id="myCarousel" class="carousel slide">
             <!-- 轮播（Carousel）指标 -->
             <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active carousel_li"  *ngFor="let str of imgs;let idx = index" [class.carousel_li]="idx == 0"></li> 
+                <li data-target="#myCarousel" data-slide-to="0" class="active carousel_li"></li> 
+                <li data-target="#myCarousel" data-slide-to="1" class="active"></li> 
 
+<!-- *ngFor="let str of imgs;let idx = index" [class.carousel_li]="idx == 0" -->
 
             </ol>   
             <!-- 轮播（Carousel）项目 -->

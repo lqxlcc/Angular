@@ -35,8 +35,8 @@
 	               
 	            </li>
 	            <li class="h98">
-	                <div>
-	                    <img src="https://imgqn8.fruitday.com/images/product_pic/500/1/1-180x180-500-3A4YF743.jpg" />
+	                <div *ngFor = "let obj of confirmorder;let idx = index;">
+	                    <img [src]="obj.mainimg" />
 	                </div>
 	                <div class="pl10">
 	                    <p>墨西哥果</p>
