@@ -37,7 +37,7 @@
                                 <b>{{obj['saleprice']}}</b>
                                 <small></small>  
                                 <span style="background: #FF8000">明日达</span> 
-                                <i class="glyphicon glyphicon-plus-sign" ></i>
+                                <i class="glyphicon glyphicon-plus-sign"></i>
                             </div>
                        </dl>
                    </li>
@@ -63,15 +63,13 @@
                    </li>
                 </ul>
             <!-- </ng-template> -->
-goCart
         </div>
 
         <div class="carts" (click)="goCart()">
             <span class="glyphicon glyphicon-shopping-cart"></span>
-            <i class="f_carts_qty" >0</i>
+            <i class="f_carts_qty" *ngIf="cartQty>0" >{{cartQty}}</i>
 
-               <!-- *ngIf=" qty >0"  -->
-
+               
         </div>
     </div>
        

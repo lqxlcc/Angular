@@ -83,13 +83,13 @@
                 </div>
             </div>
             <div class="fr">
-                
-                <button class="delCount" disabled *ngIf="currentTrIndexs.length<=0">结算（0）</button>
+                <button class="delCount1" disabled >结算（0）</button>
+                <button class="delCount" disabled *ngIf="currentTrIndexs.length<=0&& edit != 1">结算（0）</button>
                 <button class="delCount" *ngIf="currentTrIndexs.length>0&& edit == 0" (click)="goConfirmorder()">结算（{{qty}}）</button>
             
                 
-                <button disabled *ngIf="currentTrIndexs.length<=0" class="delEdit" (click)="mask()" >删除（0）</button>
-                <button *ngIf="currentTrIndexs.length>0" class="delEdit" (click)="mask()" >删除（{{qty}}）</button>
+                <button [disabled] ="currentTrIndexs.length<=0" class="delEdit" (click)="mask()" >删除（{{qty}}）</button>
+                
             </div>
             
 

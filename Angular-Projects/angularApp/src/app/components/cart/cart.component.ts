@@ -28,9 +28,9 @@ export class CartComponent implements OnInit {
         this.phone = localStorage.getItem('phone');
         this.username = localStorage.getItem('username');
         this.http.get(this.api,this.params={userid:localStorage.getItem('id')}).then((res)=>{
-        //console.log(res)
+
             this.cartset = res.data.results[0] || [];
-        //console.log(this.cartset.length)
+ 
         })
 
     }
@@ -126,7 +126,7 @@ export class CartComponent implements OnInit {
         if(document.querySelector('.edit').innerText==="完成"){
             document.querySelector('.edit').innerText = "编辑";
             this.edit = 0;
-            document.querySelector('.delCount').style.display = "inline-block";
+            document.querySelector('.delCount1').style.display = "none";
             document.querySelector('.delEdit').style.display = "none";
             
         }
@@ -134,7 +134,7 @@ export class CartComponent implements OnInit {
             this.edit = 1;
             document.querySelector('.edit').innerText = "完成";
             document.querySelector('.delEdit').style.display = "inline-block";
-            document.querySelector('.delCount').style.display = "none";
+            document.querySelector('.delCount1').style.display = "none";
         }
     }
     selectTr(_idx){

@@ -29,7 +29,7 @@ export class ConfirmorderComponent implements OnInit {
   }
   goOrderdatail(){
 
-    //this.router.navigateByUrl("orderdatail"); 
+    this.router.navigateByUrl("orderdatail"); 
     //console.log(this.http)
     this.http.post(this.apiOrder,this.params={comfirmorders:JSON.stringify(this.cartorder),orderStatus:this.orderStatus}).then((res)=>{
         console.log(res);

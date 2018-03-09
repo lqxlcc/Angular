@@ -17,12 +17,11 @@
         <router-outlet></router-outlet>  
     </div>
     <div class="footer">
-        <div class="foot_l">
-             <span class="glyphicon glyphicon-shopping-cart"></span>
-             <i class="f_carts_qty" >0</i>
-
-             <!-- *ngIf=" qty >0"  -->
-
+        <div class="foot_l"  (click)="goCart()">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            
+            <i class="f_carts_qty" *ngIf="cartQty>0" >{{cartQty}}</i>
+             
         </div>
         <ul class="kefu">
             <li>
@@ -34,7 +33,7 @@
         </ul>
         <div class="foot_r">
             <span class="arrival_time">明日达</span>
-            <span class="addcart" >加入购物车</span>
+            <span class="addcart"  (click)="addCart()">加入购物车</span>
         </div>
     </div>
 </div>
