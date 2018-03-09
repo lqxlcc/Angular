@@ -37,6 +37,6 @@
 .search .fixer .f-main{width:7.2rem;border-radius:0.266667rem;position:absolute;left:50%;bottom:50%;transform:translate(-50%,-50%);background:white;}
 .search .fixer .f-main .f-main-t{font-size:0.426667rem;line-height:2.666667rem;text-align:center;}
 .search .fixer .f-main .f-main-b{display:flex;height:1.226667rem;}
-.search .fixer .f-main .f-main-b input{flex:1;text-align:center;line-height:1.12rem;color:#008eff;}
+.search .fixer .f-main .f-main-b input{flex:1;text-align:center;line-height:1.12rem;color:#008eff;font-size:0.426667rem;}
 
 .mystyle.el-message .el-message__content{font-size:0.8rem;}

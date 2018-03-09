@@ -29,13 +29,12 @@ export class CartComponent implements OnInit {
         this.username = localStorage.getItem('username');
         
         this.http.get(this.api,this.params={userid:localStorage.getItem('id')}).then((res)=>{
+
             if(res.status){
                 this.cartset = res.data.results[0];
             }else{
                 this.cartset =[];
             }
-
-            //
  
         })
        
