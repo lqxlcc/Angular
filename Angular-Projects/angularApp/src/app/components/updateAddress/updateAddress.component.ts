@@ -16,13 +16,13 @@ export class UpdateAddressComponent implements OnInit {
   usercity: string = '';
   userroad: string = '';
   userroon: string = '';
-  addressId: number;
+  addressId: string;
   hasChange: boolean;
 
 
   @Input() banners: Array<string>;
 
-  ngOnInit(){localStorage.setItem('addressId': 4);
+  ngOnInit(){
     this.addressId = localStorage.getItem('addressId');
     this.http.get('getAddress',{addressId:this.addressId}).then(res=>{
       let data = res.data.results[0];
@@ -30,7 +30,7 @@ export class UpdateAddressComponent implements OnInit {
       this.userphone = data.phone;
       this.usercity = data.phone;
       this.userroad = data.road;
-      this.userroom = data.room;
+      this.userroon = data.room;
     })
   }
 

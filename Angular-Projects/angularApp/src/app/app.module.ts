@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {RootRouter} from './router/router'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {RootRouter} from './router/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 
@@ -79,7 +79,7 @@ import { ConfirmorderComponent } from './components/confirmorder/confirmorder.co
     SearchComponent,
     AddNewAddressComponent,
     UpdateAddressComponent,
-    SpecialPullComponent
+    SpecialPullComponent,
     PayingComponent,
     SendingComponent,
     ReceivingComponent,

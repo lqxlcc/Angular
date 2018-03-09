@@ -120,7 +120,7 @@ export class SearchComponent implements OnInit {
 
   clearHistory(){
         this.history = [];
-        localStorage.setItem('history':JSON.stringify([]));
+        localStorage.setItem('history',JSON.stringify([]));
     }
 
 }

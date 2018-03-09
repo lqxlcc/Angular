@@ -20,14 +20,16 @@ export class ListComponent implements OnInit {
     keyword:string = '全部';
     keywordBool:boolean = true;
     data:Object = {};
-    cartqty:number;
+    cartQty:number = 0;
     showHide: boolean =false;
     smallId:string;
     bigId:string;
     userId:string = "";
 
-  constructor(private http: HttpService,private router:Router,private ref:ElementRef,private route:ActivatedRoute) { 
-  }
+
+    constructor(private http: HttpService,private router:Router,private ref:ElementRef,private route:ActivatedRoute) { 
+        
+    }
 
     ngOnInit() {
         // 获取登录者id
@@ -41,17 +43,26 @@ export class ListComponent implements OnInit {
 
         //商品列表数据
         this.http.get('goodslist',params).then((res)=>{
-          this.data = res['data'].results;
-          this.types = this.data[0];
-          this.lists = this.data[1];
+            this.data = res['data'].results;
+            this.types = this.data[0];
+            this.lists = this.data[1];
 
-        //购物车商品数量
-        this.http.get('cart',{userid:1}).then((cartRes)=>{
-             console.log(cartRes);
-             
+
+            //购物车商品数量
+            if(this.userId != ""){
+                this.http.get('cartqty',{userid:this.userId}).then((cartRes)=>{
+                    let cartqtyArr = cartRes['data'].results;
+                    
+                     for(let i=0;i<cartqtyArr.length;i++){
+                         this.cartQty += cartqtyArr[i].num;
+                         
+                     }
+
+                })
+                
+            }
+
         })
-
-    })
   }
 
     gotos(event){
@@ -77,13 +88,18 @@ export class ListComponent implements OnInit {
         if(event.target.tagName.toLowerCase() == 'i'){
             if(this.userId == ""){
                 this.router.navigate(["register"]);
+            }else{
+                this.http.get('addcart',{userid:this.userId,gid:ids}).then((cartRes)=>{
+                    console.log(cartRes);
+                     this.cartQty= 0;
+                     let cartqtyArr = cartRes['data'].results;
+                    
+                     for(let i=0;i<cartqtyArr.length;i++){
+                         this.cartQty += cartqtyArr[i].num;     
+                     }
+                }) 
             }
-              //加入购物车，待做。。。
             
-            // this.http.get('cart',{id:ids,userid:}).then((res)=>{
-            //   console.log();
-
-            // })
          
         }else{
             this.router.navigate(["product/"+ids+ '/merchandise']);

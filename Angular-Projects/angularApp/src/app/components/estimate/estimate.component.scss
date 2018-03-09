@@ -54,3 +54,31 @@
     text-align: center !important;
     font-size:30px;
 }
+.estimate{
+    height: 1.6rem;
+    width: 100%;
+    background-color: #eee;
+    padding-top:0.4rem;
+    font-size:0.4rem;
+    text-align:center;
+    border-bottom:0.026667rem solid #ccc;
+    .estimate_contain{
+        height: 1.2rem;width: 100%;
+        background-color: #FFF;
+        padding:0.2rem 0;
+        .estimate_l,.estimate_r{
+            height: 0.8rem;
+            width: 2.0rem;
+            display:inline-block;
+            border:0.026667rem solid #ff8000;
+            line-height: 0.773333rem;
+            color:#ff8000;
+        }
+        .es_avtive{
+            background-color: #ff8000;
+            color:#fff;
+        }
+    }
+    
+  
+}
