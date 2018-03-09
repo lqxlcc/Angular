@@ -7,10 +7,23 @@
 </div>
 
 <div class="estimate">
-    <div class="estimate_contain">
+    <div class="estimate_contain" (click)="switchBgc($event)">
         <span class="estimate_l" >评价()</span>
         <span class="estimate_r" >嗮图</span>
         
     </div>
 </div>
+<ul class="client">
+    <li class="client_li">
+        <p class="client_p">
+            <img src="https://imgqn2.fruitday.com/up_images/default_userpic.png" />
+            <p><span class="client_span">18520017756</span><i class="client_i">2018-03-09</i></p>
 
+            <span>口感<nz-rate [ngModel]="5" nzDisabled></nz-rate></span>
+
+            <span>颜值</span><nz-rate [ngModel]="4" nzDisabled></nz-rate>
+
+        </p>
+        <p class="client_content">很好吃，很美味</p>
+    </li>
+</ul>

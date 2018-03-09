@@ -41,7 +41,15 @@ export class EstimateComponent implements OnInit {
               console.log(this.mData);
 
         })
+
     }
 
+    switchBgc(event){
+        
+        if(event.target.className.toLowerCase() == "estimate_l" ){
+            
+        }else if(event.target.className.toLowerCase() == "estimate_r"){
 
+        }
+    }
 }

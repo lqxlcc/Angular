@@ -79,6 +79,31 @@
             color:#fff;
         }
     }
+}
+.client{
     
-  
+    .client_li{
+        height: 2.4rem;
+        width: 100%;
+        background-color: #ccc;
+        border-bottom:0.013333rem solid #ccc;
+        padding-left:0.666667rem;
+        padding-top:0.2rem;
+        .client_p{
+            // height: 1.066667rem;
+            width: 100%;
+            padding-left:0.666667rem;
+            padding-top:0.266667rem;
+            position:relative;
+            img{
+                position:absolute;
+                top: 0;
+                left: 0;
+                height: 0.933333rem;
+                width: 0.933333rem;
+                border-radius:50%;
+
+            }
+        }
+    }
 }
