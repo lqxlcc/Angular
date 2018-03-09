@@ -31,7 +31,7 @@ export class CartComponent implements OnInit {
         this.http.get(this.api,this.params={userid:localStorage.getItem('id')}).then((res)=>{
 
 
-            if(res.status){
+            if(res['status']){
                 this.cartset = res.data.results[0];
             }else{
                 this.cartset =[];
