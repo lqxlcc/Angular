@@ -109,13 +109,17 @@ export class CartComponent implements OnInit {
 
     deleteBtn(idxArray){
         this.phone = localStorage.getItem('phone');
+        let str = '';
+
         for(var i=0;i<idxArray.length;i++){
-            var idx = idxArray[i];
-            this.http.post(this.delApi,this.params={cartid:this.cartset[idx].id}).then((res)=>{
-                
-            //console.log(idx)
-            })
+            str += this.cartset[idxArray[i]].id + ',';
         }
+        console.log(str)
+        this.http.post(this.delApi,this.params={cartids:str.slice(0,-1)}).then((res)=>{
+            
+            console.log(res)
+        })
+        
 
         document.querySelector('.mask').style.display = "none";
         this.http.get(this.api,this.params={userid:localStorage.getItem('id')}).then((res)=>{

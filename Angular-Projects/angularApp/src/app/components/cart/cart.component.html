@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="fr">
-                <button class="delCount1" disabled >结算（0）</button>
+                <button class="delCount1" [disabled]="currentTrIndexs.length<=0"(click)="goConfirmorder()" >结算（{{qty}}）</button>
                 <button class="delCount" disabled *ngIf="currentTrIndexs.length<=0&& edit != 1">结算（0）</button>
                 <button class="delCount" *ngIf="currentTrIndexs.length>0&& edit == 0" (click)="goConfirmorder()">结算（{{qty}}）</button>
             

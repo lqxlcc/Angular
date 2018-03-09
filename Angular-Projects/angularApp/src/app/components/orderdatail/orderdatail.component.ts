@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
-import {Router} from '@angular/router';  
+  
+import {Router} from '@angular/router';
 
+import {HttpService} from '../../utils/http.service';
 @Component({
   selector: 'app-orderdatail',
   templateUrl: './orderdatail.component.html',
@@ -17,7 +18,9 @@ export class OrderdatailComponent implements OnInit {
 	confirmorder:Array<any> = []; 
 	apiOrder:string = 'http://localhost:88/orderStatus';
 	orderStatus:number = 1;
-	constructor() { }
+	orderid:string;
+
+	constructor(private http:HttpService,private router:Router) { }
 
 	ngOnInit() {
 		this.confirmorder =  JSON.parse(localStorage.getItem('cartorder'));
@@ -25,6 +28,21 @@ export class OrderdatailComponent implements OnInit {
 			this.totalMoney += this.confirmorder[i].num*this.confirmorder[i].price;
 		}
 
+		this.orderid = localStorage.getItem('orderid');
+
+	}
+	confirmPay(){
+		this.http.post('orderstatuss',this.params={statu:this.orderStatus,orderid:this.orderid}).then((res)=>{
+
+			console.log(res);
+			if(res.status){
+				this.router.navigateByUrl("mine");
+
+			}else{
+				alert("提交失败！")
+			}
+		})
+		
 	}
 	qxd(){
 		if(this.bb){
@@ -48,8 +66,5 @@ export class OrderdatailComponent implements OnInit {
 	close(){
 		this.pay1 = false;
 	}
-	confirmPay(){
-		console.log(this.confirmorder);
-		
-	}
+	
 }
