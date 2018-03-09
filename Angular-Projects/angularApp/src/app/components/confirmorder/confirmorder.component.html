@@ -43,7 +43,7 @@
             <div class="confirmorderGoodsList" *ngIf="cartorder">
                 <ul class="confirmorderList">
                     
-                    <li class="h98" *ngFor="let obj of cartorder;let idx = index;trackBy:trackByID" (click)="count($event,idx)" >
+                    <li class="h98" *ngFor="let obj of cartorder;let idx = index;"  >
                         <div>
                             <img [src]="obj.mainimg" />
                         </div>

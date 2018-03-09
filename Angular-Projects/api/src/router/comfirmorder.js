@@ -70,5 +70,19 @@ module.exports = {
                 res.send(data);
             })
         })
+        app.post('delgid',function(req,res){
+            let userid = req.body.userid;
+            let cartgid = req.body.cartgid;
+
+            let sql=`
+                delete 
+                    *
+                form
+                    cart
+
+            `;
+
+
+        })
     }
 }

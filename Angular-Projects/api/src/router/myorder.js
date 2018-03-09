@@ -78,5 +78,25 @@ module.exports = {
 				})
 			})
 		})
+		app.get('/orderstatuss',function(req,res){
+			let status = req.body.statu;
+			let orderid = req.body.orderid;
+ 			console.log(status,orderid);
+
+			let sql =`
+				update 
+					orders
+                set 
+                	orders.status=${status}
+                where 
+                	orders.id='${orderid}'
+
+			`;
+
+			db.update(sql,function(res){
+				res.send(res);
+			})
+
+		})
 	}
 }

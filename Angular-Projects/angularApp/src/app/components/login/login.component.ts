@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
     loginStatus: string='';
     
     api: string = 'http://localhost:88/login';
-    params:object = null;
+    params:object = {};
     phone:string = null;
     username:string =null;
     password: string = null;
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     }
     goMine(){
       this.router.navigateByUrl("mine");
-      //console.log(this.loginStatus[0].phone)
+      console.log(this.loginStatus[0].phone)
       localStorage.setItem('id', this.loginStatus[0].id);
       localStorage.setItem('phone', this.loginStatus[0].phone);
       localStorage.setItem('username', this.loginStatus[0].username);

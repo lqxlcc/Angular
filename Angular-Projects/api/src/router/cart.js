@@ -49,9 +49,11 @@ module.exports = {
         })
         // 删
         app.post('/cartgoodsdel',function(req,res){
-            var id = req.body.cartid;
+            var ids = req.body.cartids;
+            var userid = req.body.userid;
+
             var sql =`
-                delete from cart where id IN (${id})
+                delete from cart where id IN (${ids}) and userid=${userid}
             `;
             db.delete(sql,function(data){
                 res.send(data);

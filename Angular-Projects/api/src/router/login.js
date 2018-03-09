@@ -16,11 +16,11 @@ module.exports = {
                 
             where phone = '${phone}' and password='${password}';
             `;
-            
+           
             db.select(sql, function(data){
-               
+            
                 var _data = data.data.results;
-                //console.log(_data)
+                
                 if(_data.length<=0){
                     
                     res.send('false');
