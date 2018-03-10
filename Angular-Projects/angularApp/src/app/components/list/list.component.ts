@@ -120,4 +120,10 @@ export class ListComponent implements OnInit {
         this.router.navigate(['search']);
     }
 
+    sorts(event){
+        let text = event.target.innerText.slice(0, 2);
+        console.log(text);
+        
+
+    }
 }

@@ -2,7 +2,7 @@
     <ul class="myordreList" *ngFor="let obj of dataset ;let idx = index">
         <li>
             <p>
-                <span>{{obj.orderid}}</span>
+                <span>订单号：{{obj.orderid}}</span>
                 <span class="fr"*ngIf="obj.status == 0">待付款</span>
                 <span class="fr"*ngIf="obj.status == 1">已付款</span>
             </p>

@@ -49,12 +49,35 @@
 </div>
 <div class="pingjia">
     <div class="pj_t">
-        <span class="pj_tl">评价(1217)</span>
+        <span class="pj_tl">评价( {{datas.length}} )</span>
         <span class="pj_tr"><i>96%</i>好评</span>
     </div>
-    <ul class="pj_ul">
-        <li></li>
-    </ul>
+    <!-- 评价 -->
+    <ul class="client">
+    <ng-template ngFor let-obj [ngForOf]="datas">
+        <li class="client_li" *ngIf="datas != 'undefined'">
+            <div class="client_p">
+                <img src="https://imgqn2.fruitday.com/up_images/default_userpic.png" />
+                <dl>
+                    <span class="client_span">{{obj['phone']}}</span>
+                    <i class="client_i">{{obj['date']}}</i>
+                </dl>
+
+                <p>
+                    <span>口感<nz-rate [ngModel]="3" nzDisabled class="mmg"></nz-rate></span>
+                    <span>颜值</span><nz-rate [ngModel]="4" nzDisabled class="mmg"></nz-rate>
+                </p>
+                    
+
+            </div>
+            <div class="client_btn">
+                <output>{{obj['contant']}}</output>
+                
+            </div>
+            
+        </li>
+    </ng-template>
+</ul>
     <div class="go_pj"><a href="#" >查看全部评价</a></div>
 </div>
 

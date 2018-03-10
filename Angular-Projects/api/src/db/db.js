@@ -12,6 +12,7 @@ var db = mysql.createPool({
 module.exports = {
     select: function(_sql, _callback){
         db.query(_sql, function(error, results, fields){
+            // console.log(results)
             if(error){
                 _callback({status: false, error: error})
             } else {

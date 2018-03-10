@@ -15,7 +15,7 @@ export class EstimateComponent implements OnInit {
     mData: Object = {};
     fontSize:string = 'red';
     userId:string = "";
-
+    datas:Array<object> = [];
     tabs = [
         {
           index: 1
@@ -31,17 +31,34 @@ export class EstimateComponent implements OnInit {
     ngOnInit(){
         this.userId = localStorage.getItem("id");
 
-        console.log(this.gid);
         this.gid=this.route.parent.snapshot.paramMap.get('id');
-
-        if(this.userId == ""){};
-         this.http.get('product',{userid:this.userId,gid:this.gid}).then((res)=>{
-          
-              this.mData = res['data'].results;
-              console.log(this.mData);
-
+        console.log(this.gid);
+        //获取商品用户评价
+        this.http.get('estimate',{gid:this.gid}).then((res)=>{
+            
+            this.datas = res['data'].results || [];
+                console.log(this.datas );
+            
         })
+
+
+
+        // if(this.userId == ""){};
+        //  this.http.get('product',{userid:this.userId,gid:this.gid}).then((res)=>{
+          
+        //       this.mData = res['data'].results;
+        //       console.log(this.mData);
+        // })
+
+
     }
 
+    switchBgc(event){
+        
+        if(event.target.className.toLowerCase() == "estimate_l" ){
+            
+        }else if(event.target.className.toLowerCase() == "estimate_r"){
 
+        }
+    }
 }

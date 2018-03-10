@@ -27,16 +27,21 @@ export class CartComponent implements OnInit {
     ngOnInit() {
         this.phone = localStorage.getItem('phone');
         this.username = localStorage.getItem('username');
+
         this.http.get(this.api,this.params={userid:localStorage.getItem('id')}).then((res)=>{
-            console.log(res);
-            if(res.status){
-                this.cartset = res.data.results[0];
-            
+             let ress = JSON.parse(JSON.stringify(res));
+             console.log(ress);
+
+
+            if(ress.status){
+                this.cartset = ress.data.results[0];
+
             }else{
-                 this.cartset =[];
+                this.cartset =[];
             }
  
         })
+       
 
     }
     goConfirmorder(){
@@ -108,17 +113,26 @@ export class CartComponent implements OnInit {
 
     deleteBtn(idxArray){
         this.phone = localStorage.getItem('phone');
+        let str = '';
+
         for(var i=0;i<idxArray.length;i++){
-            var idx = idxArray[i];
-            this.http.post(this.delApi,this.params={cartid:this.cartset[idx].id}).then((res)=>{
-                
-            //console.log(idx)
-            })
+            str += this.cartset[idxArray[i]].id + ',';
         }
+        console.log(str)
+        this.http.post(this.delApi,this.params={cartids:str.slice(0,-1)}).then((res)=>{
+            
+            console.log(res)
+        })
+        
 
         document.querySelector('.mask').style.display = "none";
         this.http.get(this.api,this.params={userid:localStorage.getItem('id')}).then((res)=>{
-            this.cartset = res.data.results[0];
+            if(res.status){
+                this.cartset = res.data.results[0]
+            }else{
+            this.cartset =[]
+            }
+        
         //console.log(this.cartset.length)
         })
         this.qty = 0;

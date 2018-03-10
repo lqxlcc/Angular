@@ -143,7 +143,9 @@
 	                    i{font-size:0.32rem;line-height: 0.426667rem;}
 	                }
 	                .pl10{padding-left:0.266667rem;}
-	                .fr{float:right;}
+	                .fr{float:right;
+                        span{font-size:0.373333rem;}
+                    }
 	            }
 	            .price{
 	            	color: black;
@@ -226,7 +228,7 @@
                     height:1.226667rem;
                     line-height:1.226667rem;
                    	color: #008eff;
-                    width: 49%;
+                    width: 48%;
                     font-size: 0.48rem;
                     display: inline-block;
                     text-align: center;
@@ -267,6 +269,7 @@
 			    color: #3a3a3a;
 			    text-align: center;
 			    position: relative;
+                h2{font-size:0.533333rem;}
 			    .close{
 			    	position: absolute;
 			    	color:#d8d8d8;

@@ -34,29 +34,29 @@
 	                </p>
 	               
 	            </li>
-	            <li class="h98">
-	                <div *ngFor = "let obj of confirmorder;let idx = index;">
+	            <li class="h98" *ngFor = "let obj of confirmorder;let idx = index;">
+	                <div>
 	                    <img [src]="obj.mainimg" />
 	                </div>
 	                <div class="pl10">
-	                    <p>墨西哥果</p>
-	                    <i>1个</i>
+	                    <p>{{obj.describes}}</p>
+	                    <i>{{obj.num}}个</i>
 	                </div>
 	                <div class="fr">
 	                	<span><i>&times;1</i></span>
 	                    
-	                    <span>￥19</span>
+	                    <span>￥{{obj.price}}</span>
 	                </div>
 
 	            </li>
 	            <li class="price">
-	                <p>商品总价：</p><span>￥88</span>
+	                <p>商品总价：</p><span>￥{{totalMoney}}</span>
 	            </li>
 	            <li class="price">
 	                <p>配送费：</p><span>￥10</span>
 	            </li>
 	            <li class="price">
-	                <span>实付金额：￥98</span>
+	                <span>实付金额：￥{{totalMoney}}</span>
 	            </li>
 	        </ul>
     	</div>
@@ -80,7 +80,7 @@
         	<div class="payb">
         		<div class="p_title">
         			<span class="close" (click)="close()"><i>&times;</i></span>
-        			<h1>付款详情</h1>
+        			<h2>付款详情</h2>
         		</div>
         		<ul>
         			<li>
@@ -89,10 +89,10 @@
         			</li>
         			<li>
         				<span class="left">需付款</span>
-        				<span class="price">￥99</span>
+        				<span class="price">￥{{totalMoney}}</span>
         			</li>
         		</ul>
-        		<div class="checkbtn" >确认支付</div>
+        		<div class="checkbtn" (click)="confirmPay()">确认支付</div>
         	</div>	
         </div>
 	</footer>

@@ -10,6 +10,7 @@ export class MyorderComponent implements OnInit {
   constructor(private http:Http) { }
 
   ngOnInit() {
+  
   }
 
 }

@@ -21,7 +21,7 @@ module.exports = {
 				res.send(data);
 				// console.log(data);
 			})
-		})
+		}),
 
 		app.get('/paying',function(req,res){
 			let userid = req.query.userid;
@@ -41,7 +41,7 @@ module.exports = {
 			db.select(sql,(data)=>{
 				res.send(data);
 			})
-		})
+		}),
 
 		app.get('/delorder',function(req,res){
 			// let ids = req.body.ids;//购物车商品id
@@ -77,6 +77,26 @@ module.exports = {
 					res.send(dates);
 				})
 			})
+		}),
+		app.post('/orderstatuss',function(req,res){
+			let status = req.body.statu;
+			let orderid = req.body.orderid;
+ 			console.log(status,orderid);
+
+			let sql =`
+				update 
+					orders
+                set 
+                	orders.status=${status}
+                where 
+                	orders.id='${orderid}'+1
+
+			`;
+
+			db.update(sql,function(ress){
+				res.send(ress);
+			})
+
 		})
 	}
 }
