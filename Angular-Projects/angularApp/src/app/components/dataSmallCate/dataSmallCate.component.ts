@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { HttpService } from '../../utils/http.service';
@@ -8,7 +8,7 @@ import { HttpService } from '../../utils/http.service';
   templateUrl: './dataSmallCate.component.html',
   styleUrls: ['./dataSmallCate.component.css']
 })
-export class DataSmallCateComponent implements OnInit {
+export class DataSmallCateComponent implements OnInit,OnDestroy {
 
   constructor(private http:HttpService,private router:Router) { }
 
@@ -19,6 +19,10 @@ export class DataSmallCateComponent implements OnInit {
 
 
   ngOnInit() {
+  }
+
+  ngOnDestroy(){
+    sessionStorage.setItem('bigTypeId',this.bigTypeId.toString())
   }
 
   goList(){
