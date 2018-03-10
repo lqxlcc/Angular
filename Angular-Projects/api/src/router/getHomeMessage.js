@@ -71,7 +71,7 @@ module.exports = {
             var usercity = req.body.usercity;
             var userroad = req.body.userroad;
             var userroom = req.body.userroom;
-            var sql = `insert into useraddress (userid,name,phone,city,road,room) values (${userid},${username},${userphone},${usercity},${userroad},${userroom})`;
+            var sql = `insert into useraddress (userid,name,phone,city,road,room) values (${userid},'${username}','${userphone}','${usercity}','${userroad}','${userroom}')`;
             db.insert(sql,function(result){
                 res.send(result);
             })

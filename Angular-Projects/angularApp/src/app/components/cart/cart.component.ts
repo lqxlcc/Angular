@@ -23,6 +23,8 @@ export class CartComponent implements OnInit {
     qty:number = 0;
     carQty: number = 0;
     maskStatus:number = 0;
+    addressStatus:number = 1;
+    address:number;
     constructor(private http:HttpService,private router:Router) { }
 
     ngOnInit() {
@@ -41,6 +43,18 @@ export class CartComponent implements OnInit {
             for(var i=0;i<this.cartset.length;i++){
                 this.carQty += this.cartset[i].num*1;
             }
+        })
+        this.http.get('http://localhost:88/getAddress',this.params={addressId:localStorage.getItem('addressId')}).then((res)=>{
+
+            let ress2 = JSON.parse(JSON.stringify(res));
+            //console.log(ress2)
+            if(ress2.status){
+                this.address = ress2.data.results[0];
+                //localStorage.setItem('cartGoods',JSON.stringify(this.cartset));
+            }else{
+                this.address =[];
+            }
+            
         })
         
         
@@ -104,7 +118,13 @@ export class CartComponent implements OnInit {
     mask(){
         this.maskStatus = 1;
     }
-
+    addressEdit(){
+        this.addressStatus = 1;
+        //console.log(this.pay1)
+    }
+    close(){
+        this.addressStatus = 0;
+    }
     deleteBtn(idxArray){
         //this.phone = localStorage.getItem('phone');
         let str = '';
@@ -178,6 +198,6 @@ export class CartComponent implements OnInit {
        
     }
     
-    
+
    
 }

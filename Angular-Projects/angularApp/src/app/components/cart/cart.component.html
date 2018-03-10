@@ -11,23 +11,23 @@
         </ul>
     </div>
     <div class="cartMainlqx">
-        <div class="cartAddress">
+        <div class="cartAddress"  (click)="addressEdit()" *ngIf="address">
             <span class="borderTop"></span>
             <span class="borderBottom"></span>
            
             <p>
-                <span class="username">{{username}}</span>
-                <span class="phone">{{phone}}</span>
+                <span class="username">{{address.name}}</span>
+                <span class="phone">{{address.phone}}</span>
                 <span class="addressType">公司</span>
             </p>
             <div class="localAddress">
                 <i class="glyphicon glyphicon-map-marker"></i>
                 <p>
-                    <span class="street">元岗街道 </span>
-                    <span class="detailAddress">广东省广州市天河区元岗街道兆联元岗创意产业园D座 </span>
+                    <span class="street">{{address.city}} </span>
+                    <span class="detailAddress">{{address.city}} {{address.road}} {{address.room}}</span>
                 </p>
             </div>
-            <i class=""></i>
+            <i class="glyphicon glyphicon-pencil"></i>
         </div>
         <div class="cartMain">
             <div class="cartNav">
@@ -103,6 +103,26 @@
     </div>
     <i *ngIf="carQty>0"[class.activedqty]="carQty>0">{{carQty}}</i>
 </div>
+<div [class.addressNone]="addressStatus == 1"class="address">
+    <div class="payb">
+        <div class="p_title">
+            <span class="close" (click)="close()"><i>&times;</i></span>
+            <h2>收货地址</h2>
+        </div>
+        <ul>
+            <li>
+                <i class="circle"></i>
+                <div class="adm">
+                    <p>ttt</p>
+                    <p>广东</p>
+                </div>
+                <i class="glyphicon glyphicon-pencil editaddress"></i>
+            </li>
+           
+        </ul>
+        <div class="checkbtn" >新增地址</div>
+    </div>  
 
+</div>
 
 
