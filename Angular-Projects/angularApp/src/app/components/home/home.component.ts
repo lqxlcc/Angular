@@ -28,9 +28,8 @@ export class HomeComponent implements OnInit {
     endY: string;
 
     ngOnInit() {
-
         localStorage.setItem('history',JSON.stringify([]));
-        let address = returnCitySN['cname'];
+        let address = window['returnCitySN']['cname'];
         let reg1 = /^.*省(.*市).*$/g;
         let reg2 = /^(.*市).*$/g;
         this.address = address.replace(reg1,'$1');
