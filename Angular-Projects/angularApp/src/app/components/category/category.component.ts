@@ -16,6 +16,7 @@ export class CategoryComponent implements OnInit {
   bigTypeId:number = 1;
 
   ngOnInit() {
+    this.activeCate = sessionStorage.getItem('bigTypeId')-1 || 1;
     this.http.get('config/categoryconfig.txt').then(res=>{
         this.bigCate = res['data'];
     })
