@@ -13,23 +13,30 @@ export class FooterComponent implements OnInit {
   params:object = {};
 
   cartQty:Array<any> = [];
-  qty:number=0;
+  qty:number = 0;
+  maskStatus:number = 0;
+  
   constructor(private http:HttpService,private router:Router) { }
 
   ngOnInit() {
-    this.http.get(this.apiCart,this.params={userid:localStorage.getItem('id')}).then((res)=>{
+      
+      this.http.get(this.apiCart,this.params={userid:localStorage.getItem('id')}).then((res)=>{
 
-     if(res.status){
-      this.cartQty = res.data.results[2]
-     }else{
-      this.cartQty = [];
-     }
-      for(var i=0;i<this.cartQty.length;i++){
-      //console.log(this.cartQty[i].num)
-        this.qty += this.cartQty[i].num*1;
+        if(JSON.parse(JSON.stringify(res)).status){
+         this.cartQty = JSON.parse(JSON.stringify(res)).data.results[2]
+        }else{
+         this.cartQty = [];
+        }
+        for(var i=0;i<this.cartQty.length;i++){
+          this.qty += this.cartQty[i].num*1;
+        }
+      })
+      if(localStorage.getItem('id')==''){
+        this.maskStatus = 1;
+      }else{
+         this.maskStatus = 0;
       }
-      //console.log(this.qty);
-    })
+
   }
    
   gocategory(){
@@ -40,8 +47,22 @@ export class FooterComponent implements OnInit {
   }
   gocart(){
     this.router.navigateByUrl("cart");
+    console.log(localStorage.getItem('id'))
+    if(localStorage.getItem('id')==''){
+      this.maskStatus = 1;
+    }else{
+       this.maskStatus = 0;
+    }
+
   }
   gomine(){
-  this.router.navigateByUrl("mine");
+    this.router.navigateByUrl("mine");
+
+  }
+  goLogin(){
+    this.router.navigateByUrl("login");
+  }
+  cancelMask(){
+    this.maskStatus = 0;
   }
 }

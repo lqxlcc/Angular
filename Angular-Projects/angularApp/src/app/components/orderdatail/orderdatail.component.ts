@@ -35,7 +35,7 @@ export class OrderdatailComponent implements OnInit {
 		this.http.post(this.apiOrder,this.params={statu:this.orderStatus,orderid:this.orderid}).then((res)=>{
 
 			console.log(res);
-			if(res.status){
+			if(JSON.parse(JSON.stringify(res)).status){
 				this.router.navigateByUrl("mine");
 
 			}else{

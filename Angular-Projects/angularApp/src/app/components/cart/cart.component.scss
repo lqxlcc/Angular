@@ -159,7 +159,7 @@
                         .mask{
                             display:none;
                             z-index: 92;
-                            background: rgba(0,0,0,.5);
+                            background: rgba(0,0,0,.1);
                             top: 0;
                             bottom: auto;
                             left: 0;
@@ -213,6 +213,9 @@
                             }
                             
                         } 
+                        .maskNone{
+                            display:block;
+                        }
                         .verDeleteDialog{
                             display:none;
                             background:#fff;
@@ -220,10 +223,27 @@
                     }
                 }
             }
+            .gotoMine{
+                img{
+                    margin: 2.0rem auto 0;
+                    width: 6.0rem;
+                }
+                .p1{
+                    color: rgba(0, 0, 0, 0.65);
+                }
+                p{
+                    line-height:0.8rem;
+                    color:#f93;
+                    font-size:0.426667rem;
+                    width:100%;
+                    text-align:center;
+                }
+            }
         }
     }
     .foot{
         height:5.333333rem;
+
         .cartFoot{
             background:#fff;
             padding-left:0.533333rem;
@@ -277,13 +297,32 @@
                 button[disabled]{
                         background: #bfbfbf;
                 }
-                .delEdit{
+                .del{
                     display:none;
+                }
+                .delCountone{display:none;
                 }
             }
         }
+        
     }
-    
+    .activedqty{
+            background: #ff4848;
+            line-height: 0.373333rem;
+            border-radius: 0.4rem;
+            min-width: 0.473333rem;
+            padding: 0 0.053333rem;
+            color: #fff;
+            top: auto;
+            left: auto;
+            bottom: 0.95rem;
+            right: 30.7%;
+            position: fixed;
+            margin-left: 0.32rem;
+            font-size:0.373333rem;
+            text-align:center;
+            z-index:300000;
+        }
     
     
     

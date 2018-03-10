@@ -26,10 +26,11 @@ export class LoginComponent implements OnInit {
     }
     goMine(){
       this.router.navigateByUrl("mine");
-      console.log(this.loginStatus[0].phone)
-      localStorage.setItem('id', this.loginStatus[0].id);
-      localStorage.setItem('phone', this.loginStatus[0].phone);
-      localStorage.setItem('username', this.loginStatus[0].username);
+      //console.log(this.loginStatus[0].phone)
+
+      localStorage.setItem('id', JSON.parse(JSON.stringify(this.loginStatus))[0].id);
+      localStorage.setItem('phone', JSON.parse(JSON.stringify(this.loginStatus))[0].phone);
+      localStorage.setItem('username', JSON.parse(JSON.stringify(this.loginStatus))[0].username);
      
     }
     goRegister(){
@@ -40,7 +41,7 @@ export class LoginComponent implements OnInit {
         //console.log(this.password)
       this.http.get(this.api,this.params={phone:this.phone,password:this.password}).then((res)=>{
         
-           this.loginStatus = res;
+           this.loginStatus = JSON.parse(JSON.stringify(res));
         
        
         console.log(this.loginStatus)

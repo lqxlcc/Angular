@@ -5,7 +5,7 @@
                 <h3>
                     <a href="javascript:history.go(-1)"><i class="el-icon-arrow-left"></i></a>
                     购物车
-                    <span class="edit"(click)="delEdit()">编辑</span>
+                    <span class="edit"(click)="delEdit()">{{editText}}</span>
                 </h3>
             </li>
         </ul>
@@ -55,7 +55,7 @@
                             <span class="num">{{obj.num}}</span>
                             <i class="glyphicon glyphicon-plus-sign"></i>
                         </div>
-                        <div class="mask">
+                        <div [class.maskNone]="maskStatus == 1"class="mask">
                            <div class="deleteDialog">
                                <div class="verMass">确定要删除{{obj.describes}}？</div>
                                <div class="verBtn">
@@ -70,6 +70,11 @@
                     
                 </ul>
             </div>
+            <div class="gotoMine" (click)="goHome()" *ngIf="cartset.length<=0">
+                <img src="https://wap.fruitday.com/content/images/main/cart_empty-172251d77c.png"/>
+                <p class="p1">还没找到心仪的商品吗？</p>
+                <p>去逛逛吧！</p>
+            </div>
         </div>
     </div>
    <div class="foot">
@@ -83,21 +88,20 @@
                 </div>
             </div>
             <div class="fr">
-                <button class="delCount1" [disabled]="currentTrIndexs.length<=0"(click)="goConfirmorder()" >结算（{{qty}}）</button>
-                <button class="delCount" disabled *ngIf="currentTrIndexs.length<=0&& edit != 1">结算（0）</button>
-                <button class="delCount" *ngIf="currentTrIndexs.length>0&& edit == 0" (click)="goConfirmorder()">结算（{{qty}}）</button>
+                <button [class.delCountone]="edit ==1" [disabled]="currentTrIndexs.length<=0"(click)="goConfirmorder()" >结算（{{qty}}）</button>
+                
             
                 
-                <button [disabled] ="currentTrIndexs.length<=0" class="delEdit" (click)="mask()" >删除（{{qty}}）</button>
+                <button [disabled] ="currentTrIndexs.length<=0" [class.del]="edit ==0" (click)="mask()" >删除（{{qty}}）</button>
                 
             </div>
             
 
         </div>
-
-    <app-footer></app-footer>
-</div>
-    
+        
+        <app-footer></app-footer>
+    </div>
+    <i *ngIf="carQty>0"[class.activedqty]="carQty>0">{{carQty}}</i>
 </div>
 
 
