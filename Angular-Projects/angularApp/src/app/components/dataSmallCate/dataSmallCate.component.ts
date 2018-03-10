@@ -22,7 +22,7 @@ export class DataSmallCateComponent implements OnInit,OnDestroy {
   }
 
   ngOnDestroy(){
-    sessionStorage.setItem('bigTypeId',this.bigTypeId)
+    sessionStorage.setItem('bigTypeId',this.bigTypeId.toString())
   }
 
   goList(){
