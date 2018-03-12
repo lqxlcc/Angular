@@ -47,13 +47,14 @@
                 color:#58bc58;
                 position:relative;
                 .sort_ul{
+                    z-index:1000;
                     display:none;
                     position:absolute;
                     right: 0.04rem;top: 0.786667rem;
-                    // background-color: #000;
                     background-color:rgba(0,0,0,0.7);
+                    
                     li{
-                        width: 2.0rem;
+                        width: 2.133333rem;
                         height: 0.8rem;
                         color:#fff;
                         font-size:0.4rem;

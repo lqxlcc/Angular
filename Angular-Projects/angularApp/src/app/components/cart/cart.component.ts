@@ -10,7 +10,7 @@ export class CartComponent implements OnInit {
     edit:number = 1;
 
     params:object = {};
-    cartset: Array<any> = [];
+    cartset: Array<any>;
     phone:string = '';
     username:string = 'angular';
     multiple:boolean = true;
@@ -21,6 +21,7 @@ export class CartComponent implements OnInit {
     updateApi:string = 'http://localhost:88/cartgoodsupdate';
     totalMoney:number = 0;
     qty:number = 0;
+    userid:string;
     
     constructor(private http:HttpService,private router:Router) { }
 
@@ -28,16 +29,20 @@ export class CartComponent implements OnInit {
         this.phone = localStorage.getItem('phone');
         this.username = localStorage.getItem('username');
 
-        this.http.get(this.api,this.params={userid:localStorage.getItem('id')}).then((res)=>{
+        this.userid =  localStorage.getItem('id') || '';
+        if(this.userid  !== 'undefined'){
+            this.http.get(this.api,this.params={userid:this.userid}).then((res)=>{
 
-
-            if(res['status']){
-                this.cartset = res.data.results[0];
-            }else{
-                this.cartset =[];
-            }
- 
-        })
+                   console.log(res);
+                if(res['status']){
+                    this.cartset = res['data'].results[0];
+                }else{
+                    this.cartset =[];
+                }
+     
+            })
+            
+        }
        
 
     }

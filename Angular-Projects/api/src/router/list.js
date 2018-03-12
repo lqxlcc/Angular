@@ -30,27 +30,23 @@ module.exports = {
 
             if(sort == '销量'){
                 
-                if(dec == 'false'){
-                  
                     sql +='order by saleqty desc';
-                }else{  
-                   
-                    sql +='order by saleqty asc';
-                }
-            }else if(sort == '价格'){
-                if(dec == 'false'){
+               
+                    // sql +='order by saleqty asc';
+               
+            }else if(sort == '价格高到低'){
+                
                     sql+='order by saleprice desc';
-                }else{
+            }else if(sort == '价格低到高'){
                     sql+='order by saleprice asc'
+                
+            }else if(sort == '综合'){
+                 if(dec == 'false'){
+                    sql+='order by price desc';
+                }else{
+                    sql+='order by price asc'
                 }
             }
-            // else if(sort == '综合'){
-            //      if(dec == 'false'){
-            //         sql+='order by price desc';
-            //     }else{
-            //         sql+='order by price asc'
-            //     }
-            // }
 
             db.select(sql,function(data){
 

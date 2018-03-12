@@ -9,10 +9,8 @@
             <div class="sort">
                 <span (click)="paixu()">{{sort}}<i class="el-icon-caret-bottom"></i></span>
                 <ul class="sort_ul" (click)="sorts($event)">
-                  <li>综合排序</li>
-                  <li>价格<i class="glyphicon glyphicon-arrow-down"></i></li>
-                  <li>价格<i class="glyphicon glyphicon-arrow-up"></i></li>
-                  <li>销量</li>
+                  <li *ngFor="let item of sort_ul">{{item}}</li>
+                  
                 </ul>
             </div>
         </div>

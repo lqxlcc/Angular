@@ -26,6 +26,8 @@ export class ListComponent implements OnInit {
     bigId:string;
     userId:string = "";
 
+    sort_ul:Array<string> = ['综合排序','价格高到低','价格低到高','销量'];
+
 
     constructor(private http: HttpService,private router:Router,private ref:ElementRef,private route:ActivatedRoute) { 
         
@@ -121,9 +123,22 @@ export class ListComponent implements OnInit {
     }
 
     sorts(event){
-        let text = event.target.innerText.slice(0, 2);
-        console.log(text);
-        
+        console.log(event.target);
 
+        if(event.target.tagName == "LI"){
+
+            event.target.parentNode.classList.toggle('showHide');
+
+            let text = event.target.innerText;
+            this.sort = event.target.innerText.slice(0,2);
+            console.log(text);
+       
+               this.http.get('goodslist',{classify:this.bigId,sort:text,dec:this.lifting}).then((res)=>{
+                         this.data = res['data'].results;
+                        this.types = this.data[0];
+                        this.lists = this.data[1];
+                    }) 
+            
+        }
     }
 }
