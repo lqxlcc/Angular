@@ -16,7 +16,8 @@ export class DatagridComponent implements OnInit {
 	dataset:Array<any>;
 	delapi:string;
 	ngOnInit() {
-		let userid = 2;
+		
+		let userid = localStorage.getItem('id');
 		let parmas = {};
 		parmas['userid']= userid;
 		this.http.get(this.config).then((configRes) => {
