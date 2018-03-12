@@ -40,12 +40,12 @@ export class AddNewAddressComponent implements OnInit {
   }
 
   handle1(type: string): void {
-  this.message.setOptions({showClose:true,center:true})
+  this.message.setOptions({showClose:true,center:true,customClass:'mystyle'})
     this.message[type]('已提交成功')
   }
 
   handle2(type: string): void {
-  this.message.setOptions({showClose:true})
+  this.message.setOptions({showClose:true,center:true,customClass:'mystyle'})
     this.message[type]('提交失败')
   }
 

@@ -71,14 +71,14 @@ module.exports = {
             var usercity = req.body.usercity;
             var userroad = req.body.userroad;
             var userroom = req.body.userroom;
-            var sql = `insert into useraddress (userid,name,phone,city,road,room) values (${userid},${username},${userphone},${usercity},${userroad},${userroom})`;
+            var sql = `insert into useraddress (userid,name,phone,city,road,room) values (${userid},'${username}','${userphone}','${usercity}','${userroad}','${userroom}')`;
             db.insert(sql,function(result){
                 res.send(result);
             })
         })
         app.get('/getAddress',function(req,res){
             var id = req.query.addressId;
-            var sql = `select * from useraddress where id=${id}`;
+            var sql = `select * from useraddress where userid=${id}`;
             db.select(sql,function(result){
                 res.send(result);
             })

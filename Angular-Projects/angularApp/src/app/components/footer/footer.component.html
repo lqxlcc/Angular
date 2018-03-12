@@ -15,7 +15,7 @@
         <li>
             <a (touchend)="gocart()">
                 <span class="glyphicon glyphicon-shopping-cart"></span>
-                <span class="qty">购物车<i *ngIf="qty>0"[class.actived]="qty>0">{{qty}}</i></span>
+                <span class="qty">购物车<i *ngIf="qty>0"[class.activedqty]="qty>0">{{qty}}</i></span>
 
             </a>
         </li>
@@ -26,4 +26,14 @@
             </a>
         </li>
     </ul>
+</div>
+<div [class.maskNone]="maskStatus == 1"class="mask">
+   <div class="deleteDialog">
+       <div class="verMass">亲，还没登录哦！去登录？</div>
+       <div class="verBtn">
+           <span class="cancelBtn" (click)="cancelMask()">取消</span>
+           <span  (click)="goLogin()">确定</span>
+       </div>
+   </div>
+
 </div>

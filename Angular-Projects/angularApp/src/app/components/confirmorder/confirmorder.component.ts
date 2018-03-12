@@ -41,7 +41,7 @@ export class ConfirmorderComponent implements OnInit {
     //console.log(this.http)
     this.http.post(this.apiOrder,this.params={comfirmorders:JSON.stringify(this.cartorder),orderStatus:this.orderStatus}).then((res)=>{
         console.log(res);
-        localStorage.setItem('orderid',res.data.results[0].orderid);
+        localStorage.setItem('orderid',JSON.parse(JSON.stringify(res)).data.results[0].orderid);
         //localStorage.getItem("id")
         console.log(localStorage.getItem('orderid'));
     })

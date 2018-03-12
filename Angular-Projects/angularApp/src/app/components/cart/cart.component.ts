@@ -7,8 +7,8 @@ import {HttpService} from '../../utils/http.service'
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-    edit:number = 1;
-
+    edit:number = 0;
+    editText:string = '编辑';
     params:object = {};
     cartset: Array<any> = [];
     phone:string = '';
@@ -21,7 +21,10 @@ export class CartComponent implements OnInit {
     updateApi:string = 'http://localhost:88/cartgoodsupdate';
     totalMoney:number = 0;
     qty:number = 0;
-    
+    carQty: number = 0;
+    maskStatus:number = 0;
+    addressStatus:number = 0;
+    address:Array<any> = [];
     constructor(private http:HttpService,private router:Router) { }
 
     ngOnInit() {
@@ -29,178 +32,192 @@ export class CartComponent implements OnInit {
         this.username = localStorage.getItem('username');
 
         this.http.get(this.api,this.params={userid:localStorage.getItem('id')}).then((res)=>{
-             let ress = JSON.parse(JSON.stringify(res));
-             console.log(ress);
-
+            let ress = JSON.parse(JSON.stringify(res));
 
             if(ress.status){
                 this.cartset = ress.data.results[0];
-
+                localStorage.setItem('cartGoods',JSON.stringify(this.cartset));
             }else{
                 this.cartset =[];
             }
- 
+            for(var i=0;i<this.cartset.length;i++){
+                this.carQty += this.cartset[i].num*1;
+            }
         })
-       
+        console.log(localStorage.getItem('id'))
+        this.http.get('http://localhost:88/getAddress',this.params={addressId:localStorage.getItem('id')}).then((res)=>{
 
+            let ress2 = JSON.parse(JSON.stringify(res));
+            console.log(ress2)
+            if(ress2.status){
+                this.address = ress2.data.results;
+                //localStorage.setItem('cartGoods',JSON.stringify(this.cartset));
+            }else{
+                this.address =[];
+            }
+            
+        })
+        
+        
     }
     goConfirmorder(){
-        //console.log(this.currentTrIndexs);
-        //console.log(this.cartset);
         let arr =[];
         for(let i=0;i<this.currentTrIndexs.length;i++){
            arr.push(this.cartset[this.currentTrIndexs[i]]);
-            
         }
-         
 
         this.router.navigateByUrl("confirmorder");
         localStorage.setItem('cartorder', JSON.stringify(arr));
     }
+    goaddAddress(){
+        this.router.navigateByUrl("addNewAddress");
+    }
+    goupdateAddress(){
+        this.router.navigateByUrl("updateAddress");
+    }
+    goHome(){
+        this.router.navigateByUrl("home");
+    }
     getKeys(item){
         return Object.keys(item);
     }
-
     trackByID(item){
         return item.id
     }
     cancelMask(idx){
-        //console.log(12)
-        document.querySelector('.mask').style.display = "none";
+        this.maskStatus = 0;
         this.qty ++;
-         let qtyAll = this.qty+'';
+        let qtyAll = this.qty+'';
         localStorage.setItem('qtyAll', qtyAll);
         console.log(qtyAll)
-        
     }
     count(event,idx){
-
         let subtract = document.querySelectorAll('.glyphicon-minus-sign');
         let add = document.querySelectorAll('.glyphicon-plus-sign');
         
         if(event.target === add[idx]){
             this.cartset[idx].num++
-            
-            this.qty++;
-            let qtyAll = this.qty+'';
-            localStorage.setItem('qtyAll', qtyAll);
-            console.log(qtyAll)
+            if(this.currentTrIndexs.length>0){
+                this.qty++;
+            }
+            this.carQty++;
         }
         else if(event.target === subtract[idx]){
             this.cartset[idx].num--
-            this.qty--;
-            let qtyAll = this.qty+'';
-            localStorage.setItem('qtyAll', qtyAll);
-            console.log(qtyAll)
-            if(this.cartset[idx].num === 0){
-                document.querySelector('.mask').style.display = "block";
-                this.cartset[idx].num = 1;
-
+            if(this.currentTrIndexs.length>0){
+                this.qty--;
             }
-            
+            this.carQty--;
+            if(this.cartset[idx].num === 0){
+                this.maskStatus = 1;
+                this.cartset[idx].num = 1;
+                this.http.post(this.delApi,this.params={cartids:this.cartset[idx].id,userid:localStorage.getItem('id')}).then((res)=>{
+                   
+                })
+            }
         }
-        //console.log(this.cartset[idx].num)
-        console.log(this.http)
+       
         this.http.post(this.updateApi,this.params={cartid:this.cartset[idx].id,num:this.cartset[idx].num}).then((res)=>{
         
-        //console.log(res)
         })
         
     }
     mask(){
-        document.querySelector('.mask').style.display = "block";
+        this.maskStatus = 1;
     }
-
+    addressEdit(){
+        this.addressStatus = 1;
+        //console.log(this.pay1)
+    }
+    close(){
+        this.addressStatus = 0;
+    }
     deleteBtn(idxArray){
-        this.phone = localStorage.getItem('phone');
+        //this.phone = localStorage.getItem('phone');
         let str = '';
 
         for(var i=0;i<idxArray.length;i++){
             str += this.cartset[idxArray[i]].id + ',';
         }
-        console.log(str)
-        this.http.post(this.delApi,this.params={cartids:str.slice(0,-1)}).then((res)=>{
-            
-            console.log(res)
+        this.http.post(this.delApi,this.params={cartids:str.slice(0,-1),userid:localStorage.getItem('id')}).then((res)=>{
+           
         })
-        
-
-        document.querySelector('.mask').style.display = "none";
+        this.maskStatus = 0;
         this.http.get(this.api,this.params={userid:localStorage.getItem('id')}).then((res)=>{
-            if(res.status){
-                this.cartset = res.data.results[0]
+            if(JSON.parse(JSON.stringify(res)).status){
+                //数组中包含对象时，需要将数据进行深拷贝操作
+                this.cartset = JSON.parse(JSON.stringify(res)).data.results[0]
             }else{
-            this.cartset =[]
+                this.cartset =[]
             }
-        
-        //console.log(this.cartset.length)
         })
+        
         this.qty = 0;
         this.totalMoney = 0;
     }
-    delCount(){
-
-    }
+    
     delEdit(){
-        if(document.querySelector('.edit').innerText==="完成"){
-            document.querySelector('.edit').innerText = "编辑";
+        if(this.editText==="完成"){
+            this.editText = "编辑";
             this.edit = 0;
-            document.querySelector('.delCount1').style.display = "none";
-            document.querySelector('.delEdit').style.display = "none";
             
         }
-        else if(document.querySelector('.edit').innerText==="编辑"){
+        else if(this.editText==="编辑"){
             this.edit = 1;
-            document.querySelector('.edit').innerText = "完成";
-            document.querySelector('.delEdit').style.display = "inline-block";
-            document.querySelector('.delCount1').style.display = "none";
+            this.editText = "完成";
         }
     }
     selectTr(_idx){
         if(this.multiple){
             if(this.currentTrIndexs.indexOf(_idx)>-1){
-              this.currentTrIndexs.splice(this.currentTrIndexs.indexOf(_idx),1);
-              
-              this.totalMoney -= this.cartset[_idx].num * this.cartset[_idx].price;
-              this.qty -= this.cartset[_idx].num;
+                this.currentTrIndexs.splice(this.currentTrIndexs.indexOf(_idx),1);
+                  
+                this.totalMoney -= this.cartset[_idx].num * this.cartset[_idx].price;
+                this.qty -= this.cartset[_idx].num;
               
             }else{
-              this.currentTrIndexs.push(_idx);
-              
-              this.totalMoney += this.cartset[_idx].num * this.cartset[_idx].price;
-              this.qty += this.cartset[_idx].num;
-              
+                this.currentTrIndexs.push(_idx);
+                this.totalMoney += this.cartset[_idx].num * this.cartset[_idx].price;
+                this.qty += this.cartset[_idx].num;
             }
         }else{
-        this.currentTrIndexs = [_idx];
-      }
-      //console.log(this.currentTrIndexs)
+            this.currentTrIndexs = [_idx];
+        }
+        
+    }
+    selectAddress(_idxA){
+        if(this.multiple){
+            if(this.currentTrIndexs.indexOf(_idxA)>-1){
+                this.currentTrIndexs.splice(this.currentTrIndexs.indexOf(_idxA),1);
+              
+            }else{
+                this.currentTrIndexs.push(_idxA);
+            }
+        }else{
+            this.currentTrIndexs = [_idxA];
+        }
+        
     }
     selectAll(){
-      if(this.currentTrIndexs.length != this.cartset.length){
-        this.currentTrIndexs = [];
-        this.totalMoney = 0;
-        this.qty = 0;
-        let qtyAll = this.qty+'';
-        localStorage.setItem('qtyAll', '');
-        
-        for(let i=0;i<this.cartset.length;i++){
-            this.currentTrIndexs.push(i);
-            this.totalMoney += this.cartset[i].num * this.cartset[i].price;
-            this.qty += this.cartset[i].num;
-            let qtyAll = this.qty+'';
-            localStorage.setItem('qtyAll', qtyAll);
-        
+        if(this.currentTrIndexs.length != this.cartset.length){
+            this.currentTrIndexs = [];
+            this.totalMoney = 0;
+            this.qty = 0;
+            
+            
+            for(let i=0;i<this.cartset.length;i++){
+                this.currentTrIndexs.push(i);
+                this.totalMoney += this.cartset[i].num * this.cartset[i].price;
+                this.qty += this.cartset[i].num;
+            }
+        }else{
+            this.currentTrIndexs = [];
+            this.totalMoney = 0;
+            this.qty = 0;
         }
-      }else{
-        this.currentTrIndexs = [];
-        this.totalMoney = 0;
-        this.qty = 0;
-        localStorage.setItem('qtyAll', '');
-        
-      }
+       
     }
     
-    
+
    
 }
