@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   apiRegister: string = 'http://localhost:88/register';
   apiUser: string = 'http://localhost:88/registerVer';
   registerStatus:boolean = null;
+  maskStatus:number = 0;
   constructor(private http:HttpService,private router:Router) { }
 
   ngOnInit() {
@@ -52,14 +53,19 @@ export class RegisterComponent implements OnInit {
     this.reg =  mobieReg.test(this.phone);
     //console.log(this.reg)
     this.http.get(this.apiUser,this.params={phone:this.phone}).then((res)=>{
-          this.registerStatus = res;
-          console.log(this.registerStatus)
+        this.registerStatus = JSON.parse(JSON.stringify(res));
+        console.log(this.registerStatus)
+
+
     })   
   }
   saveRegister(){
   console.log(this.phone)
     this.http.post(this.apiRegister,this.params={phone:this.phone,password:this.verRandomCode}).then((res)=>{
       //console.log(res);
+      if(JSON.parse(JSON.stringify(res)).status){
+        this.maskStatus = 1;
+      }
     })
   }
 

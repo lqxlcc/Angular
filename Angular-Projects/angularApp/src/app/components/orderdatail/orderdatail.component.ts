@@ -16,10 +16,10 @@ export class OrderdatailComponent implements OnInit {
 	pay1:boolean = true;
 	totalMoney:number = 0;
 	confirmorder:Array<any> = []; 
-	apiOrder:string = 'http://localhost:88/orderStatus';
+	apiOrder:string = 'http://localhost:88/orderstatuss';
 	orderStatus:number = 1;
-	orderid:string;
-
+	orderid:string = '';
+	params:Object = {};
 	constructor(private http:HttpService,private router:Router) { }
 
 	ngOnInit() {
@@ -32,10 +32,10 @@ export class OrderdatailComponent implements OnInit {
 
 	}
 	confirmPay(){
-		this.http.post('orderstatuss',this.params={statu:this.orderStatus,orderid:this.orderid}).then((res)=>{
+		this.http.post(this.apiOrder,this.params={statu:this.orderStatus,orderid:this.orderid}).then((res)=>{
 
 			console.log(res);
-			if(res.status){
+			if(JSON.parse(JSON.stringify(res)).status){
 				this.router.navigateByUrl("mine");
 
 			}else{

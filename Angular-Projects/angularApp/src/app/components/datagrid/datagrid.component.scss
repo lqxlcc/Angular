@@ -6,7 +6,9 @@
             padding:0 0.266667rem;
             border-bottom: .01rem solid #d8d8d8;
             height:0.88rem;
-
+            span{
+                font-size:0.373333rem;
+            }
             p{
                 height:0.88rem;
 
@@ -14,6 +16,7 @@
                     line-height:0.88rem;
                     display:block;
                     float:left;
+                    font-size:0.373333rem;
                 }
                 .fr{float:right;color: #ff7e05;}
             }
@@ -31,7 +34,8 @@
                 border: .01rem solid #d8d8d8;
                 padding: 0.08rem 0.266667rem;
                 margin-top:0.133333rem;
-                margin-left: 0.133333rem;}
+                margin-left: 0.133333rem;
+            font-size:0.373333rem;}
             
         }
         .h98{

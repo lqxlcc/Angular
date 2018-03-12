@@ -16,15 +16,17 @@ module.exports = {
 					inner join orderproduct od on o.id = od.orderid
 					inner join goods g on g.id = od.gid
 				where 
-					userid = 2`;
+					userid = ${userid}`;
 			db.select(sql,(data)=>{
 				res.send(data);
 				// console.log(data);
 			})
-		})
+		}),
 
 		app.get('/paying',function(req,res){
 			let userid = req.query.userid;
+			// let status = req.query.status;
+			console.log(userid);
 			let sql = `
 				select 
 					o.*,
@@ -37,18 +39,18 @@ module.exports = {
 					inner join orderproduct od on o.id = od.orderid
 					inner join goods g on g.id = od.gid
 				where 
-					userid = 2 and status= 0`;
+					userid = ${userid} and status= 0`;
 			db.select(sql,(data)=>{
 				res.send(data);
 			})
-		})
+		}),
 
 		app.get('/delorder',function(req,res){
 			// let ids = req.body.ids;//购物车商品id
 			let userid = req.query.userid;
 			let gid = req.query.gid;
 			let oid = req.query.orderid;
-			console.log(userid,gid,oid);
+			// console.log(userid,gid,oid);
 			let sql = `
 					delete 
 						
@@ -77,11 +79,11 @@ module.exports = {
 					res.send(dates);
 				})
 			})
-		})
-		app.get('/orderstatuss',function(req,res){
+		}),
+		app.post('/orderstatuss',function(req,res){
 			let status = req.body.statu;
 			let orderid = req.body.orderid;
- 			console.log(status,orderid);
+ 			// console.log(status,orderid);
 
 			let sql =`
 				update 
@@ -89,12 +91,12 @@ module.exports = {
                 set 
                 	orders.status=${status}
                 where 
-                	orders.id='${orderid}'
+                	orders.id='${orderid}'+1
 
 			`;
 
-			db.update(sql,function(res){
-				res.send(res);
+			db.update(sql,function(ress){
+				res.send(ress);
 			})
 
 		})

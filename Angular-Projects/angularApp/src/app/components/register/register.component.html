@@ -54,3 +54,13 @@
         <span class="fr">未收到验证码？</span>
     </div>
 </div>
+<div [class.maskNone]="maskStatus == 1"class="mask">
+   <div class="deleteDialog">
+       <div class="verMass">恭喜注册成功！去登录？</div>
+       <div class="verBtn">
+           <span class="cancelBtn" (click)="cancelMask()">取消</span>
+           <span  (click)="goLogin()">确定</span>
+       </div>
+   </div>
+
+</div>

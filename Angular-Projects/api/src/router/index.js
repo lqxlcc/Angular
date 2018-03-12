@@ -15,7 +15,7 @@ var getHomeMessage = require('./getHomeMessage.js');
 var list = require('./list');
 var product = require('./product');
 
-var myorder = require('./myorder');
+var myorder = require('./myorder.js');
 
 
 module.exports = {

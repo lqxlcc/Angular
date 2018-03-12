@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-dataCarousel',
   templateUrl: './dataCarousel.component.html',
   styleUrls: ['./dataCarousel.component.css']
 })
-export class DataCarouselComponent implements OnInit {
+export class DataCarouselComponent implements OnInit,OnDestroy {
 
   constructor() { }
 
@@ -18,17 +18,21 @@ export class DataCarouselComponent implements OnInit {
   @Input() banners: Array<string>;
   @Input() height: string;
 
+  ngOnDestroy(){
+    clearInterval(this.timer);
+  }
+
   ngOnInit(){
-    document.querySelector('.datacarousel').style.height = this.height;
-    window.thisComponent = this;
+    document.querySelector('.datacarousel')['style']['height'] = this.height;
+    window['thisComponent'] = this;
     this.timer = setInterval(this.autoSlide,3000);
   }
 
   autoSlide(){
-    window.thisComponent.slideDirection = 'left';
-    window.thisComponent.currentImg++;
-    if(window.thisComponent.currentImg >= window.thisComponent.banners.length){
-      window.thisComponent.currentImg = 0;
+    window['thisComponent'].slideDirection = 'left';
+    window['thisComponent'].currentImg++;
+    if(window['thisComponent'].currentImg >= window['thisComponent'].banners.length){
+      window['thisComponent'].currentImg = 0;
     }
   }
 
@@ -55,7 +59,7 @@ export class DataCarouselComponent implements OnInit {
         this.currentImg = 0;
       }
     }
-    this.timer = setInterval(window.thisComponent.autoSlide,3000);
+    this.timer = setInterval(window['thisComponent'].autoSlide,3000);
   }
 
 }

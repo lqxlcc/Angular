@@ -28,5 +28,8 @@ export class MineComponent implements OnInit {
     goRegister(){
         this.router.navigateByUrl("register");  
     }
+    gotopaying(){
+      this.router.navigateByUrl("myorder/paying");
+    }
 
 }
