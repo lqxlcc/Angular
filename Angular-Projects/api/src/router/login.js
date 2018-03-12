@@ -6,7 +6,7 @@ module.exports = {
         app.get('/login', function(req, res){
             var phone = req.query.phone;
             var password = req.query.password;
-            
+            console.log(phone,password);
             var sql = `
             select 
                
