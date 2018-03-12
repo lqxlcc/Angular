@@ -11,20 +11,20 @@
         </ul>
     </div>
     <div class="cartMainlqx">
-        <div class="cartAddress"  (click)="addressEdit()" *ngIf="address">
+        <div class="cartAddress"  (click)="addressEdit()" *ngIf="address[0]">
             <span class="borderTop"></span>
             <span class="borderBottom"></span>
            
             <p>
-                <span class="username">{{address.name}}</span>
-                <span class="phone">{{address.phone}}</span>
+                <span class="username">{{address[0].name}}</span>
+                <span class="phone">{{address[0].phone}}</span>
                 <span class="addressType">公司</span>
             </p>
             <div class="localAddress">
                 <i class="glyphicon glyphicon-map-marker"></i>
                 <p>
-                    <span class="street">{{address.city}} </span>
-                    <span class="detailAddress">{{address.city}} {{address.road}} {{address.room}}</span>
+                    <span class="street">{{address[0].city}} </span>
+                    <span class="detailAddress">{{address[0].city}} {{address[0].road}} {{address[0].room}}</span>
                 </p>
             </div>
             <i class="glyphicon glyphicon-pencil"></i>
@@ -109,18 +109,19 @@
             <span class="close" (click)="close()"><i>&times;</i></span>
             <h2>收货地址</h2>
         </div>
-        <ul>
+        <ul *ngFor="let obj of address;let idxa = index;">
             <li>
-                <i class="circle"></i>
+                <i class="circle" [class.activedA]="currentTrIndexs.indexOf(idxa)>-1" (click)="selectAddress(idxa)"></i>
                 <div class="adm">
-                    <p>ttt</p>
-                    <p>广东</p>
+                    <p>{{obj.name}} {{obj.phone}}</p>
+                    <p>{{obj.city}} {{obj.road}} {{obj.room}}</p>
                 </div>
-                <i class="glyphicon glyphicon-pencil editaddress"></i>
+                <i class="glyphicon glyphicon-pencil editaddress" *ngIf="currentTrIndexs.indexOf(idxa)<0"></i>
+                <i class="glyphicon glyphicon-pencil editaddress activedU" *ngIf="currentTrIndexs.indexOf(idxa)>-1" (click)="goupdateAddress()"></i>
             </li>
            
         </ul>
-        <div class="checkbtn" >新增地址</div>
+        <div class="checkbtn"(click)="goaddAddress()" >新增地址</div>
     </div>  
 
 </div>

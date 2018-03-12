@@ -23,8 +23,8 @@ export class CartComponent implements OnInit {
     qty:number = 0;
     carQty: number = 0;
     maskStatus:number = 0;
-    addressStatus:number = 1;
-    address:number;
+    addressStatus:number = 0;
+    address:Array<any> = [];
     constructor(private http:HttpService,private router:Router) { }
 
     ngOnInit() {
@@ -44,12 +44,13 @@ export class CartComponent implements OnInit {
                 this.carQty += this.cartset[i].num*1;
             }
         })
-        this.http.get('http://localhost:88/getAddress',this.params={addressId:localStorage.getItem('addressId')}).then((res)=>{
+        console.log(localStorage.getItem('id'))
+        this.http.get('http://localhost:88/getAddress',this.params={addressId:localStorage.getItem('id')}).then((res)=>{
 
             let ress2 = JSON.parse(JSON.stringify(res));
-            //console.log(ress2)
+            console.log(ress2)
             if(ress2.status){
-                this.address = ress2.data.results[0];
+                this.address = ress2.data.results;
                 //localStorage.setItem('cartGoods',JSON.stringify(this.cartset));
             }else{
                 this.address =[];
@@ -67,6 +68,12 @@ export class CartComponent implements OnInit {
 
         this.router.navigateByUrl("confirmorder");
         localStorage.setItem('cartorder', JSON.stringify(arr));
+    }
+    goaddAddress(){
+        this.router.navigateByUrl("addNewAddress");
+    }
+    goupdateAddress(){
+        this.router.navigateByUrl("updateAddress");
     }
     goHome(){
         this.router.navigateByUrl("home");
@@ -175,6 +182,19 @@ export class CartComponent implements OnInit {
             }
         }else{
             this.currentTrIndexs = [_idx];
+        }
+        
+    }
+    selectAddress(_idxA){
+        if(this.multiple){
+            if(this.currentTrIndexs.indexOf(_idxA)>-1){
+                this.currentTrIndexs.splice(this.currentTrIndexs.indexOf(_idxA),1);
+              
+            }else{
+                this.currentTrIndexs.push(_idxA);
+            }
+        }else{
+            this.currentTrIndexs = [_idxA];
         }
         
     }

@@ -78,7 +78,7 @@ module.exports = {
         })
         app.get('/getAddress',function(req,res){
             var id = req.query.addressId;
-            var sql = `select * from useraddress where id=${id}`;
+            var sql = `select * from useraddress where userid=${id}`;
             db.select(sql,function(result){
                 res.send(result);
             })
