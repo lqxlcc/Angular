@@ -26,12 +26,7 @@ export class DataSmallCateComponent implements OnInit,OnDestroy {
   }
 
   goList(){
-    this.router.navigate(['list'], {
-        queryParams: {
-            smalltypeid:0,
-            bigtypeid:this.bigTypeId
-        }
-    });
+    this.router.navigate(['list/'+0+"/"+this.bigTypeId]);
   }
 
   gotoList(_idx){
