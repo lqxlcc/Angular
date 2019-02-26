@@ -1,0 +1,21 @@
+<div id="category">
+    <div class="head">
+        <a href="search">
+            <i class="el-icon-search"></i>
+            <input type="text" placeholder="奇异果" />
+        </a>
+    </div>
+    <div class="main">
+        <ul class="main_l">
+            <li *ngFor="let obj of bigCate;let idx = index" [class.active]="activeCate==idx" (touchstart)="changeCate(idx)">
+                {{obj.name}}
+            </li>
+        </ul>
+        <div class="main_r">
+            <app-dataSmallCate [bigCate]="bigCate" [bigTypeId]="bigTypeId" [activeCate]="activeCate" [smallCate]="bigCate[activeCate] ? bigCate[activeCate].cate : []"></app-dataSmallCate>
+        </div>
+    </div>
+    <div class="foot">
+        <app-footer></app-footer>
+    </div>
+</div>

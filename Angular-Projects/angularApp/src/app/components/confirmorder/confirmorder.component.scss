@@ -1,0 +1,271 @@
+
+.confirmorderLqx{
+    
+    .confirmorderHeader{
+        height:1.226667rem;
+        .headerUl{
+            li{
+                height:1.226667rem;
+                line-height:1.226667rem;
+                padding:0 0.266667rem;
+                border-bottom: .01rem solid #d8d8d8;
+                h3{
+                    line-height:1.226667rem;
+                    position:relative;
+                    text-align:center;
+                    font-size: 0.48rem;
+                    color: #75a739;
+                    a{
+                        color: #75a739;
+
+                        i{
+                            position:absolute;
+                            left:0;
+                            top:0.266667rem;
+                            font-size:0.733333rem;
+                        }
+                    }
+                    span{
+                        font-size: 0.32rem;
+                        position:absolute;
+                        right:0;
+                        top:0;    
+                    }
+                }
+            }
+
+        }
+    }
+    .confirmorderMainlqx{
+        
+        .confirmorderAddress{
+            position:relative;
+            height:3.066667rem;
+            padding: 0.533333rem 0.8rem;
+            .borderTop{
+                display:block;
+                height:0.053333rem;
+                width:100%;
+                position:absolute;
+                top:0;
+                left:0;
+                background:url('https://wap.fruitday.com/content/images/main/border.png');
+            }
+            .borderBottom{
+                display:block;
+                height:0.053333rem;
+                width:100%;
+                position:absolute;
+                bottom:0;
+                left:0;
+                background:url('https://wap.fruitday.com/content/images/main/border.png');
+            }
+            p{font-size: 0.426667rem;padding-left:0.266667rem;margin-bottom: 0.266667rem;
+                span{
+                    padding-right:0.533333rem;
+                }
+                .addressType{
+                    padding: 0 .05rem;
+                    font-size: 0.373333rem;
+                    color: #ff8000;
+                    border: .01rem solid #ff8000;
+                    height: 0.373333rem;
+                    line-height: 0.426667rem;
+                    border-radius: 0.106667rem;
+                   
+                }
+            }
+            .localAddress{
+               
+                .glyphicon{position:absolute;top:50%;left:0.266667rem;color:#ff8000;font-size:0.48rem;-webkit-transform:translate(0 -50%);
+                   }
+                   p{
+                        color: #878787;
+                        font-size: 0.32rem;
+                   }
+            }
+        }
+        .confirmorderMain{
+            
+            .confirmorderNav{
+                height:1.173333rem;
+                line-height:1.173333rem;
+                border-bottom: 0.026667rem solid #d8d8d8;
+                padding:0 0.266667rem;
+                background:url('https://wap.fruitday.com/content/images/order/order-bg.png');
+                span{display:inline-block;float:left;font-size:0.48rem;}
+                .tag{height:0.48rem;font-size:0.32rem;line-height:0.48rem;margin-top:0.266667rem;color:#fff;}
+                .fr{
+                    float:right;
+                    font-size:0.32rem;
+                }
+            }
+            .confirmorderTime{
+                height:1.173333rem;
+                line-height:1.173333rem;
+                border-bottom: 0.026667rem solid #d8d8d8;
+                padding:0 0.266667rem;
+                
+                span{display:inline-block;float:left;font-size:0.32rem;}
+                
+                .fr{
+                    float:right;
+                    font-size:0.32rem;
+                }
+            }
+            .confirmorderGoodsList{
+                
+                .confirmorderList{
+                    
+                    .h98{
+                        padding:0 0.266667rem;
+                        padding-top:0.266667rem;
+                        height:2.986667rem;
+                        border-bottom:0.026667rem solid #d8d8d8;
+                        .pt{
+                            position:relative;
+                            width: 0.373333rem;
+                            margin-right:0.133333rem;
+                            height: 0.373333rem;
+                            .circle{
+                                display: inline-block;
+                                position:absolute;
+                                top:0.266667rem;
+                                left:0;
+                                width: 0.373333rem;
+                                height: 0.373333rem;
+                                margin-right: 0.266667rem;
+                                border: 0.026667rem solid #bfbfbf;
+                                background: #fff;
+                                color: #fff;
+                                border-radius: 100%;
+                                line-height: 0.373333rem;
+                                text-align: center;
+
+                            } 
+                            .actived{background:#ff8000;}
+                        }
+                        
+                        div{
+                            float:left;
+                           img{width:2.4rem;height:2.4rem;}
+                        } 
+                        .pl10{
+                           p{
+                            font-size:0.373333rem;
+                            line-height:0.693333rem;
+                             
+                                 
+                        }
+                        span{background: #ff8000;color:#fff;font-size:0.373333rem;}
+                            .price{color: #ff8000;background: #fff;font-size:0.48rem;}
+                        }
+                        .fr{
+                           float:right;
+                           line-height:2.7rem;
+
+                        i{
+                            font-size:0.48rem;
+                            color: #ff8000;
+                               
+                        }
+                        span{margin:0 0.266667rem;font-size:0.426667rem;}
+                           
+                        }
+                        .mask{
+                            display:none;
+                            z-index: 92;
+                            background: rgba(0,0,0,.5);
+                            top: 0;
+                            bottom: auto;
+                            left: 0;
+                            width: 100%;
+                            position: fixed;
+                            height: 100%;
+                            z-index:1080;
+                            .deleteDialog{
+                                position: fixed;
+                                z-index: 99;
+                                top: 50%;
+                                left: 50%;
+                                width: 7.2rem;
+                                min-height: 4.0rem;
+                                margin-top: -2.0rem;
+                                margin-left: -3.6rem;
+                                background: #fff;
+                                overflow: hidden;
+                                border-radius: .06rem .06rem .06rem .06rem;
+                                -webkit-box-shadow: 0 0.053333rem 0.106667rem 0 rgba(0,0,0,.5);
+                                box-shadow: 0 0.053333rem 0.106667rem 0 rgba(0,0,0,.5);
+                                .verMass{
+                                    display: table;
+                                    width: 100%;
+                                    height: 2.8rem;
+                                    color: #000;
+                                    text-align: center;
+                                    line-height: 2.8rem;
+                                    font-size:0.373333rem;
+                                }
+                                .verBtn{
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    border-top: .01rem solid #bfbfbf;
+                                    span{
+                                        height:1.226667rem;
+                                        line-height:1.226667rem;
+                                       color: #008eff;
+                                        width: 49%;
+                                        font-size: 0.48rem;
+                                        display: inline-block;
+                                        text-align: center;
+
+                                    }
+                                    .cancelBtn{
+                                        border-right: 0.026667rem solid #bfbfbf;
+                                    }
+                                }
+                            }
+                            
+                        } 
+                        .verDeleteDialog{
+                            display:none;
+                            background:#fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .foot{
+        height:1.28rem;
+        .confirmorderFoot{
+            
+           .priceT{
+                padding:0.266667rem;
+                float:left;
+                width:75%;
+                font-size:0.373333rem;
+                color:#ff7e05;
+                i{font-size:0.48rem;}
+           }
+            .fr{
+                height:1.28rem;
+                width:25%;
+                background:#ff8000;
+                float:right;
+                text-align:center;
+                line-height:1.28rem;
+                .delCount{background: #ff7e05;font-size:0.426667rem;color:#fff;border:none;}
+               
+            }
+        }
+    }
+    .navbar-fixed-bottom{box-shadow: 0 -0.053333rem 0.053333rem 0 rgba(0,0,0,.15); }
+    
+    
+    
+}
+
+

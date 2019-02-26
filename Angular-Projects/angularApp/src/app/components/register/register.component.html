@@ -1,0 +1,66 @@
+<div class="registerLqx">
+    <div class="registerHeader">
+        <ul class="headerUl  navbar navbar-default navbar-fixed-top">
+            <li>
+                <h3>
+                    <a href="javascript:history.go(-1)"><i class="el-icon-arrow-left"></i></a>
+                    手机号码快捷注册
+                </h3>
+            </li>
+        </ul>
+    </div>
+    <div class="registerMain">
+        <ul class="registerPhone" (input)="ver()">
+            <li class="weui-cell__ft">
+            <form name="myForm" novalidate>
+                <i class="glyphicon glyphicon-phone"></i>
+                <input type="tel" placeholder="请输入手机号" class="phone mass"[(ngModel)]="phone" name="phone"/>
+                <span *ngIf="phone==''" style="color:red">
+                    <span>手机号是必须的。
+                    </span>
+                </span>
+               
+                <span *ngIf="reg==false && phone!=''" style="color:red">
+                    <span >请输入正确手机号。
+                    </span>
+                </span>
+                <span  *ngIf="registerStatus==true" style="color:red">
+                    <span >手机号已注册。
+                    </span>
+                </span>
+                <span *ngIf="reg==true&&registerStatus==false">
+                    <button  class="weui-vcode-btn getVer" [disabled]="disabled" (click)="getCode($event)">{{tips}}</button>
+                </span> 
+                </form>
+            </li>
+            <li>
+                <i class="glyphicon glyphicon-phone"></i>
+                
+                <input type="text" placeholder="验证码" class="ver"[value]="randomCode"/>
+            </li>
+            <li>
+                <i class="glyphicon glyphicon-phone"></i>
+                
+                <input type="text" placeholder="确认验证码"[(ngModel)]="verRandomCode" name="verRandomCode"/>
+            </li>
+            <li class="lastLi">
+                首次用手机号登录将自动为您注册，并有豪礼相送。
+            </li>
+        </ul>
+    </div>
+    <div class="register">
+        <p><input type="button" value="注册" [disabled]="!phone||!randomCode||randomCode!=verRandomCode" (click)="saveRegister()"/></p>
+        <a (click)="goLogin()"><span>账号密码登录</span></a>
+        <span class="fr">未收到验证码？</span>
+    </div>
+</div>
+<div [class.maskNone]="maskStatus == 1"class="mask">
+   <div class="deleteDialog">
+       <div class="verMass">恭喜注册成功！去登录？</div>
+       <div class="verBtn">
+           <span class="cancelBtn" (click)="cancelMask()">取消</span>
+           <span  (click)="goLogin()">确定</span>
+       </div>
+   </div>
+
+</div>

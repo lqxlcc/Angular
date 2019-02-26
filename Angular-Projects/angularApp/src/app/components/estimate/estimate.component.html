@@ -1,0 +1,40 @@
+<div class="main_top">
+    <dt><span>95%</span><span>好评</span></dt>
+    <div class="main_tr">
+        <p><span>口感<nz-rate [ngModel]="5" nzDisabled></nz-rate></span></p>
+        <p><span>颜值</span><nz-rate [ngModel]="4" nzDisabled></nz-rate></p>
+    </div>
+</div>
+
+<div class="estimate">
+    <div class="estimate_contain" (click)="switchBgc($event)">
+        <span class="estimate_l" >评价()</span>
+        <span class="estimate_r" >嗮图</span>
+        
+    </div>
+</div>
+<ul class="client">
+    <ng-template ngFor let-obj [ngForOf]="datas">
+        <li class="client_li" *ngIf="datas != 'undefined'">
+            <div class="client_p">
+                <img src="https://imgqn2.fruitday.com/up_images/default_userpic.png" />
+                <dl>
+                    <span class="client_span">{{obj['phone']}}</span>
+                    <i class="client_i">{{obj['date']}}</i>
+                </dl>
+
+                <p>
+                    <span>口感<nz-rate [ngModel]="3" nzDisabled class="mmg"></nz-rate></span>
+                    <span>颜值</span><nz-rate [ngModel]="4" nzDisabled class="mmg"></nz-rate>
+                </p>
+                    
+
+            </div>
+            <div class="client_btn">
+                <output>{{obj['contant']}}</output>
+                
+            </div>
+            
+        </li>
+    </ng-template>
+</ul>

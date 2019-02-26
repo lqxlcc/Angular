@@ -1,0 +1,163 @@
+a{color: #878787;}
+.mineLqx{
+   
+    .headerLqx{
+        height:5.066667rem;
+        .headerAccount{
+            .accountUl{
+                padding:0.8rem 0.4rem 0.8rem 30%;
+                height:3.2rem;
+                text-align:center;
+                line-height: 0.6rem;
+                position:relative;
+                li{
+                    float: left;
+                    width:30%;
+                    u{
+                        display:block;
+                        width:0.266667rem;
+                        background:url("../../img/mine_level.png");
+                    }
+                    img{
+                        position:absolute;
+                        bottom:0.8rem;
+                        left:20%;
+                        width:0.533333rem;
+                        height:0.533333rem;
+                    }
+                    span{
+                        display:block;
+                        font-size:0.426667rem;
+
+                    }
+                    .login{
+                        color:#ff8000;
+
+                    }
+                    .sign{
+                        background:#ff8000;
+                        color:#fff;
+                        font-size: 0.373333rem;
+                        border-radius: 0.266667rem;
+                        text-align:center;
+                    }
+                }
+                .w40{
+                    width:50%;
+                    text-align:left;
+                }
+                .code{
+                    width:40%;float:right;
+                    i{font-size:0.8rem;}
+                    span{font-size:0.373333rem;}
+                }
+            }
+        }
+        .headerDetail{
+            .dettailUl{
+                height:1.866667rem;
+                padding:0.4rem;
+                line-height: 0.533333rem;
+                li{
+                    float:left;
+                    width:25%;
+                    text-align:center;
+                   span{
+                        font-size: 0.373333rem;
+                        display:block;
+                   } 
+                   i{color:#ff8000;font-size:0.373333rem;}
+                }
+            }
+        }
+    }
+    .mineOrder{
+        padding:0 0.266667rem;
+        .orderNav{
+            height:1.2rem;
+            color: #878787;
+            border-bottom:1px solid #ece9e5;
+            a{
+                display:block;
+                width:100%;
+                height:1.2rem;
+                h3{
+                    float:left;
+                    line-height: 1.18rem;
+                    i{
+                        vertical-align: middle;
+                        font-weight: normal;
+                        color: #878787;
+                        font-size: 0.533333rem;
+
+                    }
+                    span{
+                        color: #3a3a3a;
+                        padding-left:0.266667rem;
+                        font-size: 0.373333rem;
+                    }
+                }
+                p{
+                    float:right;
+                     line-height: 1.18rem;
+                    font-size: 0.373333rem;
+                    i{
+                      
+                        font-size: 0.666667rem;
+                    }
+                }
+            }
+        }
+        .orderNavListUl{
+            height:2.133333rem;
+            line-height: 0.613333rem;
+            padding:0.586667rem 0 0.32rem 0;
+            li{
+                text-align:center;
+                float:left;
+                width:20%;
+                i{
+                    color: #878787;
+                    font-size:0.426667rem;
+                }
+                span{
+                    display:block;
+                    color: #3a3a3a;
+                    font-size: 0.373333rem;
+                }
+            }
+
+        }
+    }
+    .mineLink{
+        padding:0 0.266667rem;
+        .linkList{
+            padding-top:0.533333rem;
+            li{
+                height:1.2rem;
+                line-height:1.2rem;
+                i{
+                    vertical-align: middle;
+                    font-weight: normal;
+                    color: #878787;
+                    font-size: 0.533333rem;
+                }
+                span{
+                    color: #3a3a3a;
+                    padding-left:0.266667rem;
+                    font-size: 0.373333rem;
+                }
+                p{
+                    float:right;
+                    position:relative;
+                    font-size: 0.373333rem;
+                   
+                     line-height: 1.18rem;
+                    i{
+                        font-size: 0.666667rem;
+                    }
+                }
+            }
+        }
+    }
+}

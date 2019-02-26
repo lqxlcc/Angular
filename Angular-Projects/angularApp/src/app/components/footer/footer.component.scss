@@ -1,0 +1,86 @@
+app-footer{height:2.666667rem;}
+.navbar-default{box-shadow: 0 -2px 2px 0 rgba(0,0,0,.15);}
+.navbar-default .navbar-nav{width:90%;margin:0 auto;}
+.navbar-default .navbar-nav>li{float:left;width:25%;}
+.navbar-default .navbar-nav>li>a:hover{color:#65a032;}
+.navbar-default .navbar-nav>li>a.startIn{color:#65a032;}
+.navbar-default .navbar-nav>li>a>span{display:block;font-size:0.373333rem;text-align: center;}
+.navbar-default .navbar-nav>li>a>.glyphicon{font-size:0.533333rem;padding-bottom:0.266667rem;}
+.activedqty{
+    background: #ff4848;
+    line-height: 0.373333rem;
+    border-radius: 0.4rem;
+    min-width: 0.373333rem;
+    padding: 0 0.053333rem;
+    color: #fff;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    position: absolute;
+    margin-left: 0.32rem;
+    
+    
+}
+.mask{
+    display:none;
+    z-index: 92;
+    background: rgba(0,0,0,.1);
+    top: 0;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    z-index:1080;
+    .deleteDialog{
+        position: fixed;
+        z-index: 99;
+        top: 50%;
+        left: 50%;
+        width: 7.2rem;
+        min-height: 4.0rem;
+        margin-top: -2.0rem;
+        margin-left: -3.6rem;
+        background: #fff;
+        overflow: hidden;
+        border-radius: .06rem .06rem .06rem .06rem;
+        -webkit-box-shadow: 0 0.053333rem 0.106667rem 0 rgba(0,0,0,.5);
+        box-shadow: 0 0.053333rem 0.106667rem 0 rgba(0,0,0,.5);
+        .verMass{
+            display: table;
+            width: 100%;
+            height: 2.8rem;
+            color: #000;
+            text-align: center;
+            line-height: 2.8rem;
+            font-size:0.373333rem;
+        }
+        .verBtn{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-top: .01rem solid #bfbfbf;
+            span{
+                height:1.226667rem;
+                line-height:1.226667rem;
+               color: #008eff;
+                width: 48%;
+                font-size: 0.48rem;
+                display: inline-block;
+                text-align: center;
+
+            }
+            .cancelBtn{
+                border-right: 0.026667rem solid #bfbfbf;
+            }
+        }
+    }
+    
+} 
+.maskNone{
+    display:block;
+}
+
+

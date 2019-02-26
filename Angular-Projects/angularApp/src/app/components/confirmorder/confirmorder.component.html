@@ -1,0 +1,94 @@
+<div class="confirmorderLqx">
+    <div class="confirmorderHeader">
+        <ul class="headerUl  navbar navbar-default navbar-fixed-top" >
+            <li>
+                <h3>
+                    <a href="javascript:history.go(-1)"><i class="el-icon-arrow-left"></i></a>
+                    确认订单
+                    
+                </h3>
+            </li>
+        </ul>
+    </div>
+    <div class="confirmorderMainlqx">
+        <div class="confirmorderAddress">
+            <span class="borderTop"></span>
+            <span class="borderBottom"></span>
+           
+            <p>
+                <span class="username">{{username}}</span>
+                <span class="phone">{{phone}}</span>
+                <span class="addressType">公司</span>
+            </p>
+            <div class="localAddress">
+                <i class="glyphicon glyphicon-map-marker"></i>
+                <p>
+                    <span class="street">元岗街道 </span>
+                    <span class="detailAddress">广东省广州市天河区元岗街道兆联元岗创意产业园D座 </span>
+                </p>
+            </div>
+            <i class=""></i>
+        </div>
+        <div class="confirmorderMain">
+            <div class="confirmorderNav">
+                <span>包裹1</span>
+                <span class="tag" style="background: #FF8000"> 明日达  </span>
+                <span class="fr"><i>{{num}}</i>件商品</span>
+            </div>
+            <div class="confirmorderTime">
+                <span>送达时间</span>
+                
+                <span class="fr">03月10日|周五 09:00-18:00</span>
+            </div>
+            <div class="confirmorderGoodsList" *ngIf="cartorder">
+                <ul class="confirmorderList">
+                    
+                    <li class="h98" *ngFor="let obj of cartorder;let idx = index;"  >
+                        <div>
+                            <img [src]="obj.mainimg" />
+                        </div>
+                        <div class="pl10">
+                            <p>{{obj.describes}}</p>
+                            <p><i>300g</i><i>约0.30kg</i></p>
+                            <span>明日达</span>
+                        </div>
+                        <div class="fr">
+                            
+                            <span class="num">x{{obj.num}}</span>
+                            <span class="price">￥{{obj.price*obj.num}}</span>
+                        </div>
+                        <div class="mask">
+                           <div class="deleteDialog">
+                               <div class="verMass">确定要删除{{obj.describes}}？</div>
+                               <div class="verBtn">
+                                   <span class="cancelBtn" (click)="cancelMask(idx)">取消</span>
+                                   <span  (click)="deleteBtn(currentTrIndexs)">确定</span>
+                               </div>
+                           </div>
+
+                        </div>
+                        <div class="verDeleteDialog">删除成功</div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+   <div class="foot">
+        <div class="confirmorderFoot navbar navbar-default navbar-fixed-bottom" >
+            <div class="priceT">
+                <p>待支付<i>￥{{totalMoney}}</i></p>
+            </div>
+            
+            <div class="fr">
+                <button class="delCount"(click)="goOrderdatail()">提交订单</button>
+                
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+

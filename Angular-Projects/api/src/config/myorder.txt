@@ -1,0 +1,8 @@
+{
+	"orderApi":"orderAll",
+	"payingApi":"paying",
+	"sendingApi":"sending",
+	"receivingApi":"receiving",
+	"evaluatingApi":"evaluating",
+	"deleteApi":"delorder"
+}

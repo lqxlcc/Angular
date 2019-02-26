@@ -1,0 +1,99 @@
+<div class="orderdatail">
+	<header>
+		<h3>
+            <a href="javascript:history.go(-1)"><i class="el-icon-arrow-left"></i></a>
+            订单详情
+        </h3>
+	</header>
+	<main>
+		
+		<div class="info">
+			<span *ngIf ="aa">已取消</span>
+			<span *ngIf ="bb">待付款</span>
+			<p>你的订单已取消欢迎来到天天果园</p>
+			<p>2018-03-08</p>
+		</div>
+		<div class="odnum">
+			<p>订单编号：P13485505085</p>
+		</div>
+		<div class="address">
+			<span>收货地址：</span>
+			<div class="cont">
+				<h5>张三</h5>
+				<p>广东省广州市天河区广州市天河区政务服务中心软件路13号 23</p>
+			</div>
+		</div>
+		<div class="time">
+			<p>送达时间：<span>20180309|17:23:43</span></p>
+		</div>
+		 <div class="myorderMain">
+	        <ul class="myordreList">
+	            <li>
+	                <p>
+	                    <span>2件商品重1.36kg</span>
+	                </p>
+	               
+	            </li>
+	            <li class="h98" *ngFor = "let obj of confirmorder;let idx = index;">
+	                <div>
+	                    <img [src]="obj.mainimg" />
+	                </div>
+	                <div class="pl10">
+	                    <p>{{obj.describes}}</p>
+	                    <i>{{obj.num}}个</i>
+	                </div>
+	                <div class="fr">
+	                	<span><i>&times;1</i></span>
+	                    
+	                    <span>￥{{obj.price}}</span>
+	                </div>
+
+	            </li>
+	            <li class="price">
+	                <p>商品总价：</p><span>￥{{totalMoney}}</span>
+	            </li>
+	            <li class="price">
+	                <p>配送费：</p><span>￥10</span>
+	            </li>
+	            <li class="price">
+	                <span>实付金额：￥{{totalMoney}}</span>
+	            </li>
+	        </ul>
+    	</div>
+	</main>
+	<footer>
+		<span (click)="qxd()">取消订单</span>
+		<span class="qx" (click)="pay()">立即支付</span>
+		<div  [class.mask] = "cc" *ngIf="cc">
+	        <div class="deleteDialog">
+               <div class="verMass">
+               		<h2>你确定要取消订单吗？</h2>
+               		<h2>退款将于5个工作日内退回支付账户</h2>
+               </div>
+               <div class="verBtn">
+                   <span class="cancelBtn" (click)="cancelMask()">取消</span>
+                   <span  (click)="deleteBtn()">确定</span>
+               </div>
+	         </div>
+        </div>
+        <div class="pay" *ngIf="pay1">
+        	<div class="payb">
+        		<div class="p_title">
+        			<span class="close" (click)="close()"><i>&times;</i></span>
+        			<h2>付款详情</h2>
+        		</div>
+        		<ul>
+        			<li>
+        				<span class="left">支付方式</span>
+        				<span class="right">微信支付</span>
+        			</li>
+        			<li>
+        				<span class="left">需付款</span>
+        				<span class="price">￥{{totalMoney}}</span>
+        			</li>
+        		</ul>
+        		<div class="checkbtn" (click)="confirmPay()">确认支付</div>
+        	</div>	
+        </div>
+	</footer>
+</div>

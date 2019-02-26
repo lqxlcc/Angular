@@ -1,0 +1,63 @@
+<div class="myorderLqx">
+    <div class="myorderHeader">
+        <ul class="headerUl  navbar navbar-default navbar-fixed-top">
+            <li>
+                <h3>
+                    <a href="javascript:history.go(-1)"><i class="el-icon-arrow-left"></i></a>
+                    我的订单
+                </h3>
+            </li>
+            <li class="menu">
+                <a routerLink="orderAll">
+                    <span>全部</span>
+                </a>
+                <a routerLink="paying">
+                    <span>待付款</span>
+                </a>
+                <a routerLink="sending">
+                    <span>待发货</span>
+                </a>
+                <a routerLink="receiving">
+                    <span>待收货</span>
+                </a>
+                <a routerLink="evaluating">
+                    <span>待评价</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+   <!--  <div class="myorderMain">
+        <ul class="myordreList">
+            <li>
+                <p>
+                     <span>id343254</span>
+                    <span class="fr">状态</span>
+                </p>
+               
+            </li>
+            <li class="h98">
+                <div>
+                    <img src="https://imgqn8.fruitday.com/images/product_pic/500/1/1-180x180-500-3A4YF743.jpg" />
+                </div>
+                <div class="pl10">
+                    <p>decription</p>
+                    <i>kg</i>
+                </div>
+                <div class="fr">
+                    <i>&times;1</i>
+                </div>
+
+            </li>
+            <li>
+                <span>共1件商品 合计：￥88.90（含运费￥20.00）</span>
+            </li>
+            <li>
+                <input type="button" value="删除订单" class="delete"/>
+            </li>
+        </ul>
+    </div> -->
+    <div class="main">
+        <router-outlet></router-outlet>
+    </div>
+</div>

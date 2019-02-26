@@ -1,0 +1,56 @@
+<div class="loginLqx">
+    <div class="loginHeader">
+        <ul class="headerUl  navbar navbar-default navbar-fixed-top">
+            <li>
+                <h3>
+                    <a href="javascript:history.go(-1)"><i class="el-icon-arrow-left"></i></a>
+                    手机号码快捷登录
+                </h3>
+            </li>
+        </ul>
+    </div>
+    <div class="loginMain" >
+       
+        <ul class="loginPhone"  (input)="ver()">
+            <li class="weui-cell__ft" >
+            
+                <i class="glyphicon glyphicon-phone"></i>
+                <input type="tel" placeholder="请输入手机号"  class="phone mass" [(ngModel)]="phone" name="phone" />
+
+                <span *ngIf="phone==''" style="color:red">
+                    <span >手机号是必须的。
+                    </span>
+
+                </span>
+               
+                <span  *ngIf="reg==false&&phone!=''" style="color:red">
+                    <span >请输入正确手机号。
+                    </span>
+                </span>
+            </li>
+            <li>
+                <i class="glyphicon glyphicon-phone"></i>
+                
+                <input type="text" placeholder="请输入密码" class="password mass" [(ngModel)]="password" name="password"/>
+                <span *ngIf="password==''" style="color:red">
+                    <span >密码是必须的。
+                    </span>
+                </span>
+            </li>
+            
+            <li class="lastLi">
+                首次用手机号登录将自动为您注册，并有豪礼相送。
+            </li>
+        </ul>
+    </div>
+    <div class="login">
+        <p>
+            <a (click)="goMine()">
+            <input type="button" value="登录" [disabled]="loginStatus==false" >
+              </a>  
+        </p>
+        <a (click)="goRegister()">
+        <span>立即注册</span></a>
+        <span class="fr">未收到验证码？</span>
+    </div>
+</div>

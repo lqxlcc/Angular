@@ -1,0 +1,42 @@
+<div class="personalLqx">
+    <div class="personalHeader">
+        <ul class="headerUl  navbar navbar-default navbar-fixed-top">
+            <li>
+                <h3>
+                    <a href="javascript:history.go(-1)"><i class="el-icon-arrow-left"></i></a>
+                    个人信息
+                </h3>
+            </li>
+        </ul>
+    </div>
+    <ul class="information">
+        <li>
+            昵称
+            <span class="fr">{{phone}}</span>
+        </li>
+        <li>
+            会员等级
+            <img src="https://wap.fruitday.com/content/images/me/old_v0.png"/>
+        </li>
+        <li>
+            性别
+            <span>保密</span>
+        </li>
+        <li>
+            生日
+            <span>0</span>
+        </li>
+        <li>
+            <a (click)="goAddressM()">
+            管理地址
+            <span class="el-icon-arrow-right"></span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="exit navbar navbar-default navbar-fixed-bottom">
+        <a (click)="goLogin()">
+            <input type="button" value="退出登录" class="btnExit"/>
+        </a>
+    </div>
+</div>

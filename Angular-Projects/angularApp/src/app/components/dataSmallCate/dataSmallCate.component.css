@@ -1,0 +1,7 @@
+.smallcate{padding:0.266667rem;}
+.smallcate .s-head{position:relative;}
+.smallcate .s-head p{text-align:center;font-size:0.373333rem;line-height:0.8rem;}
+.smallcate .s-head a{position:absolute;right:0;top:0;font-size:0.266667rem;line-height:0.8rem;color:#878787;}
+.smallcate .s-main a{float:left;padding:0 0.266667rem 0.533333rem;}
+.smallcate .s-main a img{width:1.866667rem;height:1.866667rem;}
+.smallcate .s-main a h3{font-size:0.32rem;line-height:0.426667rem;margin-top:0.008533rem;text-align:center;color:black;}

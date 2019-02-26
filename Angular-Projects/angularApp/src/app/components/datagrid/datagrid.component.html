@@ -1,0 +1,31 @@
+ <div class="myorderMain">
+    <ul class="myordreList" *ngFor="let obj of dataset ;let idx = index">
+        <li>
+            <p>
+                <span>订单号：{{obj.orderid}}</span>
+                <span class="fr"*ngIf="obj.status == 0">待付款</span>
+                <span class="fr"*ngIf="obj.status == 1">已付款</span>
+            </p>
+           
+        </li>
+        <li class="h98">
+            <div>
+                <img [src]="obj.mainimg">
+            </div>
+            <div class="pl10">
+                <p>{{obj.title}}</p>
+                <i>{{obj.total}}kg</i>
+            </div>
+            <div class="fr">
+                <i>&times;1</i>
+            </div>
+
+        </li>
+        <li>
+            <span>共1件商品 合计：{{obj.price}}（含运费￥20.00）</span>
+        </li>
+        <li>
+            <input type="button" value="删除订单" class="delete" (click)="delete(idx)"/>
+        </li>
+    </ul>
+</div>

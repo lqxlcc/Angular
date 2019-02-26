@@ -1,0 +1,5 @@
+<div class="datacarousel">
+    <div class="carousel-data" *ngFor="let imgurl of banners;let idx = index" [class.current-l-center]="slideDirection=='left' && idx==currentImg" [class.current-l-left]="(slideDirection=='left' && currentImg==0 && idx==banners.length-1) || (currentImg!=0 && idx==currentImg-1)" [class.current-l-right]="(slideDirection=='left' && currentImg==banners.length-1 && idx==0) || (currentImg!=banners.length-1 && idx==currentImg+1)" [class.current-r-center]="slideDirection=='right' && idx==currentImg" [class.current-r-left]="(slideDirection=='right' && currentImg==0 && idx==banners.length-1) || (currentImg!=0 && idx==currentImg-1)" [class.current-r-right]="(slideDirection=='right' && currentImg==banners.length-1 && idx==0) || (currentImg!=banners.length-1 && idx==currentImg+1)" (touchstart)="goStart($event)" (touchmove)="goMove($event)" (touchend)="goEnd()">
+        <img [src]="imgurl" />
+    </div>
+</div>

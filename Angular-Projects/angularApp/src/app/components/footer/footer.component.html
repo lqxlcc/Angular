@@ -1,0 +1,39 @@
+<div class="footerLqx navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <ul class="footerUl nav navbar-nav">
+        <li>
+            <a (touchend)="gohome()">
+                <span class="glyphicon glyphicon-home"></span>
+                <span>首页</span>
+            </a>
+        </li>
+        <li>
+            <a (touchend)="gocategory()">
+                <span class="glyphicon glyphicon-th-large"></span>
+                <span>分类</span>
+            </a>
+        </li>
+        <li>
+            <a (touchend)="gocart()">
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+                <span class="qty">购物车<i *ngIf="qty>0"[class.activedqty]="qty>0">{{qty}}</i></span>
+
+            </a>
+        </li>
+        <li>
+            <a (touchend)="gomine()">
+                <span class="glyphicon glyphicon-user"></span>
+                <span>我的果园</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div [class.maskNone]="maskStatus == 1"class="mask">
+   <div class="deleteDialog">
+       <div class="verMass">亲，还没登录哦！去登录？</div>
+       <div class="verBtn">
+           <span class="cancelBtn" (click)="cancelMask()">取消</span>
+           <span  (click)="goLogin()">确定</span>
+       </div>
+   </div>
+
+</div>
